@@ -17,6 +17,7 @@
 
 body {
   background-color: rgb(22, 27, 43);
+  overflow: hidden;
 }
 
 body::before {
@@ -33,6 +34,7 @@ body::before {
   backdrop-filter: blur(2px);
   filter: blur(2px);
   z-index: -10;
+  overflow: hidden;
 }
 
 
@@ -69,14 +71,14 @@ header>div:first-child #userProfilePic {
   overflow: hidden;
   font-size: 40px;
   line-height: 45px;
+  border: rgb(199, 255, 255) solid 2px;
+  box-sizing: content-box;
 }
-
 header>div:first-child #userProfilePic img {
   position: absolute;
   left: 0;
   top: 0;
 }
-
 header>div:first-child h2 {
   font-size: 10px;
   text-align: center;
@@ -106,6 +108,8 @@ header div:nth-child(2)>h2{
   line-height: 1;
   margin: 0;
   margin-top: 5px;
+  text-shadow: 2px 2px 20px rgb(140, 221, 221), 2px 2px 10px rgb(158, 228, 228);
+  -webkit-text-stroke: 1px rgb(199, 255, 255);
 }
 /* #endregion */
 
@@ -118,6 +122,17 @@ header>div:last-child #notificationIcon{
   font-size: 1.8rem;
   margin-top: 10px;
   height: fit-content;
+  position: relative;
+}
+header>div:last-child #notificationIcon.unreaded::after{
+  content: '';
+  background-color: red;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
 }
 header>div:last-child #cocsNoDiv{
   display: flex;
