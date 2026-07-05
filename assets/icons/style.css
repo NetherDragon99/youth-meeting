@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?plpim1');
-  src:  url('fonts/icomoon.eot?plpim1#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?plpim1') format('truetype'),
-    url('fonts/icomoon.woff?plpim1') format('woff'),
-    url('fonts/icomoon.svg?plpim1#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?masth');
+  src:  url('fonts/icomoon.eot?masth#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?masth') format('truetype'),
+    url('fonts/icomoon.woff?masth') format('woff'),
+    url('fonts/icomoon.svg?masth#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,26 +25,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-bell:before {
-  content: "\f0a2";
+.icon-music:before {
+  content: "\e91c";
 }
-.icon-star:before {
-  content: "\f005";
+.icon-calendar:before {
+  content: "\e91a";
 }
-.icon-edit:before {
-  content: "\f044";
+.icon-notice:before {
+  content: "\e906";
 }
-.icon-refresh:before {
-  content: "\f021";
+.icon-checkmark:before {
+  content: "\e914";
 }
-.icon-exit:before {
-  content: "\f08b";
+.icon-cancel:before {
+  content: "\e915";
 }
-.icon-pause:before {
-  content: "\f144";
+.icon-trash:before {
+  content: "\e916";
 }
-.icon-history:before {
-  content: "\f1da";
+.icon-blocked:before {
+  content: "\e917";
+}
+.icon-paperplane:before {
+  content: "\e90e";
+}
+.icon-mic:before {
+  content: "\e91d";
+}
+.icon-qr:before {
+  content: "\e91e";
 }
 .icon-plus1:before {
   content: "\e91b";
@@ -73,26 +82,35 @@
 .icon-users:before {
   content: "\e913";
 }
-.icon-calendar:before {
-  content: "\e91a";
+.icon-bell:before {
+  content: "\f0a2";
 }
-.icon-notice:before {
-  content: "\e906";
+.icon-comunity:before {
+  content: "\f0c0";
 }
-.icon-checkmark:before {
-  content: "\e914";
+.icon-private:before {
+  content: "\f21b";
 }
-.icon-cancel:before {
-  content: "\e915";
+.icon-star:before {
+  content: "\f005";
 }
-.icon-trash:before {
-  content: "\e916";
+.icon-edit:before {
+  content: "\f044";
 }
-.icon-blocked:before {
-  content: "\e917";
+.icon-refresh:before {
+  content: "\f021";
 }
-.icon-paperplane:before {
-  content: "\e90e";
+.icon-exit:before {
+  content: "\f08b";
+}
+.icon-pause:before {
+  content: "\f144";
+}
+.icon-history:before {
+  content: "\f1da";
+}
+.icon-trophy:before {
+  content: "\e99e";
 }
 .icon-home:before {
   content: "\e900";

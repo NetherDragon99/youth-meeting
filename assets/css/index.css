@@ -11,16 +11,25 @@
 * {
   font-family: 'cairo', sans-serif, serif;
   color: aliceblue;
-  height: 100%;
   box-sizing: border-box;
 }
-
-body {
-  background-color: rgb(22, 27, 43);
-  overflow: hidden;
+img{
+  height: 100%;
 }
 
-body::before {
+body{
+  background-color: rgb(22, 27, 43);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+section.MainContainer{
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+section.MainContainer::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -164,4 +173,74 @@ header>div:last-child #userPlaceDiv{
 
 /* #endregion */
 
+/* #endregion */
+
+
+/* #region footer */
+footer{
+  position: relative;
+  height: 80px;
+}
+footer>#footerContainer::before{
+  border-top: rgb(199, 255, 255);
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  content: '';
+}
+footer>#footerContainer{
+  display: flex;
+  justify-content: space-around;
+  height: 75px;
+  margin-top: 5px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+footer>#footerContainer>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+footer>#footerContainer>div>div{
+  font-size: 2rem;
+  -webkit-text-stroke: 2px rgb(136, 154, 170);
+  color: transparent;
+}
+footer>#footerContainer>div>p{
+  margin: 0;
+  color: rgb(136, 154, 170);
+  direction: var(--main-direction);
+}
+footer>#footerContainer>div:nth-child(3)>div{
+  position: relative;
+  top: -20px;
+  font-size: 3rem;
+  border-radius: 50%;
+  border: rgb(199, 255, 255) solid;
+  padding: 10px;
+  -webkit-text-stroke: 0;
+  color: rgb(199, 255, 255);
+  box-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
+  text-shadow: 0 0 10px rgb(199, 255, 255);
+}
+footer>#footerContainer>div:nth-child(3)>p{
+  position: relative;
+  bottom: 20px;
+  -webkit-text-stroke: .3px rgb(199, 255, 255);
+  text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
+}
+footer>#footerContainer>div.selected>div{
+  -webkit-text-stroke: 0;
+  color: rgb(199, 255, 255);
+  text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
+  text-shadow: 0 0 100px rgb(199, 255, 255);
+}
+footer>#footerContainer>div.selected>p{
+  -webkit-text-stroke: 1px rgb(199, 255, 255);
+  text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
+}
 /* #endregion */
