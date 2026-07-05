@@ -7,7 +7,7 @@
   <title>COC Youth Meeting</title>
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/icons/style.css">
-  <script src="assets/js/index.js"></script>
+  <script type="module" src="assets/js/index.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
   </header>
 
   <section id="MainContainer">
-    <homePage id="homePage">
+    <homePage id="homePage">home
       <section id="nextFriday">
 
       </section>
@@ -42,38 +42,39 @@
 
       </section>
     </homePage>
-    <rankPage id="rankPage">
+    <rankPage id="rankPage">rank
 
     </rankPage>
-    <comunityPage id="comunityPage">
+    <comunityPage id="comunityPage">comunity
 
     </comunityPage>
-    <profilePage id="profilePage">
+    <profilePage id="profilePage">profile
 
     </profilePage>
   </section>
   <footer>
+    <div id="selectedArea"></div>
     <section id="footerContainer">
-      <div id="homePageFooter" class="selected">
+      <a href="#homePage" id="homePageFooter" class="selected">
         <div class="icon-home"></div>
         <p>الرئيسية</p>
-      </div>
-      <div id="rankPageFooter">
+      </a>
+      <a href="#rankPage" id="rankPageFooter">
         <div class="icon-trophy"></div>
         <p>المراكز</p>
-      </div>
-      <div id="qrScanFooter">
+      </a>
+      <a id="qrScanFooter">
         <div class="icon-qr"></div>
         <p>شكان QR</p>
-      </div>
-      <div id="comunityPageFooter">
+      </a>
+      <a href="#comunityPage" id="comunityPageFooter">
         <div class="icon-comunity"></div>
         <p>المجتمع</p>
-      </div>
-      <div id="profilePageFooter">
+      </a>
+      <a href="#profilePage" id="profilePageFooter">
         <div class="icon-user"></div>
         <p>الحساب</p>
-      </div>
+      </a>
     </section>
   </footer>
 </body>

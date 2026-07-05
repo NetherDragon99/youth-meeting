@@ -7,7 +7,10 @@
 :root {
   --main-direction: rtl;
 }
-
+button, a, input, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; 
+}
 * {
   font-family: 'cairo', sans-serif, serif;
   color: aliceblue;
@@ -179,6 +182,7 @@ header>div:last-child #userPlaceDiv{
     overflow-x: scroll;
     scrollbar-width: none;
     flex: 1;
+    scroll-behavior: smooth;
   }
   body>section#MainContainer>*{
     min-width: 100%;
@@ -200,42 +204,49 @@ footer{
   position: relative;
   height: 80px;
   flex-shrink: 0;
+  min-width: 100%;
 }
-footer>#footerContainer::before{
-  border-top: rgb(199, 255, 255);
-  width: 50px;
-  height: 100%;
+footer> #selectedArea{
+  width: 41px;
+  height: 80px;
   position: absolute;
   content: '';
+  top: 0;
+  left: 0;
+  transition: .5s;
 }
 footer>#footerContainer{
   display: flex;
   justify-content: space-around;
-  height: 75px;
+  max-height: 75px;
   margin-top: 5px;
   position: absolute;
   width: 100%;
   height: 100%;
+  bottom: 0;
 }
-footer>#footerContainer>div{
+footer>#footerContainer>a{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   cursor: pointer;
+  text-decoration: none;
 }
-footer>#footerContainer>div>div{
+footer>#footerContainer>a>div{
   font-size: 2rem;
   -webkit-text-stroke: 2px rgb(136, 154, 170);
   color: transparent;
+  transition: .5s;
 }
-footer>#footerContainer>div>p{
+footer>#footerContainer>a>p{
   margin: 0;
   color: rgb(136, 154, 170);
   direction: var(--main-direction);
+  transition: .5s;
 }
-footer>#footerContainer>div:nth-child(3)>div{
+footer>#footerContainer>a:nth-child(3)>div{
   position: relative;
   top: -20px;
   font-size: 3rem;
@@ -248,19 +259,19 @@ footer>#footerContainer>div:nth-child(3)>div{
   text-shadow: 0 0 10px rgb(199, 255, 255);
   background-color: rgba(58, 78, 78, 0.644);
 }
-footer>#footerContainer>div:nth-child(3)>p{
+footer>#footerContainer>a:nth-child(3)>p{
   position: relative;
   bottom: 20px;
   -webkit-text-stroke: .3px rgb(199, 255, 255);
   text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
 }
-footer>#footerContainer>div.selected>div{
+footer>#footerContainer>a.selected>div{
   -webkit-text-stroke: 0;
   color: rgb(199, 255, 255);
   text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
   text-shadow: 0 0 100px rgb(199, 255, 255);
 }
-footer>#footerContainer>div.selected>p{
+footer>#footerContainer>a.selected>p{
   -webkit-text-stroke: 1px rgb(199, 255, 255);
   text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
 }
