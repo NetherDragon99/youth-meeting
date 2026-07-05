@@ -25,11 +25,7 @@ body{
   flex-direction: column;
   height: 100dvh;
 }
-section.MainContainer{
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-section.MainContainer::before {
+section#MainContainer::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -56,6 +52,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
+  flex-shrink: 0;
 }
 header>div{
   display: flex;
@@ -79,9 +76,10 @@ header>div:first-child #userProfilePic {
   position: relative;
   overflow: hidden;
   font-size: 40px;
-  line-height: 45px;
+  line-height: 50px;
   border: rgb(199, 255, 255) solid 2px;
   box-sizing: content-box;
+  box-shadow: 0 0 30px rgb(199, 255, 255);
 }
 header>div:first-child #userProfilePic img {
   position: absolute;
@@ -175,11 +173,33 @@ header>div:last-child #userPlaceDiv{
 
 /* #endregion */
 
+/* #region pages settings */
+  body>section#MainContainer{
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    flex: 1;
+  }
+  body>section#MainContainer>*{
+    min-width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    position: relative;
+  }
+  body>section#MainContainer>*::after{
+    content: '';
+    width: 100%;
+    height: 20px;
+    position: relative;
+  }
+/* #endregion */
 
 /* #region footer */
 footer{
   position: relative;
   height: 80px;
+  flex-shrink: 0;
 }
 footer>#footerContainer::before{
   border-top: rgb(199, 255, 255);
@@ -226,6 +246,7 @@ footer>#footerContainer>div:nth-child(3)>div{
   color: rgb(199, 255, 255);
   box-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
   text-shadow: 0 0 10px rgb(199, 255, 255);
+  background-color: rgba(58, 78, 78, 0.644);
 }
 footer>#footerContainer>div:nth-child(3)>p{
   position: relative;
