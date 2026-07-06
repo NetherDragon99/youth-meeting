@@ -12,8 +12,6 @@ pagesFooter.forEach(v => v.addEventListener('click', () => {
   selectedBar.style.width = `${v.getBoundingClientRect().width}px`;
 
   localStorage.setItem('lastOpenedPage', JSON.stringify(location.hash))
-
-  console.log(v.getBoundingClientRect().left, footerContainer.getBoundingClientRect().left);
 }))
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -40,9 +38,9 @@ window.addEventListener('DOMContentLoaded', () => {
   setTimeout(()=> activatePageObserver(), 2000)
 })
 
-document.getElementById('MainContainer').addEventListener('wheel', function (wheel) {
+document.getElementById('footer').addEventListener('wheel', function (wheel) {
   // console.log(wheel);
-  this.scrollBy({
+  document.getElementById('MainContainer').scrollBy({
     left: wheel.deltaY,
     behavior: "smooth"
   })
