@@ -22,17 +22,53 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!hash) {
       localStorage.setItem('lastOpenedPage', '#homePage');
       hash = '#homePage';
+      
     }
     document.querySelector(`body>section#MainContainer ${hash}`).scrollIntoView({
       behavior: 'smooth'
     })
-
+    
     pagesFooter.forEach(value => value.classList.remove('selected'));
 
     document.querySelector(`${hash}Footer`).classList.add('selected');
 
     selectedBar.style.left = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
     selectedBar.style.width = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().width}px`;
-    selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px'
+    selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
   }, 500);
+
+  setTimeout(()=> activatePageObserver(), 2000)
 })
+
+document.getElementById('MainContainer').addEventListener('wheel', function (wheel) {
+  // console.log(wheel);
+  this.scrollBy({
+    left: wheel.deltaY,
+    behavior: "smooth"
+  })
+})
+
+const pageView = new IntersectionObserver((items) => {
+  items.forEach(item => {
+    if (item.isIntersecting) {
+      const id = item.target.id;
+      localStorage.setItem('lastOpenedPage', `#${id}`)
+      location.hash = id;
+      const hash = `#${id}`
+
+      pagesFooter.forEach(value => value.classList.remove('selected'));
+
+      document.querySelector(`${hash}Footer`).classList.add('selected');
+
+      selectedBar.style.left = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
+      selectedBar.style.width = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().width}px`;
+      selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
+    }
+
+  })
+}, { threshold: 0.7 })
+
+function activatePageObserver() {
+  document.querySelectorAll('body>section#MainContainer>*').forEach(itme => pageView.observe(itme))
+}
+

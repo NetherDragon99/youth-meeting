@@ -182,7 +182,7 @@ header>div:last-child #userPlaceDiv{
     overflow-x: scroll;
     scrollbar-width: none;
     flex: 1;
-    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
   }
   body>section#MainContainer>*{
     min-width: 100%;
@@ -190,6 +190,8 @@ header>div:last-child #userPlaceDiv{
     overflow-y: scroll;
     scrollbar-width: none;
     position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   body>section#MainContainer>*::after{
     content: '';
