@@ -70,3 +70,15 @@ function activatePageObserver() {
   document.querySelectorAll('body>section#MainContainer>*').forEach(itme => pageView.observe(itme))
 }
 
+// notifications
+const notificationsContainer = document.getElementById('notifications');
+const allNotifications = document.querySelectorAll('#notifications .notification')
+
+allNotifications.forEach(notification => {
+  notification.addEventListener('click', function(){
+    allNotifications.forEach(value=>value.classList.remove('opened'))
+    this.classList.add('opened')
+  })
+})
+
+import * as homePage from "./homePage.js";
