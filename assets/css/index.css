@@ -147,6 +147,7 @@ header div:nth-child(2)>h2 {
 header>div:last-child {
   align-items: flex-end;
   justify-content: space-between;
+  position: relative;
 }
 
 header>div:last-child #notificationIcon {
@@ -157,13 +158,13 @@ header>div:last-child #notificationIcon {
   cursor: pointer;
 }
 
+
 #notificationContainer{
-  position: absolute;
-  border: var(--design-blue) solid;
-  background-color: rgba(19, 43, 68, 0.8);
-  width: 220px;
+  transition: 1.2s;
+  width: 0;
+  max-height: 0;
   right: 10px;
-  top: calc(100% + 5px);
+  top: 3rem;
   z-index: 2;
   border-radius: 10px 0 10px 10px;
   display: flex;
@@ -171,8 +172,17 @@ header>div:last-child #notificationIcon {
   gap: 10px;
   direction: var(--main-direction);
   padding: 10px 0;
+  overflow: hidden;
+  position: absolute;
+  border: var(--design-blue) solid;
+  background-color: rgba(19, 43, 68, 0.8);
+  opacity: 0;
+}
+#notificationContainer.opened{
+  width: 220px;
   max-height: 50dvh;
   height: fit-content;
+  opacity: 1;
 }
 #notificationContainer h4{
   margin: 0;
@@ -182,6 +192,7 @@ header>div:last-child #notificationIcon {
 #notificationContainer #notifications{
   display: flex;
   flex-direction: column;
+  gap: 10px;
   overflow: scroll;
   scrollbar-width: none;
   transition: 1s;
@@ -195,6 +206,8 @@ header>div:last-child #notificationIcon {
   transition: 1s ease-in-out;
   flex-shrink: 0;
   overflow: hidden;
+  cursor: pointer;
+  border: rgb(7, 76, 104) .5px solid;
 }
 .notification.unreaded{
   background-color: rgba(21, 77, 138, 0.336);
@@ -225,11 +238,6 @@ header>div:last-child #notificationIcon {
   overflow: hidden;
   flex-shrink: 0;
   transition: 1s;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; 
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  white-space: normal;
 }
 .notification .notficationData p:nth-child(2){
   font-size: .8rem;
@@ -240,7 +248,6 @@ header>div:last-child #notificationIcon {
   flex-shrink: 0;
   line-height: 1.3;
   transition: 1s;
-  
 }
 .notification .notficationData p:last-child{
   font-size: .6rem;
@@ -257,7 +264,6 @@ header>div:last-child #notificationIcon {
 .notification.opened .notficationData p{
   white-space: wrap;
 }
-
 
 
 header>div:last-child #notificationIcon.unreaded::after {

@@ -1,4 +1,20 @@
 
+//#region public codes
+  
+// exit page by clicking outside
+document.addEventListener('click', click=>{
+  
+  if (
+    (click.target !== bellIcons) &&
+    !click.target.closest('#notificationContainer')
+  ) {
+    console.log('ok');
+    
+  }
+})
+//#endregion
+
+// #region scroll function
 // page scroll navigation style function
 const pagesFooter = document.querySelectorAll('footer>#footerContainer>a:not(:nth-child(3))');
 const selectedBar = document.querySelector('footer> #selectedArea');
@@ -69,16 +85,36 @@ const pageView = new IntersectionObserver((items) => {
 function activatePageObserver() {
   document.querySelectorAll('body>section#MainContainer>*').forEach(itme => pageView.observe(itme))
 }
+//#endregion
 
-// notifications
-const notificationsContainer = document.getElementById('notifications');
-const allNotifications = document.querySelectorAll('#notifications .notification')
+//#region notification
+const mainNotificationContainer = document.getElementById('notificationContainer');
+const notificationContainer = document.getElementById('notifications')
+const notifications = document.querySelectorAll('#notifications .notification');
+const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)')
 
-allNotifications.forEach(notification => {
+notifications.forEach(notification => {
   notification.addEventListener('click', function(){
-    allNotifications.forEach(value=>value.classList.remove('opened'))
+    if (this.classList.contains('opened')) {
+      notifications.forEach(value=>value.classList.remove('opened'))
+    }else{
+      notifications.forEach(value=>value.classList.remove('opened'))
     this.classList.add('opened')
+    }
   })
 })
+
+
+// open & close notification bar
+bellIcons.addEventListener('click', ()=> mainNotificationContainer.classList.toggle('opened'))
+
+// readed notifications
+notifications.forEach(notification => {
+  notification.addEventListener('click', function(){
+    this.classList.remove('unreaded')
+  })
+})
+
+//#endregion
 
 import * as homePage from "./homePage.js";
