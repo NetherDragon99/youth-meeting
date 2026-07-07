@@ -7,9 +7,8 @@ document.addEventListener('click', click=>{
   if (
     (click.target !== bellIcons) &&
     !click.target.closest('#notificationContainer')
-  ) {
-    console.log('ok');
-    
+  ) {    
+    mainNotificationContainer.classList.toggle('opened')
   }
 })
 //#endregion
