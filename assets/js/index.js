@@ -5,10 +5,15 @@
 document.addEventListener('click', click=>{
   
   if (
+    (click.target.closest('#globalCloseArea')) ||
     (click.target !== bellIcons) &&
-    !click.target.closest('#notificationContainer')
+    !click.target.closest('#notificationContainer')&&
+    !click.target.closest('#floatingTask')
   ) {    
-    mainNotificationContainer.classList.toggle('opened')
+    mainNotificationContainer.classList.remove('opened')
+    homePage.closeTask();
+    console.log(document.querySelector('#floatingTask.opened'));
+    
   }
 })
 //#endregion
