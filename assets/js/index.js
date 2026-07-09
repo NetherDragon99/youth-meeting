@@ -11,9 +11,7 @@ document.addEventListener('click', click=>{
     !click.target.closest('#floatingTask')
   ) {    
     mainNotificationContainer.classList.remove('opened')
-    homePage.closeTask();
-    console.log(document.querySelector('#floatingTask.opened'));
-    
+    homePage.closeTask();    
   }
 })
 //#endregion

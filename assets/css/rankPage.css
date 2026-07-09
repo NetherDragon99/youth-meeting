@@ -1,0 +1,106 @@
+#rankPage{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+}
+#rankHeader{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 10px 0 30px 0;
+}
+#rankHeader img:nth-child(2){
+  position: absolute;
+  height: 50%;
+  bottom: calc(-50% + 5px);
+}
+
+#rankPlaces{
+  width: 90%;
+  max-width: 500px;
+  border: red solid;
+  justify-self: center;
+  margin-top: 20px;
+}
+#topThree{
+display: flex;
+justify-content: center;
+}
+#topThree>div{
+  width: 80px;
+  height: 150px;
+  /* border: yellow solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+#topThree>div #stage{
+  position: relative;
+  height: 85px;
+  align-items: center;
+}
+#topThree>div #stage p{
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+#topThree .firstPlace #stage{
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+#topThree .firstPlace #stage>div:nth-child(2){
+  height: 70px;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, rgb(218, 172, 22), rgba(110, 96, 17, 0.425), rgb(77, 76, 31), rgb(53, 46, 15));
+}
+#topThree #secondSection #stage>div:first-child{
+  clip-path: polygon(0% 100%, 15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  z-index: 3;
+}
+#topThree .firstPlace #stage>div:first-child{
+  background-color: rgb(218, 172, 22);
+  width: 100%;
+  height: 15px;
+}
+
+#topThree #firstSection #stage{
+  height: 70px;
+}
+#topThree .secondPlace #stage>div:nth-child(2){
+  height: 50px;
+  width: 100%;
+  background-image: linear-gradient(120deg, rgb(202, 201, 197), rgb(57, 67, 87), rgb(35, 46, 66), rgb(31, 46, 77));
+}
+#topThree #firstSection #stage>div:first-child{
+  clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 3;
+}
+#topThree .secondPlace #stage>div:first-child{
+  background-color: rgb(202, 201, 197);
+  width: 100%;
+  height: 15px;
+}
+
+
+
+#topThree #thirdSection #stage{
+  height: 50px;
+}
+#topThree .thirdPlace #stage>div:nth-child(2){
+  height: 30px;
+  width: 100%;
+  background-image: linear-gradient(250deg, rgb(141, 88, 39), rgba(68, 28, 45, 0.678), rgb(39, 35, 36), rgb(39, 35, 36));
+}
+#topThree #thirdSection #stage>div:first-child{
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+  z-index: 3;
+}
+#topThree .thirdPlace #stage>div:first-child{
+  background-color: rgb(141, 88, 39);
+  width: 100%;
+  height: 15px;
+}

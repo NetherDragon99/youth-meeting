@@ -35,7 +35,7 @@ tasks.forEach(task => task.addEventListener('click', function () {
 
 export function closeTask() {
   const openedTask = document.querySelector('#floatingTask.opened');
-  console.log(openedTask);
+
   if (openedTask) {
     
     openedTask.classList.remove('opened')
