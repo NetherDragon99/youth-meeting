@@ -1,4 +1,4 @@
-#comunityPage{
+#comunityPage {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -7,10 +7,11 @@
   justify-content: center;
   align-items: start;
   padding-top: 30px;
+  width: 100dvw;
 }
 
 /* #region comunity boxs */
-#comunityPage .comunityBox{
+#comunityPage .comunityBox {
   height: 250px;
   width: 90%;
   max-width: 500px;
@@ -21,29 +22,33 @@
   border-radius: 20px;
   padding: 10px;
 }
-#comunityPage .comunityBox .comunityBoxHeader{
+
+#comunityPage .comunityBox .comunityBoxHeader {
   height: 40%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: gray solid;
 }
-#comunityPage .comunityBox .comunityBoxHeader img{
+
+#comunityPage .comunityBox .comunityBoxHeader img {
   background: radial-gradient(circle, rgba(199, 255, 255, 0.5), transparent 80%);
 }
-#comunityPage .comunityBox .comunityBoxHeader h2{
+
+#comunityPage .comunityBox .comunityBoxHeader h2 {
   direction: var(--main-direction);
   line-height: 1.2;
 }
 
-#comunityPage .comunityBox .comunityBoxBody{
+#comunityPage .comunityBox .comunityBoxBody {
   margin-top: 20px;
   overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-#comunityPage .comunityBox .comunityBoxBody>div{
+
+#comunityPage .comunityBox .comunityBoxBody>div {
   width: 100%;
   height: 30px;
   padding: 5px;
@@ -52,7 +57,8 @@
   align-items: center;
   gap: 10px;
 }
-#comunityPage .comunityBox .comunityBoxBody>div>div{
+
+#comunityPage .comunityBox .comunityBoxBody>div>div {
   position: relative;
   width: 20px;
   height: 20px;
@@ -61,10 +67,56 @@
   font-size: 15px;
   line-height: 20px;
 }
-#comunityPage .comunityBox .comunityBoxBody>div>div>img{
+
+#comunityPage .comunityBox .comunityBoxBody>div>div>img {
   position: absolute;
   top: 0;
   left: 0;
 }
 
 /* #endregion */
+
+/* #region chat box */
+#comunityChatBox{
+  border-radius: 20px;
+  border: var(--design-blue) solid;
+  width: 90%;
+  max-width: 500px;
+  height: 100%;
+  position: absolute;
+  justify-self: center;
+  right: 50%;
+  transform: translateX(50%);
+  background-image: url(../pic/background.png);
+  font-size: 64px;
+  text-align: center;
+  font-weight: 900;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* #endregion */
+
+
+@media (min-width: 520px) {
+  #comunityPage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  #q-aBox{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  #praysBox{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  #comunityChatBox{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    right: 50%;
+    background-image: none;
+  }
+}
