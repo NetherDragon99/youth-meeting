@@ -103,6 +103,7 @@ footer {
   height: 80px;
   flex-shrink: 0;
   min-width: 100%;
+  direction: var(--main-direction);
 }
 
 footer>#selectedArea {

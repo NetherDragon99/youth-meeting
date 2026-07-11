@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?masth');
-  src:  url('fonts/icomoon.eot?masth#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?masth') format('truetype'),
-    url('fonts/icomoon.woff?masth') format('woff'),
-    url('fonts/icomoon.svg?masth#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?s5w4w2');
+  src:  url('fonts/icomoon.eot?s5w4w2#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?s5w4w2') format('truetype'),
+    url('fonts/icomoon.woff?s5w4w2') format('woff'),
+    url('fonts/icomoon.svg?s5w4w2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,6 +28,9 @@
 .icon-music:before {
   content: "\e91c";
 }
+.icon-mail-closed:before {
+  content: "\e91f";
+}
 .icon-calendar:before {
   content: "\e91a";
 }
@@ -49,8 +52,23 @@
 .icon-paperplane:before {
   content: "\e90e";
 }
+.icon-eye:before {
+  content: "\e911";
+}
+.icon-eye-off:before {
+  content: "\e921";
+}
+.icon-lock:before {
+  content: "\e922";
+}
 .icon-mic:before {
   content: "\e91d";
+}
+.icon-phone:before {
+  content: "\e920";
+}
+.icon-language:before {
+  content: "\e923";
 }
 .icon-qr:before {
   content: "\e91e";
@@ -63,9 +81,6 @@
 }
 .icon-play:before {
   content: "\e905";
-}
-.icon-clear:before {
-  content: "\e911";
 }
 .icon-time:before {
   content: "\e90a";
@@ -111,6 +126,9 @@
 }
 .icon-trophy:before {
   content: "\e99e";
+}
+.icon-man-woman:before {
+  content: "\e9de";
 }
 .icon-home:before {
   content: "\e900";

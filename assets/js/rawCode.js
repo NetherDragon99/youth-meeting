@@ -3,5 +3,5 @@ export const floatingTaskDom = (title, des, left, top, width, height, btnName, b
     <div id="floatingTaskHeader">${title}</div>
     <div id="floatingTaskBody">${des}</div>
     <button data-value="${btnValue??''}" style="display:${btnValue?'block':'none'}">${btnName=== ''?'press me': btnName??'press me'}</button>
-    <div class="icon-clear" id="globalCloseArea"></div>
+    <div class="icon-cancel" id="globalCloseArea"></div>
   </div>`
