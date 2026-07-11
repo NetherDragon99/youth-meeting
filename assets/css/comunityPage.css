@@ -1,0 +1,70 @@
+#comunityPage{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  overflow: scroll;
+  justify-content: center;
+  align-items: start;
+  padding-top: 30px;
+}
+
+/* #region comunity boxs */
+#comunityPage .comunityBox{
+  height: 250px;
+  width: 90%;
+  max-width: 500px;
+  border: var(--design-blue) solid;
+  overflow: hidden;
+  justify-self: center;
+  background-color: rgba(29, 32, 41, 0.5);
+  border-radius: 20px;
+  padding: 10px;
+}
+#comunityPage .comunityBox .comunityBoxHeader{
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: gray solid;
+}
+#comunityPage .comunityBox .comunityBoxHeader img{
+  background: radial-gradient(circle, rgba(199, 255, 255, 0.5), transparent 80%);
+}
+#comunityPage .comunityBox .comunityBoxHeader h2{
+  direction: var(--main-direction);
+  line-height: 1.2;
+}
+
+#comunityPage .comunityBox .comunityBoxBody{
+  margin-top: 20px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#comunityPage .comunityBox .comunityBoxBody>div{
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+}
+#comunityPage .comunityBox .comunityBoxBody>div>div{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+}
+#comunityPage .comunityBox .comunityBoxBody>div>div>img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* #endregion */

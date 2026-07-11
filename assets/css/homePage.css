@@ -248,6 +248,25 @@ header>div:last-child #userPlaceDiv {
 
 /* #endregion */
 
+/* #region logo section */
+header div:nth-child(2) {
+  justify-self: center;
+}
+
+header div:nth-child(2)>img {
+  height: 80px;
+}
+
+header div:nth-child(2)>h2 {
+  font-size: 1.7rem;
+  line-height: 1;
+  margin: 0;
+  margin-top: 5px;
+  text-shadow: 2px 2px 20px rgb(140, 221, 221), 2px 2px 10px rgb(158, 228, 228);
+  -webkit-text-stroke: 1px rgb(199, 255, 255);
+}
+
+/* #endregion */
 /* #endregion */
 
 /* #region next meeting */
