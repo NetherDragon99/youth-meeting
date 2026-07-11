@@ -1,10 +1,11 @@
-#rankPage{
+#rankPage {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr;
   justify-content: center;
 }
-#rankHeader{
+
+#rankHeader {
   height: 100px;
   width: 100%;
   display: flex;
@@ -12,74 +13,184 @@
   position: relative;
   margin: 10px 0 30px 0;
 }
-#rankHeader img:nth-child(2){
+
+#rankHeader img:nth-child(2) {
   position: absolute;
   height: 50%;
   bottom: calc(-50% + 5px);
 }
 
-#rankPlaces{
+#rankPlaces {
   width: 90%;
   max-width: 500px;
-  border: red solid;
   justify-self: center;
+  align-items: center;
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  position: relative;
 }
-#topThree{
-display: flex;
-justify-content: center;
+
+
+/* #region top 3 */
+
+/* #region top section stage */
+#userSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
 }
-#topThree>div{
+
+#userSection .topRankProfilePic {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 5;
+  bottom: 0;
+  background-color: transparent;
+  font-size: 55px;
+  line-height: 60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.secondPlace #userSection .topRankProfilePic {
+  border: silver solid;
+}
+
+.firstPlace #userSection .topRankProfilePic {
+  border: gold solid;
+}
+
+.thirdPlace #userSection .topRankProfilePic {
+  border: rgb(102, 51, 10) solid;
+}
+
+#userSection>img {
+  width: 70%;
+  object-fit: contain;
+  position: absolute;
+  display: none;
+  z-index: 4;
+}
+
+.firstPlace #userSection>img:nth-child(2) {
+  bottom: -60%;
+  display: block;
+}
+
+.secondPlace #userSection>img:nth-child(3) {
+  bottom: -70%;
+  display: block;
+}
+
+.thirdPlace #userSection>img:nth-child(4) {
+  bottom: -70%;
+  display: block;
+}
+
+.firstPlace #userSection>img:nth-child(5) {
+  right: -25%;
+  bottom: -30%;
+  transform: rotate(7deg);
+  display: block;
+}
+
+.secondPlace #userSection>img:nth-child(6) {
+  right: -25%;
+  bottom: -30%;
+  transform: rotate(7deg);
+  display: block;
+}
+
+.firstPlace #userSection>img:nth-child(7) {
+  bottom: 35px;
+  z-index: 6;
+  display: block;
+}
+
+/* #endregion */
+
+/* #region stage design */
+#topThree {
+  display: flex;
+  justify-content: center;
+}
+
+#topThree>div {
   width: 80px;
   height: 150px;
-  /* border: yellow solid; */
   display: flex;
   flex-direction: column;
   justify-content: end;
 }
-#topThree>div #stage{
+
+
+#topThree #stage {
   position: relative;
   height: 85px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-#topThree>div #stage p{
+
+#topThree>div #stage p {
   position: absolute;
   bottom: 0;
   margin: 0;
+  z-index: 6;
 }
-#topThree .firstPlace #stage{
-display: flex;
-flex-direction: column;
-width: 100%;
+
+#topThree .firstPlace #stage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-#topThree .firstPlace #stage>div:nth-child(2){
+
+#topThree #secondSection #stage>div:nth-child(2) {
   height: 70px;
   width: 100%;
+}
+
+#topThree .firstPlace #stage>div:nth-child(2) {
   background-image: linear-gradient(to bottom right, rgb(218, 172, 22), rgba(110, 96, 17, 0.425), rgb(77, 76, 31), rgb(53, 46, 15));
 }
-#topThree #secondSection #stage>div:first-child{
+
+#topThree #secondSection #stage>div:first-child {
   clip-path: polygon(0% 100%, 15% 0%, 85% 0%, 100% 100%, 0% 100%);
   z-index: 3;
 }
-#topThree .firstPlace #stage>div:first-child{
+
+#topThree .firstPlace #stage>div:first-child {
   background-color: rgb(218, 172, 22);
   width: 100%;
   height: 15px;
 }
 
-#topThree #firstSection #stage{
+#topThree #firstSection #stage {
   height: 70px;
 }
-#topThree .secondPlace #stage>div:nth-child(2){
+
+#topThree #firstSection #stage>div:nth-child(2) {
   height: 50px;
   width: 100%;
+}
+
+#topThree .secondPlace #stage>div:nth-child(2) {
   background-image: linear-gradient(120deg, rgb(202, 201, 197), rgb(57, 67, 87), rgb(35, 46, 66), rgb(31, 46, 77));
 }
-#topThree #firstSection #stage>div:first-child{
+
+#topThree #firstSection #stage>div:first-child {
   clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 100% 100%, 0% 100%);
   z-index: 3;
 }
-#topThree .secondPlace #stage>div:first-child{
+
+#topThree .secondPlace #stage>div:first-child {
   background-color: rgb(202, 201, 197);
   width: 100%;
   height: 15px;
@@ -87,20 +198,118 @@ width: 100%;
 
 
 
-#topThree #thirdSection #stage{
+#topThree #thirdSection #stage {
   height: 50px;
 }
-#topThree .thirdPlace #stage>div:nth-child(2){
+
+#topThree #thirdSection #stage>div:nth-child(2) {
   height: 30px;
   width: 100%;
+}
+
+#topThree .thirdPlace #stage>div:nth-child(2) {
   background-image: linear-gradient(250deg, rgb(141, 88, 39), rgba(68, 28, 45, 0.678), rgb(39, 35, 36), rgb(39, 35, 36));
 }
-#topThree #thirdSection #stage>div:first-child{
+
+#topThree #thirdSection #stage>div:first-child {
   clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
   z-index: 3;
 }
-#topThree .thirdPlace #stage>div:first-child{
+
+#topThree .thirdPlace #stage>div:first-child {
   background-color: rgb(141, 88, 39);
   width: 100%;
   height: 15px;
+}
+
+/* #endregion */
+/* #endregion */
+
+/* #region all users */
+
+#allRankUsers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 40px;
+  max-height: calc(100dvh - 500px);
+  overflow: hidden;
+  padding-bottom: 30px;
+  align-self: flex-start;
+}
+
+#allRankUsers .rankUser {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  background-color: rgba(31, 46, 77, 0.6);
+  padding: 5px;
+}
+
+#allRankUsers .rankUser .rankProfilePic {
+  text-align: center;
+  font-size: 25px;
+  line-height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: gray solid;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+#allRankUsers .rankUser .rankCocsNumber {
+  font-size: 1rem;
+  color: gold;
+  flex-shrink: 0;
+}
+
+#allRankUsers .rankUser .rankUserName {
+  margin-left: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction: rtl;
+}
+
+#allRankUsers .rankUser .rankNo {
+  margin-right: 10px;
+  flex-shrink: 0;
+  color: var(--design-blue);
+}
+#showAllRankUsers{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 5px;
+  bottom: 30px;
+  position: absolute;
+  border-radius: 15px;
+}
+
+/* endregion */
+
+@media (min-width: 520px) {
+  #showAllRankUsers{
+    display: none;
+  }
+  #allRankUsers{
+ max-height: calc(100dvh - 310px);
+  overflow: scroll;
+  }
+  #rankPlaces {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+   
+  }
+  #rankPlaces{
+    max-width: 100%;
+  }
+  #rankPlaces>div{
+    max-width: 500px;
+  }
 }

@@ -120,3 +120,4 @@ notifications.forEach(notification => {
 //#endregion
 
 import * as homePage from "./homePage.js";
+import * as rankPage from "./rankPage.js";
