@@ -50,6 +50,7 @@
   border: var(--design-blue) solid;
   border-radius: 20px;
   overflow: hidden;
+  padding-bottom: 30px;
 }
 
 /* #region profile body header */
@@ -92,10 +93,76 @@
 
 /* #region profile body content */
 #userProfileForm{
-  padding: 10px;
+  padding: 5px;
   direction: var(--main-direction);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: scroll;
 }
+#userProfileForm>*{
+  display: flex;
+  flex-direction: column;
+  border: var(--design-blue) solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+#userProfileForm label{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#userProfileForm label>p{
+  white-space: nowrap;
+}
+#userProfileForm label>div:first-child{
+  text-shadow: 0 0 20px var(--design-blue), 0 0 20px var(--design-blue);
+}
+#userProfileForm label>input{
+  flex: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  direction: var(--main-direction);
+  line-height: 1;
+}
+#userProfileForm label>select{
+  background-color: transparent;
+  flex: 1;
+  border: var(--design-blue) solid;
+  border-radius: 10px;
+  
+}
+#userProfileForm label>select option{
+  background-color: rgb(18, 24, 42);
+}
+
+#userFormSubmitBtn{
+  font-weight: 900;
+  background-image: linear-gradient(to right, rgb(18, 24, 42), transparent);
+  background-size: 500%;
+  background-position: left;
+  transition: 1s;
+}
+#userFormSubmitBtn:hover{
+  background-position: right;
+}
+
 /* #endregion */
+#logOutBtn{
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.4);
+  border: red solid;
+  border-radius: 10px;
+  margin: 15px;
+  align-self: center;
+}
+#logOutBtn>div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 900;
+}
 
 /* #endregion */
 

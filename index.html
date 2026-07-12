@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>COC Youth Meeting</title>
+  <meta lang="ar">
+  <meta dir="rtl">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/icons/style.css">
   <script type="module" src="assets/js/index.js" defer></script>
@@ -451,7 +453,8 @@
     </comunityPage>
     <profilePage id="profilePage">
       <section id="profilePageHeader">
-        <div id="currentProfilePic" class="icon-user"><img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none"></div>
+        <div id="currentProfilePic" class="icon-user"><img src="assets/pic/new coc logo.png" alt="profile picture"
+            style="display: none"></div>
         <h2>اعدادات الحساب</h2>
         <div class="icon-gear"></div>
       </section>
@@ -466,10 +469,14 @@
         </section>
         <form id="userProfileForm">
           <legend id="userFormMainData">
+            <label id="mainDataHeadder">
+              <div class="icon-edit"></div>
+              <p>بيانات الحساب الاساسية</p>
+            </label>
             <label for="userFormUsername">
               <div class="icon-pencil"></div>
               <p>الاسم</p>
-              <input type="text" id="userFormUsername" name="userName">
+              <input type="text" id="userFormUsername" name="userName" placeholder="اكتب اسمك الى هيكون ظاهر للكل">
             </label>
             <label for="userFormGender">
               <div class="icon-man-woman"></div>
@@ -485,12 +492,12 @@
             <label for="userFormPhoneNo">
               <div class="icon-phone"></div>
               <p>رقم التليفون</p>
-              <input type="tel" id="userFormPhoneNo" name="phoneNo">
+              <input type="tel" id="userFormPhoneNo" name="phoneNo" placeholder="01X XXXX XXXX">
             </label>
             <label for="userFormEmail">
               <div class="icon-mail-closed"></div>
               <p>الايميل</p>
-              <input type="email" id="userFormEmail" name="email">
+              <input type="email" id="userFormEmail" name="email" placeholder="yourEmail@gmail.com">
             </label>
             <label for="userFormProfilePic">
               <div class="icon-camera"></div>
@@ -500,24 +507,24 @@
             </label>
           </legend>
           <legend id="userFormChangePassward">
-            <h5>
+            <label>
               <div class="icon-lock"></div>
               <p>تغيير كلمة المرور</p>
-            </h5>
+          </label>
             <label for="userFormOldPass">
               <div class="icon-lock-rounded-open"></div>
               <p>كلمة المرور القديمة</p>
-              <input type="password" id="userFormOldPass" name="oldPass">
+              <input type="password" id="userFormOldPass" name="oldPass" placeholder="كلمة المرور الى هتغيرها">
             </label>
             <label for="userFormNewPass">
               <div class="icon-lock-rounded-close"></div>
               <p>كلمة المرور الجديدة</p>
-              <input type="password" id="userFormOldPass" name="newPass">
+              <input type="password" id="userFormOldPass" name="newPass" placeholder="كلمة المرور الجديدة">
             </label>
             <label for="userFormConfirmPass">
               <div class="icon-lock-rounded-close"></div>
               <p>تأكيد كلمة المرور الجديدة</p>
-              <input type="password" id="userFormConfirmPass" name="confirmPass">
+              <input type="password" id="userFormConfirmPass" name="confirmPass" placeholder="تأكيد على كلمة المرور الجديدة">
             </label>
           </legend>
           <input type="submit" id="userFormSubmitBtn">

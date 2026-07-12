@@ -22,12 +22,21 @@ input,
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
+button{
+  background-color: transparent;
+  border: none;
+}
 
 * {
   font-family: 'cairo', sans-serif, serif;
   color: var(--text-color);
   box-sizing: border-box;
   color: var(--text-color);
+}
+input{
+  background-color: transparent;
+  border: var(--design-blue) solid;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar{
   width: 7px;
