@@ -1,6 +1,7 @@
 @import url(./homePage.css);
 @import url(./rankPage.css);
 @import url(./comunityPage.css);
+@import url(./profilePage.css);
 
 @font-face {
   font-family: 'cairo';
@@ -66,6 +67,7 @@ body>section#MainContainer {
   scrollbar-width: none;
   flex: 1;
   scroll-snap-type: x mandatory;
+  direction: var(--main-direction);
 }
 section#MainContainer::before {
   content: '';
@@ -94,6 +96,7 @@ body>section#MainContainer>* {
   position: relative;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  direction: ltr;
 }
 /* #endregion */
 
