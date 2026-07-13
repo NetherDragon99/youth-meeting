@@ -46,7 +46,7 @@
   width: 90%;
   max-width: 500px;
   margin-top: 50px;
-  max-height: calc(100dvh - 210px);
+  max-height: calc(100dvh - 180px);
   border: var(--design-blue) solid;
   border-radius: 20px;
   overflow: hidden;
@@ -113,6 +113,7 @@
   align-items: center;
   gap: 10px;
   height: fit-content;
+  font-size: .8rem;
 }
 #userProfileForm label>p{
   white-space: nowrap;
@@ -155,8 +156,6 @@
   background-color: rgba(255, 0, 0, 0.4);
   border: red solid;
   border-radius: 10px;
-  margin: 15px;
-  margin-bottom: 0;
   align-self: center;
   width: 90%;
 }
@@ -166,6 +165,10 @@
   justify-content: center;
   gap: 10px;
   font-weight: 900;
+  margin: 0;
+}
+#logOutBtn>div>p{
+  margin: 0px;
 }
 
 /* #endregion */
