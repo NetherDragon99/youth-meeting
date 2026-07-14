@@ -2,11 +2,14 @@
 //#region public codes
 
 // exit page by clicking outside
+const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)');
+const mainNotificationContainer = document.getElementById('notificationContainer');
+
 document.addEventListener('click', click => {
 
   if (
     (click.target.closest('#globalCloseArea')) ||
-    (click.target !== document.querySelector('#notificationIcon:not(#notificationIcon>*)')) &&
+    (click.target !== bellIcons) &&
     !click.target.closest('#notificationContainer') &&
     !click.target.closest('#floatingTask')
   ) {

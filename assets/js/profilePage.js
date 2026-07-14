@@ -38,7 +38,7 @@ import * as translatePage from "./translate.js";
 
 const languageBar = document.getElementById('appLanguage');
 languageBar.onchange = ()=>{
-  console.log(languageBar.value);
+  // console.log(languageBar.value);
   localStorage.setItem('main language', languageBar.value);
 
   translatePage.applyLanguage(languageBar.value, translatePage.allSiteToTranslate);

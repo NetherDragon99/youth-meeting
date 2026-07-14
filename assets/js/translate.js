@@ -24,7 +24,7 @@ export const allSiteToTranslate = [
 ];
 let index = 1;
 export function applyLanguage(lang, items) {
-  console.log(items.length);
+  // console.log(items.length);
 
   if (lang === "ar") {
     document.documentElement.style.setProperty("--main-direction", "rtl");
