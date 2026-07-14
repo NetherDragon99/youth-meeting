@@ -1,0 +1,16 @@
+{
+  "home": ["Home", "الرئيسة"],
+  "rank": ["Rank", "المراكز"],
+  "scanqr": ["Scan QR", "سكان QR"],
+  "comunity": ["Comunity", "المجتمع"],
+  "profile": ["Profile", "الحساب"],
+  "hello": ["<h2>hello <div id='userName'>my frind</div></h2>", "<h2>أهلا <div id='userName'>صديقى</div></h2>"],
+  "cocsNo": ["<div id='cocsNo'>100</div> COCs", "<div id='cocsNo'>100</div> كوكس"],
+  "rankNo": ["Rank: <div id='userPlace'>#1</div>", "المركز: <div id='userPlace'>#1</div>"],
+  "notifications": ["Notifications", "الاشعارات"],
+  "nextmeeting": ["Next Meeting", "الاجتماع القادم"],
+  "servantspeaker": ["Servant/Speaker", "الخادم/المتكلم"],
+  "worship": ["Praise and Worship", "فقرة التسبيح"],
+  "gamesactivities": ["Games & Activities", "الأنشطة والاعاب"],
+  "mytasks": ["My Tasks", "مهامى"]
+}

@@ -1,17 +1,17 @@
 
 //#region public codes
-  
+
 // exit page by clicking outside
-document.addEventListener('click', click=>{
-  
+document.addEventListener('click', click => {
+
   if (
     (click.target.closest('#globalCloseArea')) ||
     (click.target !== bellIcons) &&
-    !click.target.closest('#notificationContainer')&&
+    !click.target.closest('#notificationContainer') &&
     !click.target.closest('#floatingTask')
-  ) {    
+  ) {
     mainNotificationContainer.classList.remove('opened')
-    homePage.closeTask();    
+    homePage.closeTask();
   }
 })
 //#endregion
@@ -32,29 +32,28 @@ pagesFooter.forEach(v => v.addEventListener('click', () => {
   localStorage.setItem('lastOpenedPage', JSON.stringify(location.hash))
 }))
 
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    let hash = location.hash
-    if (!hash) {
-      localStorage.setItem('lastOpenedPage', '#homePage');
-      hash = '#homePage';
-      
-    }
-    document.querySelector(`body>section#MainContainer ${hash}`).scrollIntoView({
-      behavior: 'smooth'
-    })
-    
-    pagesFooter.forEach(value => value.classList.remove('selected'));
+setTimeout(() => {
+  let hash = localStorage.getItem('lastOpenedPage')
+  if (!hash) {
+    localStorage.setItem('lastOpenedPage', '#homePage');
+    hash = '#homePage';
 
-    document.querySelector(`${hash}Footer`).classList.add('selected');
+  }
+  document.querySelector(`body>section#MainContainer ${hash}`).scrollIntoView({
+    behavior: 'smooth'
+  })
 
-    selectedBar.style.left = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
-    selectedBar.style.width = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().width}px`;
-    selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
-  }, 500);
+  pagesFooter.forEach(value => value.classList.remove('selected'));
 
-  setTimeout(()=> activatePageObserver(), 2000)
-})
+  document.querySelector(`${hash}Footer`).classList.add('selected');
+
+  selectedBar.style.left = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
+  selectedBar.style.width = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().width}px`;
+  selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
+}, 500);
+setTimeout(() => activatePageObserver(), 2000)
+
+
 
 document.getElementById('footer').addEventListener('wheel', function (wheel) {
   // console.log(wheel);
@@ -96,28 +95,31 @@ const notifications = document.querySelectorAll('#notifications .notification');
 const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)')
 
 notifications.forEach(notification => {
-  notification.addEventListener('click', function(){
+  notification.addEventListener('click', function () {
     if (this.classList.contains('opened')) {
-      notifications.forEach(value=>value.classList.remove('opened'))
-    }else{
-      notifications.forEach(value=>value.classList.remove('opened'))
-    this.classList.add('opened')
+      notifications.forEach(value => value.classList.remove('opened'))
+    } else {
+      notifications.forEach(value => value.classList.remove('opened'))
+      this.classList.add('opened')
     }
   })
 })
 
 
 // open & close notification bar
-bellIcons.addEventListener('click', ()=> mainNotificationContainer.classList.toggle('opened'))
+bellIcons.addEventListener('click', () => mainNotificationContainer.classList.toggle('opened'))
 
 // readed notifications
 notifications.forEach(notification => {
-  notification.addEventListener('click', function(){
+  notification.addEventListener('click', function () {
     this.classList.remove('unreaded')
   })
 })
 
 //#endregion
 
+import * as getDate from "./fetching.js";
+import * as translate from "./translate.js";
 import * as homePage from "./homePage.js";
 import * as rankPage from "./rankPage.js";
+import * as profilePage from "./profilePage.js";

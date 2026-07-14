@@ -20,7 +20,7 @@
           <div id="userProfilePic" class="icon-user">
             <img src="" alt="user profile picture" hidden>
           </div>
-          <h2>أهلا <div id="userName">صديقى</div>
+          <h2 id="welcome-name-header">أهلا <div id='userName'>صديقى</div>
           </h2>
         </div>
         <div>
@@ -30,7 +30,7 @@
         <div>
           <div class="icon-bell unreaded" id="notificationIcon"></div>
           <div id="notificationContainer">
-            <h4>Notifications</h4>
+            <h4>الاشعارات</h4>
             <div id="notifications">
               <div class="notification unreaded">
                 <div class="icon-bell"></div>
@@ -80,7 +80,7 @@
             </div>
           </div>
           <h2 id="cocsNoDiv">
-            <div id="cocsNo">100</div> COCs
+            <div id="cocsNo">100</div> كوكس
           </h2>
           <h3 id="userPlaceDiv">المركز: <div id="userPlace">#1</div>
           </h3>
@@ -124,7 +124,7 @@
               <div class="taskTitle">عليك تحضر السئلة من الكتاب علشان المسابقات</div>
               <div class="taskTime">اخر معاد 10/7/2026 12:00:00</div>
             </div>
-            <div class="taskReward">+5COCs</div>
+            <div class="taskReward"><span>+5</span><span>كوكس</span></div>
           </div>
           <div class="task" data-btnvalue="hello">
             <div class="icon-time"></div>
@@ -132,7 +132,7 @@
               <div class="taskTitle">تعال الاجتماع فى معادك</div>
               <div class="taskTime">اخر معاد 10/7/2026 12:00:00</div>
             </div>
-            <div class="taskReward">+5COCs</div>
+            <div class="taskReward"><span>+5</span><span>كوكس</span></div>
           </div>
           <div class="task">
             <div class="icon-time"></div>
@@ -140,7 +140,6 @@
               <div class="taskTitle">تعال الاجتماع فى معادك</div>
               <div class="taskTime">اخر معاد 10/7/2026 12:00:00</div>
             </div>
-            <div class="taskReward">+5COCs</div>
           </div>
           <div class="task">
             <div class="icon-time"></div>
@@ -148,7 +147,6 @@
               <div class="taskTitle">تعال الاجتماع فى معادك</div>
               <div class="taskTime">اخر معاد 10/7/2026 12:00:00</div>
             </div>
-            <div class="taskReward">+5COCs</div>
           </div>
           <div class="task">
             <div class="icon-time"></div>
@@ -156,7 +154,6 @@
               <div class="taskTitle">تعال الاجتماع فى معادك</div>
               <div class="taskTime">اخر معاد 10/7/2026 12:00:00</div>
             </div>
-            <div class="taskReward">+5COCs</div>
           </div>
           <div class="task">
             <div class="icon-time"></div>
@@ -164,7 +161,6 @@
               <div class="taskTitle">تعال الاجتماع فى معادك</div>
               <div class="taskTime">اخر معاد 10/7/2026 12:00:00</div>
             </div>
-            <div class="taskReward">+5COCs</div>
           </div>
         </div>
       </section>
@@ -453,12 +449,13 @@
     </comunityPage>
     <profilePage id="profilePage">
       <section id="profilePageHeader">
-        <div id="currentProfilePic" class="icon-user"><img src="assets/pic/new coc logo.png" alt="profile picture"
-            style="display: none"></div>
+        <div id="currentProfilePic" class="icon-user">
+          <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none">
+        </div>
         <h2>اعدادات الحساب</h2>
-        <div class="icon-gear"></div>
+        <div class="icon-gear" id="settingsIcon"></div>
       </section>
-      <div id="profileContainer">
+      <section id="profileContainer">
         <section id="profileHeader">
           <div id="profilePictureContainer">
             <div class="icon-user">
@@ -467,74 +464,92 @@
           </div>
           <h3>ستيفن ماريو</h3>
         </section>
-        <form id="userProfileForm">
-          <legend id="userFormMainData">
-            <label id="mainDataHeadder">
+        <div id="profilePagePages">
+          <form id="userProfileForm">
+            <legend id="userFormMainData">
+              <label id="mainDataHeadder">
+                <div class="icon-edit"></div>
+                <p>بيانات الحساب الاساسية</p>
+              </label>
+              <label for="userFormUsername">
+                <div class="icon-pencil"></div>
+                <p>الاسم</p>
+                <input type="text" id="userFormUsername" name="userName" placeholder="اكتب اسمك الى هيكون ظاهر للكل">
+              </label>
+              <label for="userFormGender">
+                <div class="icon-man-woman"></div>
+                <p>النوع</p>
+                <select name="userGender" id="userFormGender">
+                  <option selected disabled>اختار النوع</option>
+                  <option value="male">ولد</option>
+                  <option value="female">بنت</option>
+                  <option value="other">حاجات غريبة</option>
+                  <option value="pns">مش حابب تقول</option>
+                </select>
+              </label>
+              <label for="userFormPhoneNo">
+                <div class="icon-phone"></div>
+                <p>رقم التليفون</p>
+                <input type="tel" id="userFormPhoneNo" name="phoneNo" placeholder="01X XXXX XXXX">
+              </label>
+              <label for="userFormEmail">
+                <div class="icon-mail-closed"></div>
+                <p>الايميل</p>
+                <input type="email" id="userFormEmail" name="email" placeholder="yourEmail@gmail.com">
+              </label>
+              <label for="userFormProfilePic" hasPhoto id="changePicFiled">
+                <div class="icon-camera"></div>
+                <p>صورة الحساب</p>
+                <input type="file" accept="image/*" id="userForm">
+                <input type="text" disabled name="profilePic" style="display: none;">
+                <div class="icon-cancel" id="photoCancel"></div>
+              </label>
+            </legend>
+            <legend id="userFormChangePassward">
+              <label>
+                <div class="icon-lock"></div>
+                <p>تغيير كلمة المرور</p>
+              </label>
+              <label for="userFormOldPass">
+                <div class="icon-lock-rounded-open"></div>
+                <p>كلمة المرور القديمة</p>
+                <input type="password" id="userFormOldPass" name="oldPass" placeholder="كلمة المرور الى هتغيرها">
+              </label>
+              <label for="userFormNewPass">
+                <div class="icon-lock-rounded-close"></div>
+                <p>كلمة المرور الجديدة</p>
+                <input type="password" id="userFormOldPass" name="newPass" placeholder="كلمة المرور الجديدة">
+              </label>
+              <label for="userFormConfirmPass">
+                <div class="icon-lock-rounded-close"></div>
+                <p>تأكيد كلمة المرور الجديدة</p>
+                <input type="password" id="userFormConfirmPass" name="confirmPass"
+                  placeholder="تأكيد على كلمة المرور الجديدة">
+              </label>
+            </legend>
+            <input type="submit" id="userFormSubmitBtn">
+            <button id="logOutBtn">
+              <div class="icon-exit">
+                <p>تسجيل الخروج</p>
+              </div>
+            </button>
+          </form>
+          <div id="appSettings">
+            <label id="appSettingsHeader">
               <div class="icon-edit"></div>
-              <p>بيانات الحساب الاساسية</p>
+              <p>إعدادات التطبيق</p>
             </label>
-            <label for="userFormUsername">
-              <div class="icon-pencil"></div>
-              <p>الاسم</p>
-              <input type="text" id="userFormUsername" name="userName" placeholder="اكتب اسمك الى هيكون ظاهر للكل">
-            </label>
-            <label for="userFormGender">
-              <div class="icon-man-woman"></div>
-              <p>النوع</p>
-              <select name="userGender" id="userFormGender">
-                <option selected disabled>اختار النوع</option>
-                <option value="male">ولد</option>
-                <option value="female">بنت</option>
-                <option value="other">حاجات غريبة</option>
-                <option value="pns">مش حابب تقول</option>
+            <label for="appLanguage">
+              <div class="icon-language"></div>
+              <p>اللغة</p>
+              <select name="language" id="appLanguage">
+                <option value="ar">العربية</option>
+                <option value="en">الانجليزية</option>
               </select>
             </label>
-            <label for="userFormPhoneNo">
-              <div class="icon-phone"></div>
-              <p>رقم التليفون</p>
-              <input type="tel" id="userFormPhoneNo" name="phoneNo" placeholder="01X XXXX XXXX">
-            </label>
-            <label for="userFormEmail">
-              <div class="icon-mail-closed"></div>
-              <p>الايميل</p>
-              <input type="email" id="userFormEmail" name="email" placeholder="yourEmail@gmail.com">
-            </label>
-            <label for="userFormProfilePic">
-              <div class="icon-camera"></div>
-              <p>صورة الحساب</p>
-              <input type="file" accept="image/*" id="userForm">
-              <input type="text" disabled name="profilePic" style="display: none;">
-            </label>
-          </legend>
-          <legend id="userFormChangePassward">
-            <label>
-              <div class="icon-lock"></div>
-              <p>تغيير كلمة المرور</p>
-          </label>
-            <label for="userFormOldPass">
-              <div class="icon-lock-rounded-open"></div>
-              <p>كلمة المرور القديمة</p>
-              <input type="password" id="userFormOldPass" name="oldPass" placeholder="كلمة المرور الى هتغيرها">
-            </label>
-            <label for="userFormNewPass">
-              <div class="icon-lock-rounded-close"></div>
-              <p>كلمة المرور الجديدة</p>
-              <input type="password" id="userFormOldPass" name="newPass" placeholder="كلمة المرور الجديدة">
-            </label>
-            <label for="userFormConfirmPass">
-              <div class="icon-lock-rounded-close"></div>
-              <p>تأكيد كلمة المرور الجديدة</p>
-              <input type="password" id="userFormConfirmPass" name="confirmPass" placeholder="تأكيد على كلمة المرور الجديدة">
-            </label>
-          </legend>
-          <input type="submit" id="userFormSubmitBtn">
-          <button id="logOutBtn">
-          <div class="icon-exit">
-            <p>تسجيل الخروج</p>
           </div>
-        </button>
-        </form>
-      </div>
+        </div>
+      </section>
     </profilePage>
   </section>
   <footer id="footer">
@@ -550,7 +565,7 @@
       </a>
       <a id="qrScanFooter">
         <div class="icon-qr"></div>
-        <p>شكان QR</p>
+        <p>سكان QR</p>
       </a>
       <a href="#comunityPage" id="comunityPageFooter">
         <div class="icon-comunity"></div>

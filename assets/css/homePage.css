@@ -80,6 +80,9 @@ header>div:first-child h2 {
   height: max-content;
   max-width: 40px;
 }
+header>div:first-child h2>div{
+  white-space: nowrap;
+}
 
 /* #region header data section */
 header>div:last-child {
@@ -146,6 +149,7 @@ header>div:last-child #notificationIcon {
   overflow: hidden;
   cursor: pointer;
   border: rgb(7, 76, 104) .5px solid;
+  direction: rtl;
 }
 .notification.unreaded{
   background-color: rgba(21, 77, 138, 0.336);
@@ -228,6 +232,7 @@ header>div:last-child #cocsNoDiv {
   border: solid rgb(250, 202, 139);
   transform: translateX(10px);
   line-height: 1;
+  direction: var(--main-direction);
 }
 
 header>div:last-child #cocsNoDiv div {
@@ -360,6 +365,7 @@ header div:nth-child(2)>h2 {
   background-color: rgba(19, 43, 68, 0.6);
   width: 100%;
   cursor: pointer;
+  direction: rtl;
 }
 
 #tasksSection .task div:first-child,
@@ -410,8 +416,12 @@ header div:nth-child(2)>h2 {
   background-color: rgb(81, 56, 24);
   padding: 3px 8px;
   border-radius: 50px;
-  color: rgb(250, 202, 139);
   border: solid rgb(250, 202, 139);
+  direction: var(--main-direction);
+}
+#tasksSection .task .taskReward *,
+#floatingTaskHeader .taskReward *{
+  color: rgb(250, 202, 139);
 }
 
 #floatingTask {

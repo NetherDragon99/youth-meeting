@@ -2,7 +2,7 @@
 //#region tasks
 
 // preparing task
-import * as dom from "./rawCode.js";
+import * as dom from "../raw-text-code/rawCode.js";
 
 const homePageSection = document.getElementById('homePage');
 const tasks = document.querySelectorAll('.task');
