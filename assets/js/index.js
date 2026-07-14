@@ -6,7 +6,7 @@ document.addEventListener('click', click => {
 
   if (
     (click.target.closest('#globalCloseArea')) ||
-    (click.target !== bellIcons) &&
+    (click.target !== document.querySelector('#notificationIcon:not(#notificationIcon>*)')) &&
     !click.target.closest('#notificationContainer') &&
     !click.target.closest('#floatingTask')
   ) {
@@ -86,36 +86,6 @@ const pageView = new IntersectionObserver((items) => {
 function activatePageObserver() {
   document.querySelectorAll('body>section#MainContainer>*').forEach(itme => pageView.observe(itme))
 }
-//#endregion
-
-//#region notification
-const mainNotificationContainer = document.getElementById('notificationContainer');
-const notificationContainer = document.getElementById('notifications')
-const notifications = document.querySelectorAll('#notifications .notification');
-const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)')
-
-notifications.forEach(notification => {
-  notification.addEventListener('click', function () {
-    if (this.classList.contains('opened')) {
-      notifications.forEach(value => value.classList.remove('opened'))
-    } else {
-      notifications.forEach(value => value.classList.remove('opened'))
-      this.classList.add('opened')
-    }
-  })
-})
-
-
-// open & close notification bar
-bellIcons.addEventListener('click', () => mainNotificationContainer.classList.toggle('opened'))
-
-// readed notifications
-notifications.forEach(notification => {
-  notification.addEventListener('click', function () {
-    this.classList.remove('unreaded')
-  })
-})
-
 //#endregion
 
 import * as getDate from "./fetching.js";

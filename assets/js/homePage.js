@@ -1,4 +1,44 @@
 
+//#region notification
+const mainNotificationContainer = document.getElementById('notificationContainer');
+const notificationContainer = document.getElementById('notifications')
+const notifications = document.querySelectorAll('#notifications .notification');
+const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)');
+
+notifications.forEach(notification => {
+  notification.addEventListener('click', function () {
+    if (this.classList.contains('opened')) {
+      notifications.forEach(value => value.classList.remove('opened'));
+    } else {
+      notifications.forEach(value => value.classList.remove('opened'));
+      this.classList.add('opened');
+      setTimeout(notificationChecker, 100)
+    }
+  })
+})
+
+
+// open & close notification bar
+bellIcons.addEventListener('click', () => mainNotificationContainer.classList.toggle('opened'))
+
+// readed notifications
+notifications.forEach(notification => {
+  notification.addEventListener('click', function () {
+    this.classList.remove('unreaded')
+  })
+})
+
+// check for to remove unreaded icon for notifications
+
+function notificationChecker() {
+  const unreaded = document.querySelector('#notifications .notification.unreaded')
+  !unreaded?bellIcons.classList.remove('unreaded'):bellIcons.classList.add('unreaded')
+  
+}
+notificationChecker();
+
+//#endregion
+
 //#region tasks
 
 // preparing task
