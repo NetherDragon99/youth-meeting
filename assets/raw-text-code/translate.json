@@ -4,6 +4,7 @@
   "scanqr": ["Scan QR", "سكان QR"],
   "comunity": ["Comunity", "المجتمع"],
   "profile": ["Profile", "الحساب"],
+
   "hello": ["<h2>hello <div id='userName'>my frind</div></h2>", "<h2>أهلا <div id='userName'>صديقى</div></h2>"],
   "cocsNo": ["<div id='cocsNo'>100</div> COCs", "<div id='cocsNo'>100</div> كوكس"],
   "rankNo": ["Rank: <div id='userPlace'>#1</div>", "المركز: <div id='userPlace'>#1</div>"],
@@ -12,5 +13,32 @@
   "servantspeaker": ["Servant/Speaker", "الخادم/المتكلم"],
   "worship": ["Praise and Worship", "فقرة التسبيح"],
   "gamesactivities": ["Games & Activities", "الأنشطة والاعاب"],
-  "mytasks": ["My Tasks", "مهامى"]
+  "mytasks": ["My Tasks", "مهامى"],
+
+  "settings": ["Settings", "الأعدادات"],
+  "mainprofildatas": ["Main Profile Data", "بيانات الحساب الاساسية"],
+  "name": ["Name", "الأسم"],
+  "gender": ["Gender", "النوع"],
+  "phoneno": ["Phone Number", "رقم التليفون"],
+  "email": ["Email", "الأيميل"],
+  "profilepic": ["Profile Picture", "صورة الحساب"],
+  "changepass": ["Change Password", "تغيير كلمة المرور"],
+  "oldpass": ["Old Password", "كلمة المرور القديمة"],
+  "newpass": ["New Password", "كلمة المرور الجديدة"],
+  "confirmpass": ["Confirm Your Password", "تأكيد كلمة المرور الجديدة"],
+  "submit": ["Submit", "تأكيد"],
+  "logout": ["Log Out", "تسجيل الخروج"],
+
+  "appsettings": ["App Settings", "اعدادات التطبيق"],
+  "lang": ["Language", "اللغة"],
+  "ar": ["Arabic", "العربية"],
+  "en": ["English", "الانجليزية"],
+  
+  "writeyourname": ["Write your public name", "اكتب اسمك الى هيكون ظاهر للكل"],
+  "chooseyourgender": ["Choose your gender", "أخترا نوعك"],
+  "male": ["Male", "ولد"],
+  "female": ["Female", "بنت"],
+  "other": ["Other", "حاجات غريبة"],
+  "pnts": ["Prefare not to say", "مش حابب تقول"],
+  "passyouwanttochange": ["Old password to change", "كلمة المرور الى هتغيرها"]
 }

@@ -17,17 +17,17 @@ async function getData(url) {
 
 // translate
 // from arabic to english
-async function translateToEn(name) {
-  const url = `https://api.mymemory.translated.net/get?q=${name}&langpair=ar|en`;
+async function translateToEnglish(text) {
+  const url = `https://api.mymemory.translated.net/get?q=${text}&langpair=ar|en`;
 
   try {
-    // 2. بنبعت الطلب للـ API
     const response = await fetch(url);
     const data = await response.json();
 
     return data.responseData.translatedText;
   } catch (error) {
-    console.log("error on translating:", error);
-    return name;
+    console.log("حصلت مشكلة في الترجمة:", error);
+    return text; 
   }
 }
+

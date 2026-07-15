@@ -34,6 +34,8 @@ function scrollToProfile() {
 //#endregion
 
 //#region settings
+
+//#region language
 import * as translatePage from "./translate.js";
 
 const languageBar = document.getElementById('appLanguage');
@@ -42,7 +44,17 @@ languageBar.onchange = ()=>{
   localStorage.setItem('main language', languageBar.value);
 
   translatePage.applyLanguage(languageBar.value, translatePage.allSiteToTranslate);
+
+  const selectedBar = document.querySelector('footer> #selectedArea');
+  console.log(`#footerContainer ${location.hash}`, location.hash);
+  const footerContainer = document.getElementsByTagName('footer')[0];
+
+   selectedBar.style.left = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
+  selectedBar.style.width = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().width}px`;
+  selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
+
 }
+//#endregion
 
 
 //#endregion

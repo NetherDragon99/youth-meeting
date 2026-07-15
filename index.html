@@ -452,7 +452,7 @@
         <div id="currentProfilePic" class="icon-user">
           <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none">
         </div>
-        <h2>اعدادات الحساب</h2>
+        <h2>الأعدادات</h2>
         <div class="icon-gear" id="settingsIcon"></div>
       </section>
       <section id="profileContainer">
@@ -518,7 +518,7 @@
               <label for="userFormNewPass">
                 <div class="icon-lock-rounded-close"></div>
                 <p>كلمة المرور الجديدة</p>
-                <input type="password" id="userFormOldPass" name="newPass" placeholder="كلمة المرور الجديدة">
+                <input type="password" id="userFormNewPass" name="newPass" placeholder="كلمة المرور الجديدة">
               </label>
               <label for="userFormConfirmPass">
                 <div class="icon-lock-rounded-close"></div>
@@ -527,7 +527,11 @@
                   placeholder="تأكيد على كلمة المرور الجديدة">
               </label>
             </legend>
-            <input type="submit" id="userFormSubmitBtn">
+            <button id="userFormSubmitBtn">
+              <div class="icon-paperplane">
+                <p>تأكيد</p>
+              </div>
+            </button>
             <button id="logOutBtn">
               <div class="icon-exit">
                 <p>تسجيل الخروج</p>
