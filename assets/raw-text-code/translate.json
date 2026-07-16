@@ -40,5 +40,11 @@
   "female": ["Female", "بنت"],
   "other": ["Other", "حاجات غريبة"],
   "pnts": ["Prefare not to say", "مش حابب تقول"],
-  "passyouwanttochange": ["Old password to change", "كلمة المرور الى هتغيرها"]
+  "passyouwanttochange": ["Old password to change", "كلمة المرور الى هتغيرها"],
+  "signin": ["Sign-In", "تسجيل الدخول"],
+  "emailphone": ["Email/Phone Number", "الأيميل/رقم التليفون"],
+  "password": ["Password", "كلمة المرور"],
+  "writeemailorphoneno": ["Write your email or phone number", "اكتب الأيميل او رقم الهاتف"],
+  "writepassword": ["Write your account password", "أكتب كلمة مرور الحساب"],
+  "createaccount": ["Create New Account", "أنشاء حساب جديد"]
 }

@@ -120,6 +120,7 @@
   direction: var(--main-direction);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   width: 100%;
   height: 100%;
@@ -137,6 +138,7 @@
   border-radius: 10px;
   padding: 10px;
   gap: 10px;
+  width: 100%;
 }
 #profilePagePages label{
   display: flex;
@@ -189,6 +191,11 @@
 #changePicFiled[hasPhoto] #photoCancel{
   width: 1rem;
 }
+#noAccount{
+  margin: 0;
+  cursor: pointer;
+}
+
 
 #userFormSubmitBtn{
   font-weight: 900;

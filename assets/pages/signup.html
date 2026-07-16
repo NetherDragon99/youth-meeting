@@ -27,9 +27,9 @@
     <div id="profilePagePages">
       <form id="userProfileForm">
         <legend id="userFormMainData">
-          <label id="mainDataHeadder" data-name="mainProfileData">
+          <label id="mainDataHeadder" data-name="createaccount">
             <div class="icon-edit"></div>
-            <p>بيانات الحساب الاساسية</p>
+            <p>انشاء حساب جديد</p>
           </label>
           <label for="userFormUsername" data-name="userName">
             <div class="icon-pencil"></div>
@@ -64,37 +64,15 @@
             <input type="text" disabled name="profilePic" style="display: none;">
             <div class="icon-cancel" id="photoCancel"></div>
           </label>
-        </legend>
-        <legend id="userFormChangePassward">
-          <label data-name="changePass">
+          <label for="userFormPassword" data-name="password">
             <div class="icon-lock"></div>
-            <p>تغيير كلمة المرور</p>
-          </label>
-          <label for="userFormOldPass" data-name="oldPass">
-            <div class="icon-lock-rounded-open"></div>
-            <p>كلمة المرور القديمة</p>
-            <input type="password" id="userFormOldPass" name="oldPass" placeholder="كلمة المرور الى هتغيرها">
-          </label>
-          <label for="userFormNewPass" data-name="newPass">
-            <div class="icon-lock-rounded-close"></div>
-            <p>كلمة المرور الجديدة</p>
-            <input type="password" id="userFormNewPass" name="newPass" placeholder="كلمة المرور الجديدة">
-          </label>
-          <label for="userFormConfirmPass" data-name="confirmPass">
-            <div class="icon-lock-rounded-close"></div>
-            <p>تأكيد كلمة المرور الجديدة</p>
-            <input type="password" id="userFormConfirmPass" name="confirmPass"
-              placeholder="تأكيد على كلمة المرور الجديدة">
+            <p>كلمة المرور</p>
+            <input type="password" id="userFormPass" name="password" placeholder="كلمة المرور">
           </label>
         </legend>
         <button id="userFormSubmitBtn">
           <div class="icon-paperplane">
             <p>تأكيد</p>
-          </div>
-        </button>
-        <button id="logOutBtn">
-          <div class="icon-exit">
-            <p>تسجيل الخروج</p>
           </div>
         </button>
       </form>

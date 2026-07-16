@@ -4,7 +4,8 @@ import * as getDate from "./fetching.js";
 
 document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
 document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
-document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/update-profile.html');
+document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signup.html');
+
 const rankPage = await import("./rankPage.js");
 const homePage = await import("./homePage.js");
 const profilePage = await import("./profilePage.js");

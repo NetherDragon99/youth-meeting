@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>update profile data</title>
+</head>
+
+<body>
+  <section id="profilePageHeader">
+    <div id="currentProfilePic" class="icon-user">
+      <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none">
+    </div>
+    <h2>الأعدادات</h2>
+    <div class="icon-gear" id="settingsIcon"></div>
+  </section>
+  <section id="profileContainer">
+    <section id="profileHeader">
+      <div id="profilePictureContainer">
+        <div class="icon-user">
+          <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none;">
+        </div>
+      </div>
+      <h3>ستيفن ماريو</h3>
+    </section>
+    <div id="profilePagePages">
+      <form id="userProfileForm">
+        <legend id="userFormMainData" data-name="loginHeader">
+          <label id="mainDataHeadder">
+            <div class="icon-login"></div>
+            <p>تسجيل الدخول</p>
+          </label>
+          <label for="userFormUsername" data-name="emailPhone">
+            <div class="icon-pencil"></div>
+            <p>الايميل/رقم التليفون</p>
+            <input type="password" id="userFormEmailPhone" name="emailPhone" placeholder="اكتب اسمك الى هيكون ظاهر للكل" required>
+          </label>
+          <label for="userFormUsername" data-name="password">
+            <div class="icon-lock"></div>
+            <p>كلمة المرور</p>
+            <input type="text" id="userFormPass" name="password" placeholder="اكتب اسمك الى هيكون ظاهر للكل" required>
+          </label>
+          <p id="noAccount">ليس لديك حساب؟؟</p>
+        </legend>
+        <button id="userFormSubmitBtn" disabled>
+          <div class="icon-paperplane">
+            <p>تأكيد</p>
+          </div>
+        </button>
+      </form>
+      <div id="appSettings">
+        <label id="appSettingsHeader">
+          <div class="icon-edit"></div>
+          <p>إعدادات التطبيق</p>
+        </label>
+        <label for="appLanguage">
+          <div class="icon-language"></div>
+          <p>اللغة</p>
+          <select name="language" id="appLanguage">
+            <option value="ar">العربية</option>
+            <option value="en">الانجليزية</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
