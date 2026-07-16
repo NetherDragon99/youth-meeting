@@ -14,20 +14,18 @@ async function getData(url) {
   }
 }
 
-
-// translate
-// from arabic to english
-async function translateToEnglish(text) {
-  const url = `https://api.mymemory.translated.net/get?q=${text}&langpair=ar|en`;
-
+// fetch pages
+export async function getPageElements(url) {
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+  const getRank = await fetch((new URL(url, import.meta.url)));
+  const pageRes = await getRank.text();
+  const tempRankPage = (new DOMParser()).parseFromString(pageRes,'text/html')
+  let page = ''
+  tempRankPage.querySelectorAll('body>section').forEach(item => page += item.outerHTML);
 
-    return data.responseData.translatedText;
-  } catch (error) {
-    console.log("حصلت مشكلة في الترجمة:", error);
-    return text; 
-  }
+  return page
+} catch (error) {
+  console.log(error);
+  
 }
-
+}

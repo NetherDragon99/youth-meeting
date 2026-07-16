@@ -6,13 +6,22 @@ const profileIcon = document.getElementById('currentProfilePic');
 const userDataPage = document.getElementById("userProfileForm");
 const appSettingsPage = document.getElementById("appSettings");
 
+const containerHeader = document.getElementById('profileHeader');
 const mainContainer = document.getElementById("profileContainer");
 
 const pageTitle = document.querySelector("#profilePageHeader>h2");
 
-
 settingsIcon.onclick = scrollToSettings;
 profileIcon.onclick = scrollToProfile;
+
+containerHeader.onwheel = wheel => {
+  const lang = localStorage.getItem('main language')
+  if (wheel.deltaY > 0) {
+    lang == 'en'?scrollToSettings():lang == 'ar'?scrollToProfile():null;
+  }else if (wheel.deltaY < 0) {
+     lang == 'en'?scrollToProfile():lang == 'ar'?scrollToSettings():null;
+  }
+}
 
 
 function scrollToSettings() {
@@ -46,7 +55,6 @@ languageBar.onchange = ()=>{
   translatePage.applyLanguage(languageBar.value, translatePage.allSiteToTranslate);
 
   const selectedBar = document.querySelector('footer> #selectedArea');
-  console.log(`#footerContainer ${location.hash}`, location.hash);
   const footerContainer = document.getElementsByTagName('footer')[0];
 
    selectedBar.style.left = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
@@ -58,3 +66,4 @@ languageBar.onchange = ()=>{
 
 
 //#endregion
+

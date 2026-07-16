@@ -71,12 +71,12 @@ export function applyLanguage(lang, items) {
   for (let index = 0; index < items.length; index += 2) {
     getElement(items[index], items[index + 1])
   }
+
+  document.getElementById('appLanguage').value = lang;
 }
 applyLanguage(language, allSiteToTranslate);
 
-function getElement(element, target) {
-  console.log(document.querySelector(`${element}`).tagName);
-  
+function getElement(element, target) {  
   if (document.querySelector(`${element}`).tagName == 'INPUT') {
     return document.querySelector(`${element}`).placeholder = translate[target][index];
   }else if (document.querySelector(`${element}`)) {

@@ -1,23 +1,17 @@
+import * as getDate from "./fetching.js";
 
-//#region public codes
+//#region draw pages
 
-// exit page by clicking outside
-const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)');
-const mainNotificationContainer = document.getElementById('notificationContainer');
+document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
+document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
+document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/update-profile.html');
+const rankPage = await import("./rankPage.js");
+const homePage = await import("./homePage.js");
+const profilePage = await import("./profilePage.js");
+const translate = await import("./translate.js");
 
-document.addEventListener('click', click => {
-
-  if (
-    (click.target.closest('#globalCloseArea')) ||
-    (click.target !== bellIcons) &&
-    !click.target.closest('#notificationContainer') &&
-    !click.target.closest('#floatingTask')
-  ) {
-    mainNotificationContainer.classList.remove('opened')
-    homePage.closeTask();
-  }
-})
 //#endregion
+
 
 // #region scroll function
 // page scroll navigation style function
@@ -91,8 +85,24 @@ function activatePageObserver() {
 }
 //#endregion
 
-import * as getDate from "./fetching.js";
-import * as translate from "./translate.js";
-import * as homePage from "./homePage.js";
-import * as rankPage from "./rankPage.js";
-import * as profilePage from "./profilePage.js";
+
+//#region public codes
+
+// exit page by clicking outside
+const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)');
+const mainNotificationContainer = document.getElementById('notificationContainer');
+
+document.addEventListener('click', click => {
+
+  if (
+    (click.target.closest('#globalCloseArea')) ||
+    (click.target !== bellIcons) &&
+    !click.target.closest('#notificationContainer') &&
+    !click.target.closest('#floatingTask')
+  ) {
+    mainNotificationContainer.classList.remove('opened')
+    homePage.closeTask();
+  }
+})
+//#endregion
+
