@@ -54,6 +54,7 @@ header>div:first-child #userProfilePic {
   position: relative;
   overflow: hidden;
   font-size: 40px;
+  text-align: center;
   line-height: 50px;
   border: rgb(199, 255, 255) solid 2px;
   box-sizing: content-box;
@@ -475,6 +476,7 @@ header div:nth-child(2)>h2 {
   z-index: 4;
   overflow: hidden;
   transition: 1s;
+  direction: rtl;
 }
 
 #floatingTask.opened {
@@ -487,12 +489,12 @@ header div:nth-child(2)>h2 {
   gap: 10px;
   padding: 10px;
   direction: var(--main-direction);
+  direction: inherit;
 }
 #floatingTaskHeader .taskTitle{
   white-space: normal !important;
 }
 #floatingTaskBody {
-  direction: var(--main-direction);
   padding: 10px;
   overflow-y: scroll;
   line-height: 1.5;
@@ -509,6 +511,7 @@ header div:nth-child(2)>h2 {
 #floatingTask #globalCloseArea{
   position: absolute;
   top: 0;
+  left: 0;
 }
 
 

@@ -23,6 +23,7 @@
 <body>
   <section id="MainContainer">
     <homePage id="homePage">
+<<<<<<< HEAD:resources/views/index.blade.php
       <header>
         <div>
           <div id="userProfilePic" class="icon-user">
@@ -182,15 +183,30 @@
           </div>
         </div>
       </section>
+=======
+      <div class="loadingContainer">
+        <div class="icon-spinner"></div>
+        <div class="loadingText"></div>
+      </div>
+>>>>>>> 1f1ea32ffafe38fd3e374eb70e27a14323c31766:index.html
     </homePage>
     <rankPage id="rankPage">
-      
+      <div class="loadingContainer">
+        <div class="icon-spinner"></div>
+        <div class="loadingText"></div>
+      </div>
     </rankPage>
     <comunityPage id="comunityPage">
-     
+      <div class="loadingContainer">
+        <div class="icon-spinner"></div>
+        <div class="loadingText"></div>
+      </div>
     </comunityPage>
     <profilePage id="profilePage">
-      
+      <div class="loadingContainer">
+        <div class="icon-spinner"></div>
+        <div class="loadingText"></div>
+      </div>
     </profilePage>
   </section>
   <footer id="footer">

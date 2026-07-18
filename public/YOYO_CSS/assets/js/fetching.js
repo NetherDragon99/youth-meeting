@@ -17,10 +17,18 @@ async function getData(url) {
 // fetch pages
 export async function getPageElements(url) {
   try {
+<<<<<<< HEAD:public/YOYO_CSS/assets/js/fetching.js
     const getRank = await fetch(url);
     const pageRes = await getRank.text();
     const tempRankPage = (new DOMParser()).parseFromString(pageRes, 'text/html');
     let page = '';
+=======
+  const getRank = await fetch((new URL(url, import.meta.url)));
+  const pageRes = await getRank.text();
+  const tempRankPage = (new DOMParser()).parseFromString(pageRes,'text/html')
+  let page = ''
+  tempRankPage.querySelectorAll('body>section ,body>header').forEach(item => page += item.outerHTML);
+>>>>>>> 1f1ea32ffafe38fd3e374eb70e27a14323c31766:assets/js/fetching.js
 
     tempRankPage.querySelectorAll('body>section').forEach(item => page += item.outerHTML);
 

@@ -2,9 +2,16 @@ import * as getDate from "./fetching.js";
 
 //#region draw pages
 
+<<<<<<< HEAD:public/YOYO_CSS/assets/js/index.js
 document.getElementById('rankPage').innerHTML = await getDate.getPageElements('/page/rank');
 document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('/page/comunity');
 document.getElementById('profilePage').innerHTML = await getDate.getPageElements('/page/profile');
+=======
+document.getElementById('homePage').innerHTML = await getDate.getPageElements('../pages/home.html');
+document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
+document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
+document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signup.html');
+>>>>>>> 1f1ea32ffafe38fd3e374eb70e27a14323c31766:assets/js/index.js
 
 const rankPage = await import("./rankPage.js");
 const homePage = await import("./homePage.js");
@@ -52,7 +59,8 @@ setTimeout(() => {
     hash = JSON.parse(hash)
   }
   document.querySelector(`body>section#MainContainer ${hash}`).scrollIntoView({
-    behavior: 'smooth'
+    behavior: 'smooth',
+    block: 'center'
   })
 
   pagesFooter.forEach(value => value.classList.remove('selected'));
@@ -75,6 +83,7 @@ document.getElementById('footer').addEventListener('wheel', function (wheel) {
   })
 })
 
+// set opened page to the history
 const pageView = new IntersectionObserver((items) => {
   items.forEach(item => {
     if (item.isIntersecting) {
