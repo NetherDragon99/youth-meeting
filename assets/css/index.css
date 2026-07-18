@@ -16,9 +16,7 @@
   --design-blue: rgba(199, 255, 255, 0.705);
 }
 
-button,
-a,
-input,
+button, a, input,
 [role="button"] {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -100,8 +98,8 @@ section#MainContainer::before {
 }
 
 body>section#MainContainer>* {
-  min-width: 100dvw;
-  max-width: 100dvw;
+  min-width: 100%;
+  max-width: 100%;
   height: 100%;
   min-height: 0;
   overflow-y: scroll;
@@ -111,6 +109,56 @@ body>section#MainContainer>* {
   scroll-snap-stop: always;
   direction: ltr;
 }
+/* #endregion */
+
+/* #region Loading */
+.loadingContainer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon-spinner{
+  font-size: 3rem;
+  transition: 500ms;
+  animation: spinnerLoading 1s linear infinite;
+}
+.loadingContainer .loadingText::after{
+  content: '';
+  width: 100%;
+  height: fit-content;
+  font-size: 1.5rem;
+  animation: loadingText 5s linear infinite;
+}
+
+@keyframes spinnerLoading {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes loadingText {
+  0%{
+    content: 'Loading';
+  }16.66%{
+    content: 'Loading .';
+  }33.33%{
+    content: 'Loading . .';
+  }50%{
+    content: 'Loading . . .';
+  }66.66%{
+    content: 'Loading . .';
+  }83.33%{
+    content: 'Loading .';
+  }100%{
+    content: 'Loading';
+  }
+}
+
 /* #endregion */
 
 /* #region footer */
@@ -151,10 +199,11 @@ footer>#footerContainer>a {
   position: relative;
   cursor: pointer;
   text-decoration: none;
+  width: 24px;
 }
 
 footer>#footerContainer>a>div {
-  font-size: 2rem;
+  font-size: 24px;
   -webkit-text-stroke: 2px rgb(136, 154, 170);
   color: transparent;
   transition: .5s;
@@ -179,11 +228,13 @@ footer>#footerContainer>a:nth-child(3)>div {
   box-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
   text-shadow: 0 0 10px rgb(199, 255, 255);
   background-color: rgba(58, 78, 78, 0.644);
+  width: max-content;
 }
 
 footer>#footerContainer>a:nth-child(3)>p {
   position: relative;
   bottom: 20px;
+  white-space: nowrap;
   -webkit-text-stroke: .3px rgb(199, 255, 255);
   text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
 }

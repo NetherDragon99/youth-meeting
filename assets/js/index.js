@@ -2,6 +2,7 @@ import * as getDate from "./fetching.js";
 
 //#region draw pages
 
+document.getElementById('homePage').innerHTML = await getDate.getPageElements('../pages/home.html');
 document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
 document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
 document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signup.html');
@@ -38,7 +39,8 @@ setTimeout(() => {
 
   }
   document.querySelector(`body>section#MainContainer ${hash}`).scrollIntoView({
-    behavior: 'smooth'
+    behavior: 'smooth',
+    block: 'center'
   })
 
   pagesFooter.forEach(value => value.classList.remove('selected'));
@@ -61,6 +63,7 @@ document.getElementById('footer').addEventListener('wheel', function (wheel) {
   })
 })
 
+// set opened page to the history
 const pageView = new IntersectionObserver((items) => {
   items.forEach(item => {
     if (item.isIntersecting) {

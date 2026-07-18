@@ -21,7 +21,7 @@ export async function getPageElements(url) {
   const pageRes = await getRank.text();
   const tempRankPage = (new DOMParser()).parseFromString(pageRes,'text/html')
   let page = ''
-  tempRankPage.querySelectorAll('body>section').forEach(item => page += item.outerHTML);
+  tempRankPage.querySelectorAll('body>section ,body>header').forEach(item => page += item.outerHTML);
 
   return page
 } catch (error) {
