@@ -252,3 +252,106 @@ footer>#footerContainer>a.selected>p {
 }
 
 /* #endregion */
+
+/* #region QR Code */
+#qrcodePage{
+  width: 100%;
+  height: 100%;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute;
+  background-color: black;
+  z-index: 10;
+  display: none;
+}
+#qrCodeScanner{
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: none !important;
+}
+#cancelQrBtn{
+  font-size: 3rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+#qrCodeScanner__scan_region>img{
+  filter: 
+    drop-shadow(2px 0px 0px var(--design-blue))   /* يمين */
+    drop-shadow(-2px 0px 0px var(--design-blue))  /* شمال */
+    drop-shadow(0px 2px 0px var(--design-blue))   /* تحت */
+    drop-shadow(0px -2px 0px var(--design-blue)); /* فوق */
+}
+#html5-qrcode-button-camera-permission{
+  font-size: 1.3rem;
+  color: yellow;
+  font-weight: 700;
+  border: yellow solid;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#html5-qrcode-button-camera-permission::before, 
+#html5-qrcode-anchor-scan-type-change::before,
+#qrCodeScanner__header_message::before{
+  margin-right: 5px;
+}
+#qrCodeScanner__dashboard_section>div:last-child{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+#html5-qrcode-anchor-scan-type-change{
+  font-size: 1.4rem;
+  align-self: center;
+  margin-top: 10px;
+  width: max-content;
+  text-decoration: none !important;
+  border: aliceblue solid;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  display: block !important;
+}
+#qrCodeScanner__header_message{
+  font-size: 1.5rem !important;
+  font-weight: 900;
+  padding: 10px;
+  border: red solid !important;
+  border-radius: 10px;
+  cursor: default;
+}
+/* select camera */
+#qrCodeScanner__dashboard_section_csr{
+  font-size: 1.5rem;
+}
+#html5-qrcode-select-camera{
+  background-color: transparent;
+  font-size: 1rem;
+}
+#html5-qrcode-select-camera>option{
+  background-color: black;
+}
+#html5-qrcode-button-camera-start, #html5-qrcode-button-camera-stop{
+  font-size: 1rem;
+  color: var(--design-blue);
+  border: var(--design-blue) solid;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+#html5-qrcode-button-camera-stop{
+  color: red;
+  border: red solid;
+  font-weight: 900;
+}
+
+/* #endregion */

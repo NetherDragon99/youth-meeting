@@ -39,8 +39,8 @@
           <label for="userFormGender" data-name="gender">
             <div class="icon-man-woman"></div>
             <p>النوع</p>
-            <select name="userGender" id="userFormGender">
-              <option selected disabled>اختار النوع</option>
+            <select id="userFormGender" name="gender">
+              <option value="unselected" selected disabled>اختار النوع</option>
               <option value="male">ولد</option>
               <option value="female">بنت</option>
               <option value="other">حاجات غريبة</option>
@@ -61,7 +61,7 @@
             <div class="icon-camera"></div>
             <p>صورة الحساب</p>
             <input type="file" accept="image/*" id="userForm">
-            <input type="text" disabled name="profilePic" style="display: none;">
+            <input type="text" name="profilePic" hidden>
             <div class="icon-cancel" id="photoCancel"></div>
           </label>
           <label for="userFormPassword" data-name="password">
@@ -69,8 +69,9 @@
             <p>كلمة المرور</p>
             <input type="password" id="userFormPass" name="password" placeholder="كلمة المرور">
           </label>
+          <p id="backToSignIn" onclick="changeLocationToSignIn()">اللرجوع لتسجيل الدخول</p>
         </legend>
-        <button id="userFormSubmitBtn">
+        <button id="userFormSubmitBtn" onclick="getFormDataBtn(event, 'signUp')">
           <div class="icon-paperplane">
             <p>تأكيد</p>
           </div>

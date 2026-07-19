@@ -34,16 +34,16 @@
           <label for="userFormUsername" data-name="emailPhone">
             <div class="icon-pencil"></div>
             <p>الايميل/رقم التليفون</p>
-            <input type="password" id="userFormEmailPhone" name="emailPhone" placeholder="اكتب اسمك الى هيكون ظاهر للكل" required>
+            <input type="text" id="userFormEmailPhone" name="emailPhone" placeholder="اكتب اسمك الى هيكون ظاهر للكل" required>
           </label>
           <label for="userFormUsername" data-name="password">
             <div class="icon-lock"></div>
             <p>كلمة المرور</p>
-            <input type="text" id="userFormPass" name="password" placeholder="اكتب اسمك الى هيكون ظاهر للكل" required>
+            <input type="password" id="userFormPass" name="password" placeholder="اكتب اسمك الى هيكون ظاهر للكل" required>
           </label>
-          <p id="noAccount">ليس لديك حساب؟؟</p>
+          <p id="noAccount" onclick="changeLocationToSignUp()">ليس لديك حساب؟؟</p>
         </legend>
-        <button id="userFormSubmitBtn" disabled>
+        <button id="userFormSubmitBtn" onclick="getFormDataBtn(event, 'signIn')">
           <div class="icon-paperplane">
             <p>تأكيد</p>
           </div>

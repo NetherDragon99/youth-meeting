@@ -5,15 +5,30 @@ import * as getDate from "./fetching.js";
 document.getElementById('homePage').innerHTML = await getDate.getPageElements('../pages/home.html');
 document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
 document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
-document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signup.html');
+document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signIn.html');
 
 const rankPage = await import("./rankPage.js");
 const homePage = await import("./homePage.js");
 const profilePage = await import("./profilePage.js");
 const translate = await import("./translate.js");
+const qrCodeScannerPage = await import("./qr.js");
 
 //#endregion
 
+//#region link state
+const params = new URLSearchParams(location.search)
+console.log(params.has('account-state'));
+
+if (params.has('account-state')) {
+  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signUp.html');
+
+  await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
+} else if (!(params.has('account-state'))) {
+  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signIn.html');
+
+  await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
+}
+//#endregion
 
 // #region scroll function
 // page scroll navigation style function
@@ -110,3 +125,11 @@ document.addEventListener('click', click => {
 })
 //#endregion
 
+//#region qr code
+
+const qrBtn = document.getElementById('qrScanFooter')
+qrBtn.addEventListener('click', click => {
+
+  qrCodeScannerPage.startScanner()
+})
+//#endregion

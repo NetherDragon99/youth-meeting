@@ -56,7 +56,8 @@ export const allSiteToTranslate = [
   '#userFormEmailPhone', 'writeemailorphoneno',
   '#userFormPass', 'writepassword',
   '#noAccount', 'createaccount',
-  '#userFormMainData label[data-name="createaccount"] p', 'createaccount'
+  '#userFormMainData label[data-name="createaccount"] p', 'createaccount',
+  '#backToSignIn', 'backtosignin'
 ];
 export const placeholderTranslate = [
 

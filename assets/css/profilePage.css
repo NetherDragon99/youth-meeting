@@ -191,7 +191,7 @@
 #changePicFiled[hasPhoto] #photoCancel{
   width: 1rem;
 }
-#noAccount{
+#noAccount, #backToSignIn{
   margin: 0;
   cursor: pointer;
 }
