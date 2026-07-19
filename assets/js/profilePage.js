@@ -103,11 +103,11 @@ addEventListener('urlChanged', async ()=>{
   console.log(params.has('account-state'));
   
   if (params.has('account-state')) {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signUp.html');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.html');
     
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
   }else if (!(params.has('account-state'))) {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signIn.html');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
     
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
   }

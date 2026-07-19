@@ -5,7 +5,7 @@ import * as getDate from "./fetching.js";
 document.getElementById('homePage').innerHTML = await getDate.getPageElements('../pages/home.html');
 document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
 document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
-document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signIn.html');
+document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
 
 const rankPage = await import("./rankPage.js");
 const homePage = await import("./homePage.js");
@@ -20,11 +20,11 @@ const params = new URLSearchParams(location.search)
 console.log(params.has('account-state'));
 
 if (params.has('account-state')) {
-  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signUp.html');
+  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.html');
 
   await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
 } else if (!(params.has('account-state'))) {
-  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/signIn.html');
+  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
 
   await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
 }
