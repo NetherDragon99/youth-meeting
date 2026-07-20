@@ -29,8 +29,6 @@ function ProfilePageScrollFunction() {
   }
 
   function scrollToSettings() {
-    console.log('settings');
-
     appSettingsPage.scrollIntoView({
       behavior: "smooth",
       inline: "start",
