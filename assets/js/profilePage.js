@@ -1,46 +1,52 @@
 import * as getDate from "./fetching.js";
 import * as translate from "./translate.js"
 
+
+let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
+
 //#region profile page scrolling functions
-const settingsIcon = document.getElementById('settingsIcon');
-const profileIcon = document.getElementById('currentProfilePic');
+function ProfilePageScrollFunction() {
+  settingsIcon = document.getElementById('settingsIcon');
+  profileIcon = document.getElementById('currentProfilePic');
 
-const userDataPage = document.getElementById("userProfileForm");
-const appSettingsPage = document.getElementById("appSettings");
+  userDataPage = document.getElementById("userProfileForm");
+  appSettingsPage = document.getElementById("appSettings");
 
-const containerHeader = document.getElementById('profileHeader');
-const mainContainer = document.getElementById("profileContainer");
+  containerHeader = document.getElementById('profileHeader');
+  mainContainer = document.getElementById("profileContainer");
 
-const pageTitle = document.querySelector("#profilePageHeader>h2");
+  pageTitle = document.querySelector("#profilePageHeader>h2");
+  settingsIcon.onclick = scrollToSettings;
+  profileIcon.onclick = scrollToProfile;
 
-settingsIcon.onclick = scrollToSettings;
-profileIcon.onclick = scrollToProfile;
+  containerHeader.onwheel = wheel => {
+    const lang = localStorage.getItem('main language')
+    if (wheel.deltaY > 0) {
+      lang == 'en' ? scrollToSettings() : lang == 'ar' ? scrollToProfile() : null;
+    } else if (wheel.deltaY < 0) {
+      lang == 'en' ? scrollToProfile() : lang == 'ar' ? scrollToSettings() : null;
+    }
+  }
 
-containerHeader.onwheel = wheel => {
-  const lang = localStorage.getItem('main language')
-  if (wheel.deltaY > 0) {
-    lang == 'en' ? scrollToSettings() : lang == 'ar' ? scrollToProfile() : null;
-  } else if (wheel.deltaY < 0) {
-    lang == 'en' ? scrollToProfile() : lang == 'ar' ? scrollToSettings() : null;
+  function scrollToSettings() {
+    console.log('settings');
+
+    appSettingsPage.scrollIntoView({
+      behavior: "smooth",
+      inline: "start",
+      block: "nearest"
+    })
+
+  };
+  function scrollToProfile() {
+    userDataPage.scrollIntoView({
+      behavior: "smooth",
+      inline: "start",
+      block: "nearest"
+    })
   }
 }
-
-
-function scrollToSettings() {
-  appSettingsPage.scrollIntoView({
-    behavior: "smooth",
-    inline: "start",
-    block: "nearest"
-  })
-
-};
-function scrollToProfile() {
-  userDataPage.scrollIntoView({
-    behavior: "smooth",
-    inline: "start",
-    block: "nearest"
-  })
-}
+ProfilePageScrollFunction();
 
 //#endregion
 
@@ -66,7 +72,6 @@ languageBar.onchange = () => {
 }
 //#endregion
 
-
 //#endregion
 
 //#region form 
@@ -80,49 +85,69 @@ window.getFormDataBtn = function (event, type) {
 
   console.log(type, formData);
 }
+
 window.logOut = function (event) {
   event.preventDefault()
-  console.log(event, 'logged out');
+  console.log('User logged out');
+
+  const newURL = new URL(location.href)
+  newURL.searchParams.delete('account-state');
+  history.pushState({}, '', newURL);
+  applysignTypePage();
 }
 
+//#endregion
+
+
+//#region sign up/sign in page type
 // signup
 window.changeLocationToSignUp = function () {
   const newURL = new URL(location.href)
   newURL.searchParams.set('account-state', 'creat');
-  console.log(newURL);
 
   history.pushState({}, '', newURL);
 
   const accountStateLinkEvent = new CustomEvent('urlDataChanged', {
     detail: { 'account-state': 'myValue' }
   });
-  window.dispatchEvent(new Event('urlChanged'));
+  applysignTypePage();
 }
-addEventListener('urlChanged', async ()=>{
-  const params = new URLSearchParams(location.search)
-  console.log(params.has('account-state'));
-  
-  if (params.has('account-state')) {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.html');
-    
-    await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
-  }else if (!(params.has('account-state'))) {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
-    
-    await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
-  }
-  
-})
-
+// signin
 window.changeLocationToSignIn = function () {
   const newURL = new URL(location.href)
   newURL.searchParams.delete('account-state');
-  console.log(newURL);
 
   history.pushState({}, '', newURL);
 
   const accountStateLinkEvent = new CustomEvent('urlDataChanged', {
     detail: { 'account-state': 'myValue' }
   });
-  window.dispatchEvent(new Event('urlChanged'));
+  applysignTypePage();
 }
+// apply profile page type
+async function applysignTypePage() {
+  const params = new URLSearchParams(location.search)
+  // console.log(params.has('account-state'));
+
+  if (params.get('account-state') == 'creat') {
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.html');
+
+    await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
+
+  } else if (params.get('account-state') == 'active') {
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/update-profile.html');
+
+    await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
+
+  } else {
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
+
+    await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
+  }
+  await ProfilePageScrollFunction();
+}
+applysignTypePage();
+// #endregion
+
+
+// prvernt cancel photo from adding photo

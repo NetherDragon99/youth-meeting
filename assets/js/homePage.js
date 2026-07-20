@@ -89,3 +89,9 @@ export function closeTask() {
 }
 //#endregion
 
+// go to proile
+document.getElementById('profileHeaderUserProfile').addEventListener('click', click => document.getElementById('userProfileForm').scrollIntoView({
+  behavior: "smooth",
+  inline: "center",
+  block: "nearest"
+}))

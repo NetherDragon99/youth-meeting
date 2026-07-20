@@ -15,21 +15,6 @@ const qrCodeScannerPage = await import("./qr.js");
 
 //#endregion
 
-//#region link state
-const params = new URLSearchParams(location.search)
-console.log(params.has('account-state'));
-
-if (params.has('account-state')) {
-  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.html');
-
-  await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
-} else if (!(params.has('account-state'))) {
-  document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
-
-  await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
-}
-//#endregion
-
 // #region scroll function
 // page scroll navigation style function
 const pagesFooter = document.querySelectorAll('footer>#footerContainer>a:not(:nth-child(3))');
@@ -94,16 +79,14 @@ const pageView = new IntersectionObserver((items) => {
       selectedBar.style.left = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
       selectedBar.style.width = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().width}px`;
       selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
-    }
-
+    }    
   })
-}, { threshold: 0.7 })
+}, { threshold: 0.8 })
 
 function activatePageObserver() {
   document.querySelectorAll('body>section#MainContainer>*').forEach(itme => pageView.observe(itme))
 }
 //#endregion
-
 
 //#region public codes
 
