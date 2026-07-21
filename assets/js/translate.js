@@ -62,26 +62,29 @@ export const allSiteToTranslate = [
   '#userFormMainData label[data-name="createaccount"] p', 'createaccount',
   '#backToSignIn', 'backtosignin'
 ];
-export const placeholderTranslate = [
 
-]
-let index = 1;
+let langIndex = 1;
 export function applyLanguage(lang, items) {
-  // console.log(items.length);
+  console.log(items.length, lang);
 
   if (lang === "ar") {
     document.documentElement.style.setProperty("--main-direction", "rtl");
-    index = 1;
+    langIndex = 1;
+    console.log('ar');
+    
   } else if (lang === "en") {
     document.documentElement.style.setProperty("--main-direction", "ltr");
-    index = 0;
+    langIndex = 0;
+    console.log('en');
+    
   } else {
     lang = "ar";
-    applyLanguage(lang);
+    return applyLanguage(lang, allSiteToTranslate);
   }
 
   for (let index = 0; index < items.length; index += 2) {
-    getElement(items[index], items[index + 1])
+    getElement(items[index], items[index + 1]);
+    
   }
 
   document.getElementById('appLanguage').value = lang;
@@ -89,12 +92,21 @@ export function applyLanguage(lang, items) {
 applyLanguage(language, allSiteToTranslate);
 
 function getElement(element, target) {
+  console.log('pass here');
   
   if (document.querySelectorAll(element).length > 0) {
+    console.log('phase 1');
+    
     if (document.querySelector(`${element}`).tagName == 'INPUT') {
-      return document.querySelector(`${element}`).placeholder = translate[target][index];
+      console.log('input');
+      
+      return document.querySelector(`${element}`).placeholder = translate[target][langIndex];
+      
     } else if (document.querySelector(`${element}`)) {
-      return document.querySelector(`${element}`).innerHTML = translate[target][index];
+      console.log('element', target, langIndex);
+      
+      return document.querySelector(`${element}`).innerHTML = translate[target][langIndex];
+
     } else {
       console.log(`error on element: ${element}`);
     }

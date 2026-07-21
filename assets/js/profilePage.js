@@ -54,58 +54,62 @@ ProfilePageScrollFunction();
 import * as translatePage from "./translate.js";
 
 let languageBar = document.getElementById('appLanguage');
-languageBar.onchange = () => {
-  // console.log(languageBar.value);
-  localStorage.setItem('main language', languageBar.value);
+function prepareLanguageBarF() {
+  languageBar = document.getElementById('appLanguage');
+  
+  languageBar.onchange = () => {
 
-  translatePage.applyLanguage(languageBar.value, translatePage.allSiteToTranslate);
+    console.log(languageBar.value);
+    localStorage.setItem('main language', languageBar.value);
 
-  const selectedBar = document.querySelector('footer> #selectedArea');
-  const footerContainer = document.getElementsByTagName('footer')[0];
+    translatePage.applyLanguage(languageBar.value, translatePage.allSiteToTranslate);
 
-  selectedBar.style.left = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
-  selectedBar.style.width = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().width}px`;
-  selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
+    const selectedBar = document.querySelector('footer> #selectedArea');
+    const footerContainer = document.getElementsByTagName('footer')[0];
 
+    selectedBar.style.left = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
+    selectedBar.style.width = `${document.querySelector(`${location.hash}Footer`).getBoundingClientRect().width}px`;
+    selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
+  }
 }
 //#endregion
+
+//#region theme
 let theme;
 let themeBar;
 theme = localStorage.getItem('app-theme') || 'dark';
 import * as appTheme from "./apptheme.js";
 
-function applyTheme(){
-  
+function applyTheme() {
+
   if (theme == 'light') {
     appTheme.lightTheme();
-    console.log('light');
-  }else{
-    appTheme.darkTheme(); 
-    console.log('dark');   
+  } else {
+    appTheme.darkTheme();
   }
 }
 
 function themeFiledPrepare() {
   themeBar = document.getElementById('appTheme');
   themeBar.value = theme
-  themeBar.addEventListener('change', value=>{    
+  themeBar.addEventListener('change', value => {
     theme = value.target.value;
     localStorage.setItem('app-theme', value.target.value)
     applyTheme();
-    
+
     changeThemeIconF();
   })
   changeThemeIconF();
 }
-const changeThemeIconF = ()=>{
+const changeThemeIconF = () => {
   const themeIcon = document.querySelector('#appSettings>label[data-name="appTheme"]>div');
-    if (theme == 'light') {
-      themeIcon.classList.remove('icon-moon');
-      themeIcon.classList.add('icon-sun');
-    }else{
-      themeIcon.classList.remove('icon-sun');
-      themeIcon.classList.add('icon-moon')
-    }
+  if (theme == 'light') {
+    themeIcon.classList.remove('icon-moon');
+    themeIcon.classList.add('icon-sun');
+  } else {
+    themeIcon.classList.remove('icon-sun');
+    themeIcon.classList.add('icon-moon')
+  }
 }
 //#endregion
 
@@ -180,10 +184,9 @@ async function applysignTypePage() {
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
   }
   await ProfilePageScrollFunction();
-  applyTheme()
-  themeFiledPrepare()
-  console.log('applyed');
-  
+  applyTheme();
+  themeFiledPrepare();
+  prepareLanguageBarF();  
 }
 applysignTypePage();
 // #endregion
