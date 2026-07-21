@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"]::before, [class*=" icon-"]::before {
   font-family: 'Untitled' !important;
   font-style: normal;
   font-weight: normal;

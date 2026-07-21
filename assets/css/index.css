@@ -297,6 +297,7 @@ footer>#footerContainer>a.selected>p {
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
+  min-width: 100%;
 }
 #html5-qrcode-button-camera-permission::before, 
 #html5-qrcode-anchor-scan-type-change::before,
