@@ -228,12 +228,16 @@ footer>#footerContainer>a:nth-child(3)>div {
   box-shadow: 0 0 10px var(--design-blue2), 0 0 10px var(--design-blue2);
   text-shadow: 0 0 10px var(--design-blue2);
   background-color: var(--background-color);
-  width: max-content;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer>#footerContainer>a:nth-child(3)>p {
   position: relative;
-  bottom: 20px;
+  bottom: 10px;
   white-space: nowrap;
   -webkit-text-stroke: .3px var(--design-blue2);
   text-shadow: 0 0 10px var(--design-blue2), 0 0 10px var(--design-blue2);
