@@ -65,17 +65,17 @@ export const allSiteToTranslate = [
 
 let langIndex = 1;
 export function applyLanguage(lang, items) {
-  console.log(items.length, lang);
+  // console.log(items.length, lang);
 
   if (lang === "ar") {
     document.documentElement.style.setProperty("--main-direction", "rtl");
     langIndex = 1;
-    console.log('ar');
+    // console.log('ar');
     
   } else if (lang === "en") {
     document.documentElement.style.setProperty("--main-direction", "ltr");
     langIndex = 0;
-    console.log('en');
+    // console.log('en');
     
   } else {
     lang = "ar";
@@ -92,18 +92,18 @@ export function applyLanguage(lang, items) {
 applyLanguage(language, allSiteToTranslate);
 
 function getElement(element, target) {
-  console.log('pass here');
+  // console.log('pass here');
   
   if (document.querySelectorAll(element).length > 0) {
-    console.log('phase 1');
+    // console.log('phase 1');
     
     if (document.querySelector(`${element}`).tagName == 'INPUT') {
-      console.log('input');
+      // console.log('input');
       
       return document.querySelector(`${element}`).placeholder = translate[target][langIndex];
       
     } else if (document.querySelector(`${element}`)) {
-      console.log('element', target, langIndex);
+      // console.log('element', target, langIndex);
       
       return document.querySelector(`${element}`).innerHTML = translate[target][langIndex];
 

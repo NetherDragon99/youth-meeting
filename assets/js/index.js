@@ -2,10 +2,10 @@ import * as getDate from "./fetching.js";
 
 //#region draw pages
 
-document.getElementById('homePage').innerHTML = await getDate.getPageElements('../pages/home.html');
-document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.html');
-document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.html');
-document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
+document.getElementById('homePage').innerHTML = await getDate.getPageElements('../pages/home.blade.php');
+document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../pages/rank.blade.php');
+document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../pages/comunity.blade.php');
+document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.blade.php');
 
 const rankPage = await import("./rankPage.js");
 const homePage = await import("./homePage.js");

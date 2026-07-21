@@ -70,6 +70,8 @@
             <option value="dark" selected>الداكن</option>
           </select>
         </label>
+        <button id="refreshApp">اعادة التحميل الصفحة</button>
+        <button id="resetData">مسح البيانات</button>
       </div>
     </div>
   </section>

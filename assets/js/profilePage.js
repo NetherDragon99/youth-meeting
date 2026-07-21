@@ -56,10 +56,10 @@ import * as translatePage from "./translate.js";
 let languageBar = document.getElementById('appLanguage');
 function prepareLanguageBarF() {
   languageBar = document.getElementById('appLanguage');
-  
+
   languageBar.onchange = () => {
 
-    console.log(languageBar.value);
+    // console.log(languageBar.value);
     localStorage.setItem('main language', languageBar.value);
 
     translatePage.applyLanguage(languageBar.value, translatePage.allSiteToTranslate);
@@ -169,17 +169,17 @@ async function applysignTypePage() {
   // console.log(params.has('account-state'));
 
   if (params.get('account-state') == 'creat') {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.html');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
 
   } else if (params.get('account-state') == 'active') {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/update-profile.html');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/update-profile.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
 
   } else {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.html');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
   }
