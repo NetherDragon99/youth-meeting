@@ -53,7 +53,7 @@ ProfilePageScrollFunction();
 //#region language
 import * as translatePage from "./translate.js";
 
-const languageBar = document.getElementById('appLanguage');
+let languageBar = document.getElementById('appLanguage');
 languageBar.onchange = () => {
   // console.log(languageBar.value);
   localStorage.setItem('main language', languageBar.value);
@@ -69,7 +69,44 @@ languageBar.onchange = () => {
 
 }
 //#endregion
+let theme;
+let themeBar;
+theme = localStorage.getItem('app-theme') || 'dark';
+import * as appTheme from "./apptheme.js";
 
+function applyTheme(){
+  
+  if (theme == 'light') {
+    appTheme.lightTheme();
+    console.log('light');
+  }else{
+    appTheme.darkTheme(); 
+    console.log('dark');   
+  }
+}
+
+function themeFiledPrepare() {
+  themeBar = document.getElementById('appTheme');
+  themeBar.value = theme
+  themeBar.addEventListener('change', value=>{    
+    theme = value.target.value;
+    localStorage.setItem('app-theme', value.target.value)
+    applyTheme();
+    
+    changeThemeIconF();
+  })
+  changeThemeIconF();
+}
+const changeThemeIconF = ()=>{
+  const themeIcon = document.querySelector('#appSettings>label[data-name="appTheme"]>div');
+    if (theme == 'light') {
+      themeIcon.classList.remove('icon-moon');
+      themeIcon.classList.add('icon-sun');
+    }else{
+      themeIcon.classList.remove('icon-sun');
+      themeIcon.classList.add('icon-moon')
+    }
+}
 //#endregion
 
 //#region form 
@@ -143,6 +180,10 @@ async function applysignTypePage() {
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
   }
   await ProfilePageScrollFunction();
+  applyTheme()
+  themeFiledPrepare()
+  console.log('applyed');
+  
 }
 applysignTypePage();
 // #endregion

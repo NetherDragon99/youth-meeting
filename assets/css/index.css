@@ -10,11 +10,6 @@
   font-weight: 200 900;
 }
 
-:root {
-  --main-direction: rtl;
-  --text-color: aliceblue;
-  --design-blue: rgba(199, 255, 255, 0.705);
-}
 
 button, a, input,
 [role="button"] {
@@ -37,6 +32,7 @@ input{
   border: var(--design-blue) solid;
   border-radius: 10px;
 }
+/* #region scroll bar */
 ::-webkit-scrollbar{
   width: 7px;
   height: 7px;
@@ -56,6 +52,7 @@ input{
 ::-webkit-scrollbar-corner{
   background-color: transparent;
 }
+/* #endregion */
 
 img {
   height: 100%;
@@ -68,6 +65,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100dvh;
+}
+option{
+  background-color: var(--background-color);
 }
 
 
@@ -88,7 +88,7 @@ section#MainContainer::before {
   top: 0;
   left: 0;
   background-size: cover;
-  background-image: url(../pic/background.png);
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-origin: border-box;
   backdrop-filter: blur(2px);
@@ -204,14 +204,14 @@ footer>#footerContainer>a {
 
 footer>#footerContainer>a>div {
   font-size: 24px;
-  -webkit-text-stroke: 2px rgb(136, 154, 170);
+  -webkit-text-stroke: 2px var(--text-color2);
   color: transparent;
   transition: .5s;
 }
 
 footer>#footerContainer>a>p {
   margin: 0;
-  color: rgb(136, 154, 170);
+  color: var(--text-color2);
   direction: var(--main-direction);
   transition: .5s;
 }
@@ -221,13 +221,13 @@ footer>#footerContainer>a:nth-child(3)>div {
   top: -20px;
   font-size: 3rem;
   border-radius: 50%;
-  border: rgb(199, 255, 255) solid;
+  border: var(--design-blue2) solid;
   padding: 10px;
   -webkit-text-stroke: 0;
-  color: rgb(199, 255, 255);
-  box-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
-  text-shadow: 0 0 10px rgb(199, 255, 255);
-  background-color: rgba(58, 78, 78, 0.644);
+  color: var(--design-blue2);
+  box-shadow: 0 0 10px var(--design-blue2), 0 0 10px var(--design-blue2);
+  text-shadow: 0 0 10px var(--design-blue2);
+  background-color: var(--background-color);
   width: max-content;
 }
 
@@ -235,20 +235,20 @@ footer>#footerContainer>a:nth-child(3)>p {
   position: relative;
   bottom: 20px;
   white-space: nowrap;
-  -webkit-text-stroke: .3px rgb(199, 255, 255);
-  text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
+  -webkit-text-stroke: .3px var(--design-blue2);
+  text-shadow: 0 0 10px var(--design-blue2), 0 0 10px var(--design-blue2);
 }
 
 footer>#footerContainer>a.selected>div {
   -webkit-text-stroke: 0;
-  color: rgb(199, 255, 255);
-  text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
-  text-shadow: 0 0 100px rgb(199, 255, 255);
+  color: var(--design-blue2);
+  text-shadow: 0 0 10px var(--design-blue2), 0 0 10px var(--design-blue2);
+  text-shadow: 0 0 100px var(--design-blue2);
 }
 
 footer>#footerContainer>a.selected>p {
-  -webkit-text-stroke: 1px rgb(199, 255, 255);
-  text-shadow: 0 0 10px rgb(199, 255, 255), 0 0 10px rgb(199, 255, 255);
+  -webkit-text-stroke: 1px var(--design-blue2);
+  text-shadow: 0 0 10px var(--design-blue2), 0 0 10px var(--design-blue2);
 }
 
 /* #endregion */

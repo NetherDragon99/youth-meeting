@@ -47,5 +47,8 @@
   "writeemailorphoneno": ["Write your email or phone number", "اكتب الأيميل او رقم الهاتف"],
   "writepassword": ["Write your account password", "أكتب كلمة مرور الحساب"],
   "createaccount": ["Create New Account", "أنشاء حساب جديد"],
-  "backtosignin": ["Already have an account ??", "عندك حساب ؟؟"]
+  "backtosignin": ["Already have an account ??", "عندك حساب ؟؟"],
+  "theme": ["Theme", "المظهر"],
+  "dark": ["Dark Mode", "الوضع الليلى"],
+  "light": ["Light Mode", "الوضع النهارى"]
 }

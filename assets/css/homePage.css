@@ -53,12 +53,13 @@ header #profileHeaderUserProfile #userProfilePic {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  color: var(--text-color2);
   font-size: 40px;
   text-align: center;
   line-height: 50px;
-  border: rgb(199, 255, 255) solid 2px;
+  border: var(--design-blue) solid 2px;
   box-sizing: content-box;
-  box-shadow: 0 0 30px rgb(199, 255, 255);
+  box-shadow: 0 0 30px var(--design-blue);
 }
 
 header #profileHeaderUserProfile #userProfilePic img {
@@ -118,7 +119,7 @@ header>div:last-child #notificationIcon {
   overflow: hidden;
   position: absolute;
   border: var(--design-blue) solid;
-  background-color: rgba(19, 43, 68, 0.8);
+  background-color: var(--background-color3);
   opacity: 0;
 }
 #notificationContainer.opened{
@@ -150,11 +151,11 @@ header>div:last-child #notificationIcon {
   flex-shrink: 0;
   overflow: hidden;
   cursor: pointer;
-  border: rgb(7, 76, 104) .5px solid;
+  border: var(--design-blue) .5px solid;
   direction: rtl;
 }
 .notification.unreaded{
-  background-color: rgba(21, 77, 138, 0.336);
+  background-color: var(--background-color4);
 }
 #notifications .notification>div:first-child{
   font-size: 2rem;
@@ -274,7 +275,6 @@ header div:nth-child(2)>h2 {
 }
 
 /* #endregion */
-/* #endregion */
 
 /* #region next meeting */
 #nextFriday {
@@ -284,6 +284,11 @@ header div:nth-child(2)>h2 {
   display: flex;
   flex-direction: column;
   direction: var(--main-direction);
+}
+#nextFriday>h1{
+  color: var(--text-color2);
+  font-size: 1.7rem;
+  font-weight: 900;
 }
 
 #nextMeetingSection {
@@ -345,6 +350,11 @@ header div:nth-child(2)>h2 {
   flex-direction: column;
   overflow: hidden;
 }
+#myTasks>h1{
+  color: var(--text-color2);
+  font-size: 1.7rem;
+  font-weight: 900;
+}
 
 #tasksSection {
   display: flex;
@@ -364,7 +374,7 @@ header div:nth-child(2)>h2 {
   gap: 10px;
   padding: 10px;
   border-radius: 20px;
-  background-color: rgba(19, 43, 68, 0.6);
+  background-color: var(--background-color3);
   width: 100%;
   cursor: pointer;
   direction: rtl;
@@ -394,7 +404,7 @@ header div:nth-child(2)>h2 {
 #tasksSection .task div:nth-child(2) .taskTitle,
 #floatingTaskHeader div:nth-child(2) .taskTitle {
   font-size: .9rem;
-  font-weight: 600;
+  font-weight: 700;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -404,7 +414,7 @@ header div:nth-child(2)>h2 {
 #tasksSection .task div:nth-child(2) .taskTime,
 #floatingTaskHeader div:nth-child(2) .taskTime {
   font-size: .7rem;
-  color: rgb(196, 178, 178);
+  color: var(--text-color2);
 }
 
 #tasksSection .task .taskReward,
@@ -432,8 +442,8 @@ header div:nth-child(2)>h2 {
   flex-direction: column;
   justify-content: start;
   border-radius: 20px;
-  background-color: rgba(19, 43, 68);
-  border: rgba(199, 255, 255, 0.5) solid;
+  background-color: var(--background-color3);
+  border: var(--design-blue2) solid;
   z-index: 4;
   overflow: hidden;
   transition: 1s;

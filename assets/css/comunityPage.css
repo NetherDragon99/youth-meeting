@@ -18,7 +18,7 @@
   border: var(--design-blue) solid;
   overflow: hidden;
   justify-self: center;
-  background-color: rgba(29, 32, 41, 0.5);
+  background-color: var(--background-color);
   border-radius: 20px;
   padding: 10px;
 }
@@ -87,7 +87,8 @@
   justify-self: center;
   right: 50%;
   transform: translateX(50%);
-  background-image: url(../pic/background.png);
+  background-image: var(--background-image);
+  color: var(--text-color2);
   font-size: 64px;
   text-align: center;
   font-weight: 900;

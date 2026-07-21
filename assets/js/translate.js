@@ -38,8 +38,11 @@ export const allSiteToTranslate = [
   '#logOutBtn>div>p', 'logout',
   '#appSettingsHeader p', 'appsettings',
   '#appSettings>label[data-name="appLanguage"] p', 'lang',
-  '#appSettings>label[data-name="appLanguage"] option:nth-child(1)', 'ar',
-  '#appSettings>label[data-name="appLanguage"] option:nth-child(2)', 'en',
+  '#appLanguage option:nth-child(1)', 'ar',
+  '#appLanguage option:nth-child(2)', 'en',
+  '#appSettings>label[data-name="appTheme"] p', 'theme',
+  '#appTheme option:nth-child(1)', 'light',
+  '#appTheme option:nth-child(2)', 'dark',
 
   '#userFormUsername', 'writeyourname',
   '#userFormGender>option:nth-child(1)', 'chooseyourgender',

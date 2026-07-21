@@ -19,13 +19,14 @@
 #profilePageHeader #currentProfilePic{
   width: 40px;
   height: 40px;
-  border: var(--design-blue);
+  border: var(--design-blue) solid;
   border-radius: 50%;
   position: relative;
   font-size: 35px;
   line-height: 40px;
   overflow: hidden;
   text-align: center;
+  color: var(--text-color2);
 }
 #profilePageHeader #currentProfilePic img{
   position: absolute;
@@ -37,6 +38,7 @@
 }
 #profilePageHeader>div:last-child{
   font-size: 30px;
+  color: var(--text-color2);
 }
 /* #endregion */
 
@@ -77,7 +79,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(18, 24, 42);
+  background-color: var(--background-color);
 }
 #profilePictureContainer>div{
   width: 80px;
@@ -87,6 +89,7 @@
   font-size: 75px;
   line-height: 80px;
   text-align: center;
+  color: var(--text-color2);
 }
 #profilePictureContainer>div>img{
   position: absolute;
@@ -172,9 +175,6 @@
   cursor: pointer;
   
 }
-#profilePagePages label>select option{
-  background-color: rgb(18, 24, 42);
-}
 #photoCancel{
   cursor: pointer;
   pointer-events: none;
@@ -199,7 +199,7 @@
 
 #userFormSubmitBtn{
   font-weight: 900;
-  background-image: linear-gradient(to right, rgb(18, 24, 42), transparent);
+  background-image: linear-gradient(to right, var(--background-color), transparent);
   background-size: 500%;
   background-position: left;
   transition: 1s;
@@ -241,6 +241,7 @@
   overflow: scroll;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   padding: 10px;
   max-height: max-content;
   scroll-snap-align: start;

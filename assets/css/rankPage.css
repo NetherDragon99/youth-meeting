@@ -54,9 +54,10 @@
   bottom: 0;
   background-color: transparent;
   font-size: 55px;
+  color: var(--text-color2);
   line-height: 60px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--background-color2);
 }
 
 .secondPlace #userSection .topRankProfilePic {
@@ -144,6 +145,7 @@
   bottom: 0;
   margin: 0;
   z-index: 6;
+  color: aliceblue;
 }
 
 #topThree .firstPlace #stage {
@@ -245,7 +247,7 @@
   width: 100%;
   height: 40px;
   border-radius: 15px;
-  background-color: rgba(31, 46, 77, 0.6);
+  background-color: var(--background-color2);
   padding: 5px;
 }
 
@@ -256,6 +258,7 @@
   overflow: hidden;
   border-radius: 50%;
   border: gray solid;
+  color: var(--text-color2);
   width: 30px;
   height: 30px;
   flex-shrink: 0;
@@ -278,11 +281,11 @@
 #allRankUsers .rankUser .rankNo {
   margin-right: 10px;
   flex-shrink: 0;
-  color: var(--design-blue);
+  color: var(--text-color);
 }
 #showAllRankUsers{
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: color-mix(in srgb, black 40%, var(--background-color3) 100%);
   text-align: center;
   padding: 5px;
   bottom: 30px;
@@ -290,7 +293,7 @@
   border-radius: 15px;
 }
 
-/* endregion */
+/* #endregion */
 
 @media (min-width: 520px) {
   #showAllRankUsers{
