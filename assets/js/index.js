@@ -79,7 +79,7 @@ const pageView = new IntersectionObserver((items) => {
       selectedBar.style.left = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().left - footerContainer.getBoundingClientRect().left}px`;
       selectedBar.style.width = `${document.querySelector(`${hash}Footer`).getBoundingClientRect().width}px`;
       selectedBar.style.borderBottom = 'rgb(199, 255, 255) solid 2px';
-    }    
+    }
   })
 }, { threshold: 0.8 })
 
@@ -123,61 +123,52 @@ const db = await import("./tools-js/indexdb.js");
 
 //#region service worker for downloading the app
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', ()=>{
+  window.addEventListener('load', () => {
     navigator.serviceWorker.register('./tools-js/service-worker.js')
-    .then(registration => {
-      console.log('service worker successed');
-    })
-    .catch(err => {
-      console.log('service worker failed', err);
-    })
+      .then(registration => {
+        console.log('service worker successed');
+      })
+      .catch(err => {
+        console.log('service worker failed', err);
+      })
   })
 }
 
-let deferredPrompt;
-const installBtn = document.getElementById('downloadAppBtn');
+let deferredPrompt; 
 
-window.addEventListener('beforeinstallprompt', e => {
+window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-
-  if (installBtn) {
-    installBtn.style.display = 'flex';
-  }
+  
+  document.body.classList.add('pwa-ready');
 });
 
-if (installBtn) {
-  installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) {
-      return;
-    }
+document.body.addEventListener('click', async (e) => {
+  const targetButton = e.target.closest('#install-btn');
+  
+  if (targetButton) {
+    if (!deferredPrompt) return;
 
     deferredPrompt.prompt();
-
     const { outcome } = await deferredPrompt.userChoice;
+    
     if (outcome === 'accepted') {
-      console.log('user accepted to install');
-      
-    }else{
-      console.log('user dismissed to install');
-      
+      console.log('User accepted');
+    } else {
+      console.log('User dismissed');
     }
-    deferredPrompt = null;
 
-    installBtn.style.display = 'none';
-  })
-}
+    deferredPrompt = null;
+    document.body.classList.remove('pwa-ready');
+  }
+});
 
 window.addEventListener('appinstalled', () => {
   deferredPrompt = null;
-  
-  const installBtn = document.getElementById('install-btn');
-  if (installBtn) {
-    installBtn.style.display = 'none';
-  }
-  
-  console.log('تم تثبيت التطبيق بنجاح، وتم إخفاء الزرار.');
+  document.body.classList.remove('pwa-ready');
+  console.log('تم التثبيت بنجاح');
 });
+
 
 //#endregion
 

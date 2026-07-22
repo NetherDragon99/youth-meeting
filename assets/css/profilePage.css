@@ -312,12 +312,16 @@
 }
 #downloadAppBtn{
   background-color: rgba(0, 255, 42, 0.384);
+  display: none;
+}
+body.pwa-ready #downloadAppBtn {
+  display: flex; 
 }
 #appVersion{
   align-self: center;
   margin-bottom: 0;
 }
 #appVersion::after{
-  content: "0.0.2";
+  content: "0.0.3";
 }
 /* #endregion */
