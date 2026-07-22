@@ -116,3 +116,12 @@ qrBtn.addEventListener('click', click => {
   qrCodeScannerPage.startScanner()
 })
 //#endregion
+
+
+//#region get user data & long time actions
+const db = await import("./tools-js/indexdb.js");
+
+
+
+//#endregion
+
