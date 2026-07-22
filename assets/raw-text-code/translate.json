@@ -53,6 +53,7 @@
   "light": ["Light Mode", "الوضع النهارى"],
   "reloadpage": ["Reload Page", "إعادة تحميل الصفحة"],
   "cleardata": ["Clear Data", "مسح البيانات"],
+  "appversion": ["app version: ", "اصدار التطبييق: "],
 
   "reloadpagealert": ["Are you sure you want to reload the page??", "متأكد انك عاوز تعيد تحمل الصفحة؟؟"],
   "cleardataalert": ["Are you sure you want to clear all collected data??\ncollected data may be app preferences or images and site data to save the internet!!", "متأكد انك عاوز تمسح المعلومات التى تم تجميعها؟؟\nالمعلومات دى ممكن تكون تفضيلاتك او صور وبيانات الموقع علشان توفر فى الانترنت!!"]

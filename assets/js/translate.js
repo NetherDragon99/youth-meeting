@@ -45,6 +45,7 @@ export const allSiteToTranslate = [
   '#appTheme option:nth-child(2)', 'dark',
   '#refreshApp', 'reloadpage',
   '#resetData', 'cleardata',
+  '#appVersion', 'appversion',
 
   '#userFormUsername', 'writeyourname',
   '#userFormGender>option:nth-child(1)', 'chooseyourgender',

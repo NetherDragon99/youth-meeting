@@ -98,6 +98,9 @@
             <option value="dark" selected>الداكن</option>
           </select>
         </label>
+        <button id="refreshApp">اعادة تحميل الصفحة</button>
+        <button id="resetData">مسح البيانات</button>
+        <p id="appVersion">اصدار التطبيق: </p>
       </div>
     </div>
   </section>

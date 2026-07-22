@@ -302,4 +302,12 @@
   background-color: rgba(255, 0, 0, 0.384);
 }
 
+
+#appVersion{
+  align-self: center;
+  margin-bottom: 0;
+}
+#appVersion::after{
+  content: "0.0.1";
+}
 /* #endregion */
