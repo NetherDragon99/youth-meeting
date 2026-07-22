@@ -1,3 +1,57 @@
+//#region get user data & long time actions
+const db = await import("./tools-js/indexdb.js");
+
+//#region service worker for downloading the app
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('service worker successed');
+    })
+    .catch(err => {
+      console.log('service worker failed', err);
+    })
+}
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  document.body.classList.add('pwa-ready');
+});
+
+document.body.addEventListener('click', async (e) => {
+  const targetButton = e.target.closest('#downloadAppBtn');    
+
+  if (targetButton) {
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === 'accepted') {
+      console.log('User accepted');
+    } else {
+      console.log('User dismissed');
+    }
+
+    deferredPrompt = null;
+    document.body.classList.remove('pwa-ready');
+  }
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  document.body.classList.remove('pwa-ready');
+  // console.log('تم التثبيت بنجاح');
+});
+
+
+//#endregion
+
+//#endregion
+
 import * as getDate from "./tools-js/fetching.js";
 
 //#region draw pages
@@ -118,59 +172,4 @@ qrBtn.addEventListener('click', click => {
 //#endregion
 
 
-//#region get user data & long time actions
-const db = await import("./tools-js/indexdb.js");
-
-//#region service worker for downloading the app
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./tools-js/service-worker.js')
-      .then(registration => {
-        console.log('service worker successed');
-      })
-      .catch(err => {
-        console.log('service worker failed', err);
-      })
-  })
-}
-
-let deferredPrompt; 
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  
-  document.body.classList.add('pwa-ready');
-});
-
-document.body.addEventListener('click', async (e) => {
-  const targetButton = e.target.closest('#install-btn');
-  
-  if (targetButton) {
-    if (!deferredPrompt) return;
-
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
-      console.log('User accepted');
-    } else {
-      console.log('User dismissed');
-    }
-
-    deferredPrompt = null;
-    document.body.classList.remove('pwa-ready');
-  }
-});
-
-window.addEventListener('appinstalled', () => {
-  deferredPrompt = null;
-  document.body.classList.remove('pwa-ready');
-  console.log('تم التثبيت بنجاح');
-});
-
-
-//#endregion
-
-//#endregion
 

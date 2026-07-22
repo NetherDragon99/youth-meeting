@@ -181,7 +181,6 @@ window.logOut = function (event) {
 
 //#endregion
 
-
 //#region sign up/sign in page type
 // signup
 window.changeLocationToSignUp = function () {
