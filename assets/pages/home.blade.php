@@ -17,7 +17,7 @@
       </h2>
     </a>
     <div>
-      <img src="assets/pic/new coc logo.png" alt="coc logo">
+      <img src="assets/pic/coc logo.png" alt="coc logo">
       <h2>COC</h2>
     </div>
     <div>

@@ -15,57 +15,57 @@
     </div>
     <div id="q-aBoxTopQuestions" class="comunityBoxBody">
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture"
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture"
             style="display: none;"></div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
       <div class="q-aTopQuestion">
-        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png" alt="profile picture">
+        <div class="q-aTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png" alt="profile picture">
         </div>
         <p>مواعيد الاجتماع القادم</p>
       </div>
@@ -78,42 +78,42 @@
     </div>
     <div id="praysBoxTopQuestions" class="comunityBoxBody">
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>
       <div class="praysTopQuestion">
-        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/new coc logo.png"
+        <div class="praysTopQuestionProfilePic icon-private"><img src="assets/pic/coc logo.png"
             alt="profile picture"></div>
         <p>صلاه من اجل الامتحانات</p>
       </div>

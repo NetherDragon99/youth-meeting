@@ -51,6 +51,7 @@
   "theme": ["Theme", "المظهر"],
   "dark": ["Dark Mode", "الوضع الليلى"],
   "light": ["Light Mode", "الوضع النهارى"],
+  "downloadapp": ["Download the app", "تحميل التطبيق"],
   "reloadpage": ["Reload Page", "إعادة تحميل الصفحة"],
   "cleardata": ["Clear Data", "مسح البيانات"],
   "appversion": ["app version: ", "اصدار التطبييق: "],

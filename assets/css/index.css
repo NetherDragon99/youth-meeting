@@ -1,4 +1,4 @@
-@import url(../icons/font/style.css);
+@import url(../icons/style.css);
 @import url(./homePage.css);
 @import url(./rankPage.css);
 @import url(./comunityPage.css);
@@ -32,7 +32,7 @@ button{
 }
 
 * {
-  font-family: 'cairo', sans-serif, serif;
+  font-family: 'cairo','icomoon', sans-serif, serif !important;
   color: var(--text-color);
   box-sizing: border-box;
   color: var(--text-color);

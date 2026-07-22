@@ -121,7 +121,65 @@ qrBtn.addEventListener('click', click => {
 //#region get user data & long time actions
 const db = await import("./tools-js/indexdb.js");
 
+//#region service worker for downloading the app
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('./tools-js/service-worker.js')
+    .then(registration => {
+      console.log('service worker successed');
+    })
+    .catch(err => {
+      console.log('service worker failed', err);
+    })
+  })
+}
 
+let deferredPrompt;
+const installBtn = document.getElementById('downloadAppBtn');
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  if (installBtn) {
+    installBtn.style.display = 'flex';
+  }
+});
+
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) {
+      return;
+    }
+
+    deferredPrompt.prompt();
+
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      console.log('user accepted to install');
+      
+    }else{
+      console.log('user dismissed to install');
+      
+    }
+    deferredPrompt = null;
+
+    installBtn.style.display = 'none';
+  })
+}
+
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  
+  const installBtn = document.getElementById('install-btn');
+  if (installBtn) {
+    installBtn.style.display = 'none';
+  }
+  
+  console.log('تم تثبيت التطبيق بنجاح، وتم إخفاء الزرار.');
+});
+
+//#endregion
 
 //#endregion
 

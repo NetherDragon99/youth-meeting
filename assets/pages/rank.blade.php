@@ -9,7 +9,7 @@
 
 <body>
   <section id="rankHeader">
-    <img src="assets/pic/new coc logo.png" alt="church logo">
+    <img src="assets/pic/coc logo.png" alt="church logo">
     <img src="assets/pic/cocs-heros.png" alt="cocs heros banner">
   </section>
   <section id="rankPlaces">
@@ -17,7 +17,7 @@
       <div id="firstSection" class="secondPlace">
         <div id="userSection">
           <div class="topRankProfilePic icon-user">
-            <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none;">
+            <img src="assets/pic/coc logo.png" alt="profile picture" style="display: none;">
           </div>
           <img src="assets/pic/golden-medal.png" alt="golden-medal">
           <img src="assets/pic/silver-medal.png" alt="silver-medal">
@@ -35,7 +35,7 @@
       <div id="secondSection" class="firstPlace">
         <div id="userSection">
           <div class="topRankProfilePic icon-user">
-            <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none;">
+            <img src="assets/pic/coc logo.png" alt="profile picture" style="display: none;">
           </div>
           <img src="assets/pic/golden-medal.png" alt="golden-medal">
           <img src="assets/pic/silver-medal.png" alt="silver-medal">
@@ -53,7 +53,7 @@
       <div id="thirdSection" class="thirdPlace">
         <div id="userSection">
           <div class="topRankProfilePic icon-user">
-            <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none;">
+            <img src="assets/pic/coc logo.png" alt="profile picture" style="display: none;">
           </div>
           <img src="assets/pic/golden-medal.png" alt="golden-medal">
           <img src="assets/pic/silver-medal.png" alt="silver-medal">
@@ -71,98 +71,98 @@
     </div>
     <div id="allRankUsers">
       <div class="rankUser">
-        <div class="rankProfilePic icon-user"><img src="assets/pic/new coc logo.png" alt="profile picture"
+        <div class="rankProfilePic icon-user"><img src="assets/pic/coc logo.png" alt="profile picture"
             style="display: none;"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس ملك ابراهيم يوسف</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>
       </div>
       <div class="rankUser">
-        <div class="rankProfilePic"><img src="assets/pic/new coc logo.png" alt="profile picture"></div>
+        <div class="rankProfilePic"><img src="assets/pic/coc logo.png" alt="profile picture"></div>
         <div class="rankCocsNumber">1000</div>
         <div class="rankUserName">ستيفن ماريو محروس</div>
         <div class="rankNo">1</div>

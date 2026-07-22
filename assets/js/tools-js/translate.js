@@ -43,6 +43,7 @@ export const allSiteToTranslate = [
   '#appSettings>label[data-name="appTheme"] p', 'theme',
   '#appTheme option:nth-child(1)', 'light',
   '#appTheme option:nth-child(2)', 'dark',
+  '#downloadAppBtn', 'downloadapp',
   '#refreshApp', 'reloadpage',
   '#resetData', 'cleardata',
   '#appVersion', 'appversion',

@@ -10,7 +10,7 @@
 <body>
   <section id="profilePageHeader">
     <div id="currentProfilePic" class="icon-user">
-      <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none">
+      <img src="assets/pic/coc logo.png" alt="profile picture" style="display: none">
     </div>
     <h2>الأعدادات</h2>
     <div class="icon-gear" id="settingsIcon"></div>
@@ -19,7 +19,7 @@
     <section id="profileHeader">
       <div id="profilePictureContainer">
         <div class="icon-user">
-          <img src="assets/pic/new coc logo.png" alt="profile picture" style="display: none;">
+          <img src="assets/pic/coc logo.png" alt="profile picture" style="display: none;">
         </div>
       </div>
       <h3>ستيفن ماريو</h3>
@@ -98,8 +98,9 @@
             <option value="dark" selected>الداكن</option>
           </select>
         </label>
-        <button id="refreshApp">اعادة تحميل الصفحة</button>
-        <button id="resetData">مسح البيانات</button>
+        <button id="downloadAppBtn" class="icon-download">تحميل التطبيق</button>
+        <button id="refreshApp" class="icon-refresh">اعادة تحميل الصفحة</button>
+        <button id="resetData" class="icon-trash">مسح البيانات</button>
         <p id="appVersion">اصدار التطبيق: </p>
       </div>
     </div>
