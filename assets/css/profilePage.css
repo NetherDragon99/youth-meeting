@@ -1,4 +1,4 @@
-#profilePage{
+#profilePage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,7 +6,7 @@
 
 
 /* #region profile page header */
-#profilePageHeader{
+#profilePageHeader {
   width: 90%;
   height: 50px;
   display: flex;
@@ -17,7 +17,8 @@
   direction: var(--main-direction);
   margin-top: 10px;
 }
-#profilePageHeader #currentProfilePic{
+
+#profilePageHeader #currentProfilePic {
   width: 40px;
   height: 40px;
   border: var(--design-blue) solid 1px;
@@ -29,22 +30,26 @@
   text-align: center;
   color: var(--text-color2);
 }
-#profilePageHeader #currentProfilePic img{
+
+#profilePageHeader #currentProfilePic img {
   position: absolute;
   top: 0;
   left: 0;
 }
-#profilePageHeader h2{
+
+#profilePageHeader h2 {
   margin: 0;
 }
-#profilePageHeader>div:last-child{
+
+#profilePageHeader>div:last-child {
   font-size: 30px;
   color: var(--text-color2);
 }
+
 /* #endregion */
 
 /* #region profile page body */
-#profileContainer{
+#profileContainer {
   width: 90%;
   max-width: 500px;
   margin-top: 50px;
@@ -59,7 +64,7 @@
 }
 
 /* #region profile body header */
-#profileHeader{
+#profileHeader {
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -72,7 +77,8 @@
   top: 0;
   transform: translateY(-50px);
 }
-#profilePictureContainer{
+
+#profilePictureContainer {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -82,7 +88,8 @@
   align-items: center;
   background-color: var(--background-color);
 }
-#profilePictureContainer>div{
+
+#profilePictureContainer>div {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -92,21 +99,25 @@
   text-align: center;
   color: var(--text-color2);
 }
-#profilePictureContainer>div>img{
+
+#profilePictureContainer>div>img {
   position: absolute;
   top: 0;
   left: 0;
 }
-#profileHeader>h3{
+
+#profileHeader>h3 {
   margin: 0;
   margin-top: 10px;
 }
-#profilePageHeader>div{
+
+#profilePageHeader>div {
   cursor: pointer;
 }
+
 /* #endregion */
 
-#profilePagePages{
+#profilePagePages {
   display: flex;
   overflow: auto;
   width: 100%;
@@ -114,12 +125,13 @@
   direction: var(--main-direction);
   scroll-snap-type: x mandatory;
 }
-#profilePagePages::-webkit-scrollbar{
+
+#profilePagePages::-webkit-scrollbar {
   height: 0;
 }
 
 /* #region profile body content */
-#userProfileForm{
+#userProfileForm {
   padding: 5px;
   direction: var(--main-direction);
   display: flex;
@@ -135,7 +147,8 @@
   scroll-snap-stop: always;
   padding-bottom: 30px;
 }
-#userProfileForm>*{
+
+#userProfileForm>* {
   display: flex;
   flex-direction: column;
   border: var(--design-blue) solid;
@@ -144,7 +157,8 @@
   gap: 10px;
   width: 100%;
 }
-#profilePagePages label{
+
+#profilePagePages label {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -153,14 +167,17 @@
   position: relative;
   cursor: pointer;
 }
-#profilePagePages label>p{
+
+#profilePagePages label>p {
   white-space: nowrap;
   margin: 0;
 }
-#profilePagePages label>div:first-child{
+
+#profilePagePages label>div:first-child {
   text-shadow: 0 0 20px var(--design-blue), 0 0 20px var(--design-blue);
 }
-#profilePagePages label>input{
+
+#profilePagePages label>input {
   flex: 1;
   flex-shrink: 1;
   min-width: 0;
@@ -168,15 +185,17 @@
   direction: var(--main-direction);
   line-height: 1;
 }
-#profilePagePages label>select{
+
+#profilePagePages label>select {
   background-color: transparent;
   flex: 1;
   border: var(--design-blue) solid;
   border-radius: 10px;
   cursor: pointer;
-  
+
 }
-#photoCancel{
+
+#photoCancel {
   cursor: pointer;
   pointer-events: none;
   font-size: 1rem;
@@ -186,19 +205,23 @@
   overflow: hidden;
   transition: width 400ms ease-in-out;
 }
-#changePicFiled{
+
+#changePicFiled {
   cursor: pointer;
 }
-#changePicFiled[hasPhoto] #photoCancel{
+
+#changePicFiled[hasPhoto] #photoCancel {
   width: 1rem;
 }
-#noAccount, #backToSignIn{
+
+#noAccount,
+#backToSignIn {
   margin: 0;
   cursor: pointer;
 }
 
 
-#userFormSubmitBtn{
+#userFormSubmitBtn {
   font-weight: 900;
   background-image: linear-gradient(to right, var(--background-color), transparent);
   background-size: 500%;
@@ -206,11 +229,12 @@
   transition: 1s;
   cursor: pointer;
 }
-#userFormSubmitBtn:hover{
+
+#userFormSubmitBtn:hover {
   background-position: right;
 }
 
-#logOutBtn{
+#logOutBtn {
   background-color: rgba(255, 0, 0, 0.4);
   border: red solid;
   border-radius: 10px;
@@ -218,7 +242,9 @@
   width: 90%;
   cursor: pointer;
 }
-#logOutBtn>div, #userFormSubmitBtn>div{
+
+#logOutBtn>div,
+#userFormSubmitBtn>div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,7 +252,9 @@
   font-weight: 900;
   margin: 0;
 }
-#logOutBtn>div>p, #userFormSubmitBtn>div>p{
+
+#logOutBtn>div>p,
+#userFormSubmitBtn>div>p {
   margin: 0px;
 }
 
@@ -235,7 +263,7 @@
 /* #endregion */
 
 /* #region settings */
-#appSettings{
+#appSettings {
   width: 100%;
   height: 100%;
   flex-shrink: 0;
@@ -248,13 +276,30 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-#appSettingsHeader{
+
+#appSettingsHeader {
   margin-bottom: 10px;
   font-size: 1rem;
   font-weight: 700;
 }
-#appSettings label:not(#appSettingsHeader){
+
+#appSettings label:not(#appSettingsHeader) {
   padding: 0 20px;
+}
+
+#refreshApp,
+#resetData {
+  background-color: rgba(255, 255, 0, 0.377);
+  width: 60%;
+  border-radius: 7px;
+  padding: 5px;
+  align-self: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#resetData {
+  background-color: rgba(255, 0, 0, 0.384);
 }
 
 /* #endregion */

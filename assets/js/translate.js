@@ -43,6 +43,8 @@ export const allSiteToTranslate = [
   '#appSettings>label[data-name="appTheme"] p', 'theme',
   '#appTheme option:nth-child(1)', 'light',
   '#appTheme option:nth-child(2)', 'dark',
+  '#refreshApp', 'reloadpage',
+  '#resetData', 'cleardata',
 
   '#userFormUsername', 'writeyourname',
   '#userFormGender>option:nth-child(1)', 'chooseyourgender',
@@ -97,18 +99,18 @@ function getElement(element, target) {
   if (document.querySelectorAll(element).length > 0) {
     // console.log('phase 1');
     
-    if (document.querySelector(`${element}`).tagName == 'INPUT') {
+    if (document.querySelector(`${element}`).tagName == 'INPUT' && translate[target][langIndex]) {
       // console.log('input');
       
       return document.querySelector(`${element}`).placeholder = translate[target][langIndex];
       
-    } else if (document.querySelector(`${element}`)) {
-      // console.log('element', target, langIndex);
+    } else if (document.querySelector(`${element}`) && (translate[target])) {
+      // console.log(element, target, translate[target][langIndex]);
       
       return document.querySelector(`${element}`).innerHTML = translate[target][langIndex];
 
     } else {
-      console.log(`error on element: ${element}`);
+      console.error(`error on element: ${element}`);
     }
   }
 

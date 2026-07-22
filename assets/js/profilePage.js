@@ -113,6 +113,50 @@ const changeThemeIconF = () => {
 }
 //#endregion
 
+//#region setting buttons
+import * as translateE from "./fetching.js";
+
+function settingBtns() {
+  // reload page 
+  const homePageUrl = new URL(location.origin + location.pathname);
+  const reloadPageBtn = document.getElementById('refreshApp');
+
+  reloadPageBtn.addEventListener('click', () => {
+    const lang = localStorage.getItem('main language');
+    let alert;
+
+    if (lang == "ar") {
+      alert = confirm(translateE.translate['reloadpagealert'][1]);
+    } else {
+      alert = confirm(translateE.translate['reloadpagealert'][0]);
+    }
+    alert ? location.href = homePageUrl : null;
+  })
+
+  // clear data
+  const clearDataBtn = document.getElementById('resetData');
+
+  clearDataBtn.addEventListener('click', () => {
+    const lang = localStorage.getItem('main language');
+    let alert;
+
+    if (lang == "ar") {
+      alert = confirm(translateE.translate['cleardataalert'][1]);
+    } else {
+      alert = confirm(translateE.translate['cleardataalert'][0]);
+    }
+    if (alert) {
+      localStorage.clear();
+      location.href = homePageUrl;
+    }
+  })
+}
+
+//#endregion
+
+//#endregion
+
+
 //#region form 
 
 // get form data
@@ -186,7 +230,8 @@ async function applysignTypePage() {
   await ProfilePageScrollFunction();
   applyTheme();
   themeFiledPrepare();
-  prepareLanguageBarF();  
+  prepareLanguageBarF();
+  settingBtns();
 }
 applysignTypePage();
 // #endregion

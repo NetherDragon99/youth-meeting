@@ -9,7 +9,17 @@
   src: url('../fonts/Cairo.ttf') format('truetype');
   font-weight: 200 900;
 }
-
+:root{
+  --text-color: aliceblue;
+  --text-color2: rgb(136, 154, 170);
+  --design-blue: rgba(199, 255, 255, 0.705);
+  --design-blue2: rgb(199, 255, 255);
+  --background-image: url(../pic/background.png);
+  --background-color: rgb(18, 24, 42);
+  --background-color2: rgba(19, 43, 68);
+  -background-color3: rgba(19, 43, 68, 0.9);
+  --background-color4: rgba(21, 77, 138, 0.336);
+}
 
 button, a, input,
 [role="button"] {
