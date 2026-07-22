@@ -1,5 +1,5 @@
-import * as getDate from "./fetching.js";
-import * as translate from "./translate.js"
+import * as getDate from "../tools-js/fetching.js";
+import * as translate from "../tools-js/translate.js"
 
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
@@ -51,7 +51,7 @@ ProfilePageScrollFunction();
 //#region settings
 
 //#region language
-import * as translatePage from "./translate.js";
+import * as translatePage from "../tools-js/translate.js";
 
 let languageBar = document.getElementById('appLanguage');
 function prepareLanguageBarF() {
@@ -78,7 +78,7 @@ function prepareLanguageBarF() {
 let theme;
 let themeBar;
 theme = localStorage.getItem('app-theme') || 'dark';
-import * as appTheme from "./apptheme.js";
+import * as appTheme from "../tools-js/apptheme.js";
 
 function applyTheme() {
 
@@ -114,7 +114,7 @@ const changeThemeIconF = () => {
 //#endregion
 
 //#region setting buttons
-import * as translateE from "./fetching.js";
+import * as translateE from "../tools-js/fetching.js";
 
 function settingBtns() {
   // reload page 
@@ -213,17 +213,17 @@ async function applysignTypePage() {
   // console.log(params.has('account-state'));
 
   if (params.get('account-state') == 'creat') {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-up.blade.php');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../../pages/sign-up.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
 
   } else if (params.get('account-state') == 'active') {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/update-profile.blade.php');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../../pages/update-profile.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
 
   } else {
-    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../pages/sign-in.blade.php');
+    document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../../pages/sign-in.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);
   }

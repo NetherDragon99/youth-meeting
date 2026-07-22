@@ -1,7 +1,7 @@
 
 
 // getting data 'locally'
-export let translate = await getData((new URL('../raw-text-code/translate.json', import.meta.url)));
+export let translate = await getData((new URL('../../raw-text-code/translate.json', import.meta.url)));
 
 async function getData(url) {
   try {
