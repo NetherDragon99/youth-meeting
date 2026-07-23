@@ -1,7 +1,7 @@
 import * as getDate from "../tools-js/fetching.js";
 import * as translate from "../tools-js/translate.js";
 import { currentAppVersion } from "../../../config.js";
-
+import { createMessage } from "../tools-js/public.js";
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
 
@@ -177,6 +177,7 @@ window.getFormDataBtn = function (event, type) {
   document.getElementById('userFormGender') ? formData.gender = document.getElementById('userFormGender').value : null;
 
   console.log(type, formData);
+  createMessage(formData, 'green', 5)
 }
 
 window.logOut = function (event) {

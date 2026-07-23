@@ -90,25 +90,13 @@ body>section#MainContainer {
   flex: 1;
   scroll-snap-type: x mandatory;
   direction: var(--main-direction);
-}
-section#MainContainer::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-size: cover;
+   background-size: cover;
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-origin: border-box;
-  backdrop-filter: blur(2px);
-  filter: blur(2px);
-  z-index: -10;
-  overflow: hidden;
+  position: relative;
 }
-
-body>section#MainContainer>* {
+body>section#MainContainer>*:not(#messagesBarContainer) {
   min-width: 100%;
   max-width: 100%;
   height: 100%;
@@ -370,4 +358,71 @@ footer>#footerContainer>a.selected>p {
   font-weight: 900;
 }
 
+/* #endregion */
+
+/* #region messages bar */
+#messagesBarContainer{
+  position: absolute !important;
+  min-width: calc(100dvw * 4);
+  height: 100%;
+}
+#messagesBar{
+  position: sticky;
+  width: 100dvw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  direction: var(--main-direction);
+}
+#messagesBarContainer #messagesBar .overlayMessage{
+  padding: 10px;
+  background-color: color-mix(in srgb, red 80%, transparent);
+  border-radius: 10px;
+  border: red solid;
+  max-width: 60%;
+  width: fit-content;
+  min-width: 150px;
+  position: relative;
+  animation: messagesrtl 5s forwards;
+}
+
+@keyframes messagesltr {
+  0%{
+    left: -100%;
+  }15%{
+    left: 10%;
+  }20%{
+    left: 0%;
+  }80%{
+    left: 0%;
+  }85%{
+    left: -10%;
+  }99.99%{
+    left: 100%;
+  }100%{
+    display: none;
+  }
+}
+@keyframes messagesrtl {
+  0%{
+    left: 100%;
+  }15%{
+    left: -10%;
+  }20%{
+    left: 0%;
+  }80%{
+    left: 0%;
+  }85%{
+    left: 10%;
+  }99.99%{
+    left: -100%;
+  }100%{
+    display: none;
+  }
+}
 /* #endregion */

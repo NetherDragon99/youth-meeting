@@ -3,7 +3,7 @@ const db = await import("./tools-js/indexdb.js");
 
 //#region service worker for downloading the app
 if ('serviceWorker' in navigator) {
-  if (location.hostname == '127.0.0.12') {
+  if (location.hostname == '127.0.0.1') {
     navigator.serviceWorker.getRegistrations().then(registrations => {
       for(let registration of registrations){
         registration.unregister();
@@ -81,6 +81,7 @@ const homePage = await import("./pages-js/homePage.js");
 const profilePage = await import("./pages-js/profilePage.js");
 const translate = await import("./tools-js/translate.js");
 const qrCodeScannerPage = await import("./pages-js/qr.js");
+const publicCode = await import('./tools-js/public.js');
 
 //#endregion
 
@@ -155,26 +156,6 @@ const pageView = new IntersectionObserver((items) => {
 function activatePageObserver() {
   document.querySelectorAll('body>section#MainContainer>*:not(#messagesBarContainer)').forEach(itme => pageView.observe(itme))
 }
-//#endregion
-
-//#region public codes
-
-// exit page by clicking outside
-const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)');
-const mainNotificationContainer = document.getElementById('notificationContainer');
-
-document.addEventListener('click', click => {
-
-  if (
-    (click.target.closest('#globalCloseArea')) ||
-    (click.target !== bellIcons) &&
-    !click.target.closest('#notificationContainer') &&
-    !click.target.closest('#floatingTask')
-  ) {
-    mainNotificationContainer.classList.remove('opened')
-    homePage.closeTask();
-  }
-})
 //#endregion
 
 //#region qr code
