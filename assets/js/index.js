@@ -10,7 +10,7 @@ if ('serviceWorker' in navigator) {
       }
     })
   } else {
-    navigator.serviceWorker.register('../service-worker.js', { type: 'module' })
+    navigator.serviceWorker.register('./service-worker.js', { type: 'module' })
       .then(registration => {
         console.log('service worker successed');
       })

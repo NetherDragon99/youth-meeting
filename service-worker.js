@@ -1,4 +1,4 @@
-import { currentAppVersion } from "/config.js";
+import { currentAppVersion } from "./config.js";
 
 const cashName = `version ${currentAppVersion}`;
 
