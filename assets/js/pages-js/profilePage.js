@@ -241,7 +241,7 @@ async function applysignTypePage() {
   themeFiledPrepare();
   prepareLanguageBarF();
   settingBtns();
-  document.documentElement.style.setProperty('--download-app-version', `"version: ${currentAppVersion}"`)
+  document.documentElement.style.setProperty('--download-app-version', `"${currentAppVersion}"`)
 }
 applysignTypePage();
 // #endregion
