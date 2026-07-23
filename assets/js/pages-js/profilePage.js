@@ -1,5 +1,6 @@
 import * as getDate from "../tools-js/fetching.js";
-import * as translate from "../tools-js/translate.js"
+import * as translate from "../tools-js/translate.js";
+import { currentAppVersion } from "/config.js";
 
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
@@ -231,6 +232,7 @@ async function applysignTypePage() {
   themeFiledPrepare();
   prepareLanguageBarF();
   settingBtns();
+  document.documentElement.style.setProperty('--download-app-version', `"version: ${currentAppVersion}"`)
 }
 applysignTypePage();
 // #endregion

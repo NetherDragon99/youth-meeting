@@ -3,13 +3,28 @@ const db = await import("./tools-js/indexdb.js");
 
 //#region service worker for downloading the app
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(registration => {
-      console.log('service worker successed');
+  if (location.hostname == '127.0.0.1') {
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+      for(let registration of registrations){
+        registration.unregister();
+      }
     })
-    .catch(err => {
-      console.log('service worker failed', err);
+  } else {
+    navigator.serviceWorker.register('/service-worker.js', { type: 'module' })
+      .then(registration => {
+        console.log('service worker successed');
+      })
+      .catch(err => {
+        console.log('service worker failed', err);
+      })
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!refreshing) {
+        window.location.reload();
+        refreshing = true;
+      }
     })
+  }
 }
 
 let deferredPrompt;
@@ -22,7 +37,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 document.body.addEventListener('click', async (e) => {
-  const targetButton = e.target.closest('#downloadAppBtn');    
+  const targetButton = e.target.closest('#downloadAppBtn');
 
   if (targetButton) {
     if (!deferredPrompt) return;

@@ -1,7 +1,9 @@
+import { currentAppVersion } from "/config.js";
 
-const cashName = 'version 0.0.4';
+const cashName = `version ${currentAppVersion}`;
 
 self.addEventListener('activate', event => {
+  event.waitUntil(clients.claim());
   event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
@@ -9,6 +11,10 @@ self.addEventListener('activate', event => {
       );
     })
   );
+});
+
+self.addEventListener('install', event => {
+  self.skipWaiting();
 });
 
 self.addEventListener('fetch', event => {

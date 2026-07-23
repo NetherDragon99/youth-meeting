@@ -322,6 +322,6 @@ body.pwa-ready #downloadAppBtn {
   margin-bottom: 0;
 }
 #appVersion::after{
-  content: "0.0.3";
+  content: var(--download-app-version);
 }
 /* #endregion */
