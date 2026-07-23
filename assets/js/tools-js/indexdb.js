@@ -57,3 +57,17 @@ export function deleteDBItem(id, name) {
     }
   })
 }
+
+export function clearDBItem(name) {
+  return new Promise((resolve, reject) => {
+    const tx = indexdb.transaction(name, 'readwrite');
+    tx.objectStore(name).clear();
+
+    tx.oncomplete = e => {
+      resolve(name, 'deleted');
+    }
+    tx.onerror = e =>{
+      reject(e.target.error)
+    }
+  })
+}

@@ -116,6 +116,7 @@ const changeThemeIconF = () => {
 
 //#region setting buttons
 import * as translateE from "../tools-js/fetching.js";
+import { clearDBItem } from "../tools-js/indexdb.js";
 
 function settingBtns() {
   // reload page 
@@ -137,7 +138,7 @@ function settingBtns() {
   // clear data
   const clearDataBtn = document.getElementById('resetData');
 
-  clearDataBtn.addEventListener('click', () => {
+  clearDataBtn.addEventListener('click', async () => {
     const lang = localStorage.getItem('main language');
     let alert;
 
@@ -147,12 +148,20 @@ function settingBtns() {
       alert = confirm(translateE.translate['cleardataalert'][0]);
     }
     if (alert) {
-      localStorage.clear();
+      await clearSavedData();
       location.href = homePageUrl;
     }
   })
 }
 
+async function clearSavedData() {
+  localStorage.clear();
+
+  const keys = await caches.keys();
+  await caches.delete(keys[0]);
+
+  clearDBItem('photos')
+}
 //#endregion
 
 //#endregion
