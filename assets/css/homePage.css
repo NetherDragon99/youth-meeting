@@ -502,16 +502,16 @@ header div:nth-child(2)>h2 {
     grid-column: 2/3;
     grid-row: 2/3;
     justify-self: start;
-    width: fit-content;
-    min-width: 500px;
+    width: 90%;
+    max-width: 500px;
   }
 
   #myTasks {
     grid-column: 1/2;
     grid-row: 2/3;
     justify-self: end;
-    width: fit-content;
-    min-width: 500px;
+    min-width: 200px;
+    width: 90%;
     max-width: 500px;
   }
 }

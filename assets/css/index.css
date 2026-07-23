@@ -17,7 +17,7 @@
   --background-image: url(../pic/background.png);
   --background-color: rgb(18, 24, 42);
   --background-color2: rgba(19, 43, 68);
-  -background-color3: rgba(19, 43, 68, 0.9);
+  --background-color3: rgba(19, 43, 68, 0.9);
   --background-color4: rgba(21, 77, 138, 0.336);
 }
 
