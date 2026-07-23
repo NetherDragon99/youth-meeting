@@ -1,6 +1,6 @@
 import * as getDate from "../tools-js/fetching.js";
 import * as translate from "../tools-js/translate.js";
-import { currentAppVersion } from "/config.js";
+import { currentAppVersion } from "../../../config.js";
 
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;

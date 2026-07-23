@@ -3,14 +3,14 @@ const db = await import("./tools-js/indexdb.js");
 
 //#region service worker for downloading the app
 if ('serviceWorker' in navigator) {
-  if (location.hostname == '127.0.0.1') {
+  if (location.hostname == '127.0.0.12') {
     navigator.serviceWorker.getRegistrations().then(registrations => {
       for(let registration of registrations){
         registration.unregister();
       }
     })
   } else {
-    navigator.serviceWorker.register('/service-worker.js', { type: 'module' })
+    navigator.serviceWorker.register('../service-worker.js', { type: 'module' })
       .then(registration => {
         console.log('service worker successed');
       })
@@ -153,7 +153,7 @@ const pageView = new IntersectionObserver((items) => {
 }, { threshold: 0.8 })
 
 function activatePageObserver() {
-  document.querySelectorAll('body>section#MainContainer>*').forEach(itme => pageView.observe(itme))
+  document.querySelectorAll('body>section#MainContainer>*:not(#messagesBarContainer)').forEach(itme => pageView.observe(itme))
 }
 //#endregion
 
