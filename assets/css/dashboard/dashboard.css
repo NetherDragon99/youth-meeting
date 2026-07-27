@@ -1,9 +1,8 @@
-@import url(../index.css);
 @import url(../../icons/style.css);
 @import url(./dashboard-transaction-page.css);
 @import url(./dashboard-user-page.css);
 @import url(./dashboard-tasks-page.css);
-@import url(../profile-page.css);
+@import url(../profilePage.css);
 
 
 @font-face {
@@ -33,7 +32,7 @@ body {
 }
 
 
-/* header */ 
+/*#region header */ 
 
 header {
   padding: 15px;
@@ -110,7 +109,7 @@ header {
   width: 100%;
   position: absolute;
 }
-
+/* #endregion */
 
 
 .mainContainer {
@@ -121,6 +120,7 @@ header {
   scroll-behavior: smooth;
   position: relative;
   direction: var(--main-direction);
+  
 }
 
 
