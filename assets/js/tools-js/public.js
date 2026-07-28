@@ -47,3 +47,10 @@ function removeMessage(duration) {
   setTimeout(()=> message.remove(), duration);
 }
 //#endregion
+
+//#region turn photos to base64
+export async function photoToBase64(photo) {
+  
+}
+
+//#endregion

@@ -17,15 +17,63 @@ async function getData(url) {
 // fetch pages
 export async function getPageElements(url) {
   try {
-  const getRank = await fetch((new URL(url, import.meta.url)));
-  const pageRes = await getRank.text();
-  const tempRankPage = (new DOMParser()).parseFromString(pageRes,'text/html')
-  let page = ''
-  tempRankPage.querySelectorAll('body>section ,body>header').forEach(item => page += item.outerHTML);
+    const getRank = await fetch((new URL(url, import.meta.url)));
+    const pageRes = await getRank.text();
+    const tempRankPage = (new DOMParser()).parseFromString(pageRes, 'text/html')
+    let page = ''
+    tempRankPage.querySelectorAll('body>section ,body>header').forEach(item => page += item.outerHTML);
 
-  return page
-} catch (error) {
-  console.log(error);
-  
+    return page
+  } catch (error) {
+    console.log(error);
+  }
 }
+
+
+//#region google sheet api
+const googleSheetURL = 'https://script.google.com/macros/s/AKfycbwxtPdggFOa_bLB_9DxAYxnHcTUAiB-1LfUZuO-1rpRgyGbVg_acOf2lPYwFjaatw/exec';
+
+// get data
+export async function getDataAPI(sheetName, condition, returned, resHash) {
+  try {
+    const request = await fetch(googleSheetURL, {
+      method: "POST",
+      body: JSON.stringify({
+        key: "YouthMeeting2026",
+        action: "read",
+        sheetName: sheetName,
+        where: condition,
+        select: returned,
+        resHash: resHash
+      })
+    })
+
+    return await request.json();
+  } catch (error) {
+    console.error(error);
+    return error
+  }
 }
+
+// add and update data
+export async function postDataAPI(sheetName, condition, data) {
+  try {
+    const request = await fetch(googleSheetURL, {
+      method: "POST",
+      body: JSON.stringify({
+        key: "YouthMeeting2026",
+        action: "write",
+        sheetName: sheetName,
+        checkBy: condition,
+        data: data
+      })
+    })
+
+    return await request.json();
+  } catch (error) {
+    console.error(error);
+    return error
+  }
+}
+//#region 
+

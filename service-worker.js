@@ -24,6 +24,7 @@ self.addEventListener('fetch', event => {
     event.request.method !== 'GET' ||
     requestUrl.pathname.startsWith('/api') ||
     requestUrl.pathname.startsWith('/admin') ||
+    requestUrl.host.startsWith('script.google.com') ||
     (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:')
   ) {
     return;
