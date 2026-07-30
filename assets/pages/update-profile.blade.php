@@ -61,7 +61,7 @@
             <div class="icon-camera"></div>
             <p>صورة الحساب</p>
             <input type="file" accept="image/*" id="userFormProfilePic">
-            <input type="text" name="profilePic" hidden>
+            <input type="text" name="profilePic" hidden id="toFormProfilePic">
             <div class="icon-cancel" id="photoCancel"></div>
           </label>
         </legend>

@@ -64,7 +64,8 @@ export const allSiteToTranslate = [
   '#userFormPass', 'writepassword',
   '#noAccount', 'createaccount',
   '#userFormMainData label[data-name="createaccount"] p', 'createaccount',
-  '#backToSignIn', 'backtosignin'
+  '#backToSignIn', 'backtosignin',
+  '#confirmImgEdit', 'ok'
 ];
 
 let langIndex = 1;

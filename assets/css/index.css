@@ -66,6 +66,7 @@ input{
 
 img {
   height: 100%;
+  object-fit: contain;
 }
 
 body {
@@ -390,6 +391,71 @@ footer>#footerContainer>a.selected>p {
   position: relative;
   animation: messagesrtl 5s forwards;
 }
+/* #endregion */
+
+/* #region edit Profile Pic */
+#editProfilePic{
+  background-color: rgba(70, 70, 100, 0.842);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  touch-action: none;
+}
+#cancelEditProfileBtn{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+#editProfilePicPhotoContainer{
+  aspect-ratio: 1/1;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+#editProfilePicPhotoContainer>img{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transform: scale(1);
+  object-fit: contain;
+}
+#focusAreaCircle{
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.541);
+  pointer-events: none;
+}
+#editProfilePicPhotoContainer>img:hover{
+  cursor: grab;
+}
+#editProfilePicPhotoContainer>img:active{
+  cursor: grabbing;
+}
+#confirmImgEdit{
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 2;
+  background-color: rgba(0, 0, 255, 0.555);
+  border: 1px blue solid;
+  border-radius: 10px;
+  padding: 0px 50px;
+  position: absolute;
+  bottom: 20px;
+}
+/* #endregion */
 
 @keyframes messagesltr {
   0%{

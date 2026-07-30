@@ -99,6 +99,7 @@
   line-height: 80px;
   text-align: center;
   color: var(--text-color2);
+  position: relative;
 }
 
 #profilePictureContainer>div>img {
@@ -198,7 +199,6 @@
 
 #photoCancel {
   cursor: pointer;
-  pointer-events: none;
   font-size: 1rem;
   line-height: 1;
   transition: 1s;
@@ -207,7 +207,7 @@
   transition: width 400ms ease-in-out;
 }
 
-#changePicFiled {
+#changePicFiled, #userForm {
   cursor: pointer;
 }
 

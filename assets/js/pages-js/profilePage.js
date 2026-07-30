@@ -1,7 +1,7 @@
 import * as getDate from "../tools-js/fetching.js";
 import * as translate from "../tools-js/translate.js";
 import { currentAppVersion } from "../../../config.js";
-import { createMessage } from "../tools-js/public.js";
+import { createMessage, selectPhoto } from "../tools-js/public.js";
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
 
@@ -242,6 +242,7 @@ async function applysignTypePage() {
   themeFiledPrepare();
   prepareLanguageBarF();
   settingBtns();
+  selectPhoto();
   document.documentElement.style.setProperty('--download-app-version', `"${currentAppVersion}"`)
 }
 applysignTypePage();
