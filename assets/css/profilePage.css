@@ -229,10 +229,25 @@
   background-position: left;
   transition: 1s;
   cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  content: 'hello';
 }
-
+#userFormSubmitBtn::before{
+  content: 'تأكيد';
+}
+body.en #userFormSubmitBtn::before{
+  content: 'Submit';
+}
 #userFormSubmitBtn:hover {
   background-position: right;
+}
+body.en #userFormSubmitBtn.preparing::before{
+  animation: preparingDataEn 5s linear infinite;
+}
+#userFormSubmitBtn.preparing::before{
+  animation: preparingDataAr 5s linear infinite;
 }
 
 #logOutBtn {
@@ -257,6 +272,41 @@
 #logOutBtn>div>p,
 #userFormSubmitBtn>div>p {
   margin: 0px;
+}
+
+@keyframes preparingDataEn {
+  0%{
+    content: 'Preparing';
+  }16.66%{
+    content: 'Preparing .';
+  }33.33%{
+    content: 'Preparing . .';
+  }50%{
+    content: 'Preparing . . .';
+  }66.66%{
+    content: 'Preparing . .';
+  }83.33%{
+    content: 'Preparing .';
+  }100%{
+    content: 'Preparing';
+  }
+}
+@keyframes preparingDataAr {
+  0%{
+    content: 'جارى التجهيز';
+  }16.66%{
+    content: 'جارى التجهيز .';
+  }33.33%{
+    content: 'جارى التجهيز . .';
+  }50%{
+    content: 'جارى التجهيز . . .';
+  }66.66%{
+    content: 'جارى التجهيز . .';
+  }83.33%{
+    content: 'جارى التجهيز .';
+  }100%{
+    content: 'جارى التجهيز';
+  }
 }
 
 /* #endregion */

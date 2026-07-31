@@ -70,11 +70,11 @@ window.addEventListener('appinstalled', () => {
 import * as getDate from "./tools-js/fetching.js";
 
 //#region draw pages
-
 document.getElementById('homePage').innerHTML = await getDate.getPageElements('../../pages/home.blade.php');
 document.getElementById('rankPage').innerHTML = await getDate.getPageElements('../../pages/rank.blade.php');
 document.getElementById('comunityPage').innerHTML = await getDate.getPageElements('../../pages/comunity.blade.php');
 document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../../pages/sign-in.blade.php');
+//#endregion
 
 const rankPage = await import("./pages-js/rankPage.js");
 const homePage = await import("./pages-js/homePage.js");
@@ -82,8 +82,8 @@ const profilePage = await import("./pages-js/profilePage.js");
 const translate = await import("./tools-js/translate.js");
 const qrCodeScannerPage = await import("./pages-js/qr.js");
 const publicCode = await import('./tools-js/public.js');
+const timing = await import('./tools-js/timing.js')
 
-//#endregion
 
 // #region scroll function
 // page scroll navigation style function

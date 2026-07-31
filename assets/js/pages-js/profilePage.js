@@ -1,7 +1,8 @@
 import * as getDate from "../tools-js/fetching.js";
 import * as translate from "../tools-js/translate.js";
 import { currentAppVersion } from "../../../config.js";
-import { createMessage, selectPhoto } from "../tools-js/public.js";
+import { createMessage, createUserId, selectPhoto } from "../tools-js/public.js";
+
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
 
@@ -170,15 +171,73 @@ async function clearSavedData() {
 //#region form 
 
 // get form data
-window.getFormDataBtn = function (event, type) {
-  event.preventDefault()
+window.getFormDataBtn = async function (event, type) {
+  event.preventDefault();
+  const submitBtn = document.getElementById('userFormSubmitBtn');
 
   const formData = Object.fromEntries(new FormData(userDataPage));
   document.getElementById('userFormGender') ? formData.gender = document.getElementById('userFormGender').value : null;
 
-  console.log(type, formData);
-  createMessage(formData, 'green', 5)
+if (checkingForFormData(formData)) {
+  console.log('ok');
+  
 }
+
+  if (type === 'signUp') {
+    submitBtn.classList.add('preparing')
+    // formData.id = await createUserId();
+
+  }
+  // signUp(formData);
+  // console.log(type, formData);
+}
+
+
+function checkingForFormData(data) {
+  let lang;
+  const submitBtn = document.getElementById('userFormSubmitBtn');
+  console.log(data);
+
+
+  localStorage.getItem('main language') === 'en' ? lang = 0 : lang = 1;
+
+  if (data.userName === '') {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.emptyusername[lang]);
+
+  } else if (data.gender === 'unselected') {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.emptygender[lang]);
+
+  } else if (data.gender === 'other') {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.othergender[lang]);
+
+  } else if (data.gender === 'pns') {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.pnsgender[lang]);
+
+  } else if (
+    data.email?((data.email === '') || !((data.email).includes('@'))):null ||
+    data.phhoneNo?(((data.phoneNo.length !== 11)) || isNaN(Number(data.phoneNo))):null
+  ) {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.emailorphone[lang]);
+
+  }else if (data.emailPhone === '') {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.emailPhone[lang]);
+
+  } else if (data.password === '') {
+    submitBtn.classList.remove('preparing');
+    return createMessage(getDate.translate.emptypass[lang]);
+
+  }
+  
+  return true
+}
+// console.log(isNaN(Number('9')));
+
 
 window.logOut = function (event) {
   event.preventDefault()
@@ -247,6 +306,3 @@ async function applysignTypePage() {
 }
 applysignTypePage();
 // #endregion
-
-
-// prvernt cancel photo from adding photo

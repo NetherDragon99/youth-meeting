@@ -1,4 +1,7 @@
 import { closeTask } from "../pages-js/homePage.js";
+import { getDataAPI, translate } from "./fetching.js";
+const fetching = await import('./fetching.js');
+
 
 //#region exit page by clicking outside
 const bellIcons = document.querySelector('#notificationIcon:not(#notificationIcon>*)');
@@ -38,10 +41,9 @@ export function createMessage(text, color, duration) {
   console.log('message created');
 
 }
-
 function removeMessage(duration) {
   const message = document.querySelector('.overlayMessage:last-child');
-  console.log(message);
+  // console.log(message);
 
   duration = Number(duration) * 1000;
   setTimeout(() => message.remove(), duration);
@@ -56,16 +58,21 @@ export function selectPhoto() {
   const cancelBtn = document.getElementById('cancelEditProfileBtn');
   const removeImageBtn = document.getElementById('photoCancel');
   const toFormProfilePic = document.getElementById('toFormProfilePic');
-  const displayPic = document.querySelector('#profilePictureContainer>div>img')
+  const displayPic = document.querySelector('#profilePictureContainer>div>img');
+  let lang;
+  localStorage.getItem('main language') === 'en' ? lang = 0 : lang = 1;
+
   //#region remove image
-  removeImageBtn.onclick = () => {
+  removeImageBtn ? removeImageBtn.onclick = () => {
     console.log('removed');
     formPicInput.value = '';
     toFormProfilePic.value = '';
     displayPic.style.display = 'none';
-    displayPic.setAttribute('src', '')
-  }
-  cancelBtn.onclick = () => {
+    displayPic.setAttribute('src', '');
+    createMessage(translate.emptyphoto[lang]);
+
+  } : null;
+  cancelBtn ? cancelBtn.onclick = () => {
     console.log('reomved');
     formPicInput.value = '';
     editPicContainer.querySelector('img').remove();
@@ -73,7 +80,9 @@ export function selectPhoto() {
     toFormProfilePic.value = '';
     displayPic.style.display = 'none';
     displayPic.setAttribute('src', '')
-  }
+    createMessage(translate.emptyphoto[lang]);
+
+  } : null;
   //#endregion
 
 
@@ -238,5 +247,21 @@ export async function photoToBase64(photo) {
 }
 
 //#endregion
+
+//#endregion
+
+//#region create id
+export async function createUserId() {
+  let userId = (crypto.randomUUID()).replaceAll('-', '').slice(0, 25);
+
+  const result = await fetching.getDataAPI('users', { id: userId }, 'id');
+
+  if (result.data.items.length === 0) {
+    return userId
+  } else {
+    createUserId();
+  }
+
+}
 
 //#endregion

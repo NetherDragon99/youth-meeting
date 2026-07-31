@@ -58,5 +58,16 @@
 
   "reloadpagealert": ["Are you sure you want to reload the page??", "متأكد انك عاوز تعيد تحمل الصفحة؟؟"],
   "cleardataalert": ["Are you sure you want to clear all collected data??\ncollected data may be app preferences or images and site data to save the internet!!", "متأكد انك عاوز تمسح المعلومات التى تم تجميعها؟؟\nالمعلومات دى ممكن تكون تفضيلاتك او صور وبيانات الموقع علشان توفر فى الانترنت!!"],
-  "ok": ["OK", "تم"]
+  "ok": ["OK", "تم"],
+
+  "emptyusername": ["Please enter your username", "من فضلك ادخل اسم المستخدم"],
+  "emptygender": ["Please select your gender male or female", "من فضلك اختر النوع ولد او بنت"],
+  "pnsgender": ["hey dude why you don't want to choose your gender. or you are with them and thinking with somthing weard ??", "خير يسطا مش عاوز تختار النوع بتاعك لية ولا انت منهم او بتفكر فى حاجات غريبة ؟؟"],
+  "othergender": ["are you from them or what !!?? rethink in your choice as we are not accepting those peaples", "انت طلعت منهم !!؟؟ فكر تانى يسطا فى اختيراك احنا مش بنقبل الناس دى"],
+  "emailorphone": ["plz type the email or your phone no or both so you can sign in with them later", "من فضلك اكتب ايميل او رقم التليفون او الاتنين علشان تقدر تسجل بيهم تانى قدام"],
+  "emailPhone": ["plz type your email or phone no to sign-in", "من فضلك اكتب ايميلك او رقم التليفون لتسجيل الدخول"],
+  "emptypass": ["I think that you forget to type your password", "بيتهيقلى كدة انك نسيت تكتب كلمة السر"],
+  "emptynewpass": ["I think that your forget to type your new password", "بيتهيقلى كدة انك نيست تكتب الباسورد الجديد"],
+  "emptyconfirmpass": ["sorry but there is an extra step which is to confirm your password to make sure you typed it properly", "معلش بس فى خطوة اخيرة انك تأكد على الباسورد علشان نتأكد انك كاتبة صح"],
+  "emptyphoto": ["be carful there is no photo", "خلى بالك ان كدة مفيش صورة"]
 }

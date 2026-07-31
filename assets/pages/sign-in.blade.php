@@ -45,7 +45,6 @@
         </legend>
         <button id="userFormSubmitBtn" onclick="getFormDataBtn(event, 'signIn')">
           <div class="icon-paperplane">
-            <p>تأكيد</p>
           </div>
         </button>
       </form>

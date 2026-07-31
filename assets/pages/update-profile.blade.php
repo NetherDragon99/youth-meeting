@@ -89,7 +89,6 @@
         </legend>
         <button id="userFormSubmitBtn" onclick="getFormDataBtn(event, 'update')">
           <div class="icon-paperplane">
-            <p>تأكيد</p>
           </div>
         </button>
         <button id="logOutBtn" onclick="logOut(event)">

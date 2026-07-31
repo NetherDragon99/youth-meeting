@@ -75,12 +75,14 @@ export function applyLanguage(lang, items) {
   if (lang === "ar") {
     document.documentElement.style.setProperty("--main-direction", "rtl");
     langIndex = 1;
-    // console.log('ar');
+    document.body.classList.remove('en');
+    document.body.classList.add('ar');
     
   } else if (lang === "en") {
     document.documentElement.style.setProperty("--main-direction", "ltr");
     langIndex = 0;
-    // console.log('en');
+    document.body.classList.remove('ar');
+    document.body.classList.add('en');
     
   } else {
     lang = "ar";
@@ -93,6 +95,7 @@ export function applyLanguage(lang, items) {
   }
 
   document.getElementById('appLanguage').value = lang;
+
 }
 applyLanguage(language, allSiteToTranslate);
 

@@ -1,10 +1,13 @@
 export const indexdb = await new Promise((resolve, reject) => {
-  const requestdb = indexedDB.open('youth-meeting', 1);
+  const requestdb = indexedDB.open('youth-meeting', 2);
   requestdb.onupgradeneeded = function (e) {
     const db = e.target.result;
 
     if (!db.objectStoreNames.contains('photos')) {
       db.createObjectStore('photos', { keyPath: 'id' })
+    }
+    if (!db.objectStoreNames.contains('usersData')) {
+      db.createObjectStore('usersData', { keyPath: 'id' })
     }
   }
   requestdb.onsuccess = e => {

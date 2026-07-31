@@ -368,7 +368,7 @@ footer>#footerContainer>a.selected>p {
   height: 100%;
 }
 #messagesBar{
-  position: sticky;
+  position: fixed;
   width: 100dvw;
   height: 100%;
   top: 0;
@@ -390,6 +390,8 @@ footer>#footerContainer>a.selected>p {
   min-width: 150px;
   position: relative;
   animation: messagesrtl 5s forwards;
+  font-size: 1rem;
+  font-weight: 700;
 }
 /* #endregion */
 
