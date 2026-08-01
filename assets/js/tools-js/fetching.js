@@ -31,7 +31,7 @@ export async function getPageElements(url) {
 
 
 //#region google sheet api
-const googleSheetURL = 'https://script.google.com/macros/s/AKfycbwxtPdggFOa_bLB_9DxAYxnHcTUAiB-1LfUZuO-1rpRgyGbVg_acOf2lPYwFjaatw/exec';
+const googleSheetURL = 'https://script.google.com/macros/s/AKfycbyLZPuqElWqcNP4nnSNQQUDq8GXfaf7xh9F6YOywdKJIYCFIJB6WXTH63ZBwb7K6lqj/exec';
 
 // get data
 export async function getDataAPI(sheetName, condition, returned, resHash) {
@@ -50,7 +50,7 @@ export async function getDataAPI(sheetName, condition, returned, resHash) {
 
     return await request.json();
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return error
   }
 }
@@ -71,7 +71,7 @@ export async function postDataAPI(sheetName, condition, data) {
 
     return await request.json();
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return error
   }
 }

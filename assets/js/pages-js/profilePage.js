@@ -1,7 +1,8 @@
 import * as getDate from "../tools-js/fetching.js";
 import * as translate from "../tools-js/translate.js";
 import { currentAppVersion } from "../../../config.js";
-import { createMessage, createUserId, selectPhoto } from "../tools-js/public.js";
+import { createMessage, createUserId, managePic, selectPhoto } from "../tools-js/public.js";
+import {  } from "../tools-js/manage-data.js";
 
 
 let profileIcon, settingsIcon, userDataPage, appSettingsPage, containerHeader, mainContainer, pageTitle;
@@ -116,8 +117,7 @@ const changeThemeIconF = () => {
 //#endregion
 
 //#region setting buttons
-import * as translateE from "../tools-js/fetching.js";
-import { clearDBItem } from "../tools-js/indexdb.js";
+import { addDBItem, clearDBItem } from "../tools-js/indexdb.js";
 
 function settingBtns() {
   // reload page 
@@ -129,9 +129,9 @@ function settingBtns() {
     let alert;
 
     if (lang == "ar") {
-      alert = confirm(translateE.translate['reloadpagealert'][1]);
+      alert = confirm(getDate.translate['reloadpagealert'][1]);
     } else {
-      alert = confirm(translateE.translate['reloadpagealert'][0]);
+      alert = confirm(getDate.translate['reloadpagealert'][0]);
     }
     alert ? location.href = homePageUrl : null;
   })
@@ -144,9 +144,9 @@ function settingBtns() {
     let alert;
 
     if (lang == "ar") {
-      alert = confirm(translateE.translate['cleardataalert'][1]);
+      alert = confirm(getDate.translate['cleardataalert'][1]);
     } else {
-      alert = confirm(translateE.translate['cleardataalert'][0]);
+      alert = confirm(getDate.translate['cleardataalert'][0]);
     }
     if (alert) {
       await clearSavedData();
@@ -172,71 +172,149 @@ async function clearSavedData() {
 
 // get form data
 window.getFormDataBtn = async function (event, type) {
-  event.preventDefault();
   const submitBtn = document.getElementById('userFormSubmitBtn');
+  try {
+    event.preventDefault();
 
-  const formData = Object.fromEntries(new FormData(userDataPage));
-  document.getElementById('userFormGender') ? formData.gender = document.getElementById('userFormGender').value : null;
+    const lang = localStorage.getItem('main language') === 'en' ? 0 : 1;
 
-if (checkingForFormData(formData)) {
-  console.log('ok');
-  
-}
+    const formData = Object.fromEntries(new FormData(userDataPage));
+    document.getElementById('userFormGender') ? formData.gender = document.getElementById('userFormGender').value : null;
 
-  if (type === 'signUp') {
-    submitBtn.classList.add('preparing')
-    // formData.id = await createUserId();
+    submitBtn.classList.add('active');
+    submitBtn.setAttribute('disabled', 'true');
+    submitBtn.classList.add('preparing');
 
+    if (await checkingForFormData(formData)) {
+
+      if (type === 'signUp') {
+        let makeId = await createUserId();
+
+        if (makeId) {
+          formData.id = makeId;
+        } else {
+          submitBtn.classList.remove('preparing');
+          submitBtn.classList.remove('active');
+          submitBtn.removeAttribute('disabled')
+          return createMessage(getDate.translate.problemhappend[lang]);
+        }
+
+        submitBtn.classList.add('sending');
+        submitBtn.classList.remove('preparing');
+
+        let picId = await managePic(formData.profilePic, formData.userName);
+        // console.log(picId);
+
+        delete formData.profilePic;
+        formData.picId = picId.id;
+        formData.picV = picId.version;
+        formData.cocs = 0;
+        formData.rank = 'unranked';
+        formData.state = 'pending';
+
+        let sendDate = await getDate.postDataAPI('users', 'id', formData);
+        if (sendDate) {
+
+          createMessage(getDate.translate.accountcreated[lang], 'green');
+        }
+
+        localStorage.setItem('user', JSON.stringify(formData))
+
+      }
+      // console.log(formData);
+
+
+    }
+  } catch (error) {
+    console.log(error);
   }
-  // signUp(formData);
-  // console.log(type, formData);
+  submitBtn.classList.remove('sending');
+  submitBtn.classList.remove('active');
+  submitBtn.removeAttribute('disabled');
 }
 
 
-function checkingForFormData(data) {
+async function checkingForFormData(data) {
   let lang;
   const submitBtn = document.getElementById('userFormSubmitBtn');
-  console.log(data);
-
 
   localStorage.getItem('main language') === 'en' ? lang = 0 : lang = 1;
 
-  if (data.userName === '') {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.emptyusername[lang]);
 
-  } else if (data.gender === 'unselected') {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.emptygender[lang]);
 
-  } else if (data.gender === 'other') {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.othergender[lang]);
+  try {
+    if (data.userName === '') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.emptyusername[lang]);
 
-  } else if (data.gender === 'pns') {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.pnsgender[lang]);
+    } else if (data.gender === 'unselected') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.emptygender[lang]);
 
-  } else if (
-    data.email?((data.email === '') || !((data.email).includes('@'))):null ||
-    data.phhoneNo?(((data.phoneNo.length !== 11)) || isNaN(Number(data.phoneNo))):null
-  ) {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.emailorphone[lang]);
+    } else if (data.gender === 'other') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.othergender[lang]);
 
-  }else if (data.emailPhone === '') {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.emailPhone[lang]);
+    } else if (data.gender === 'pns') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.pnsgender[lang]);
 
-  } else if (data.password === '') {
-    submitBtn.classList.remove('preparing');
-    return createMessage(getDate.translate.emptypass[lang]);
+    } else if (
+      data.email ? ((data.email === '') || !((data.email).includes('@'))) : null ||
+        data.phhoneNo ? (((data.phoneNo.length !== 11)) || isNaN(Number(data.phoneNo))) : null
+    ) {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.emailorphone[lang]);
+
+    } else if (data.emailPhone === '') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.emailPhone[lang]);
+
+    } else if (data.password === '') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(getDate.translate.emptypass[lang]);
+
+    }
+    const checkingEP = await checkingForEmailAndPhone(data.email, data.phoneNo);
+
+    if (checkingEP !== 'not found') {
+      submitBtn.classList.remove('preparing');
+      return createMessage(checkingEP[2] === 'email' ? getDate.translate.emailinuse[lang] : checkingEP[2] === 'phone' ? getDate.translate.phoneinuse[lang] : getDate.translate.emailphoneinuse[lang]);
+    }
+    
+    return true
+  } catch (error) {
+    console.log(error);
+    throw new Error("error");
 
   }
-  
-  return true
 }
-// console.log(isNaN(Number('9')));
+
+export async function checkingForEmailAndPhone(email, phone) {
+  try {
+    const [checkEmail, checkPhone] = await Promise.all([
+      getDate.getDataAPI('users', { email: email }, 'email'),
+      getDate.getDataAPI('users', { phoneNo: phone }, 'phoneNo')
+    ])
+
+    if (checkEmail.status === 'success' || checkPhone.status === 'success') {
+      if (checkEmail.data.count !== 0 || checkPhone.data.count !== 0) {
+        return [checkEmail.data.items, checkPhone.data.items,
+          `${checkEmail.data.count !== 0 && checkPhone.data.count !== 0?'email & phone':
+            checkPhone.data.count !== 0?'phone':'email'
+          }`];
+      }
+      return 'not found'
+    }else{
+      throw new Error("error on getting phone or email");
+    }
+
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
 
 
 window.logOut = function (event) {

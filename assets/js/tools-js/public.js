@@ -1,5 +1,6 @@
 import { closeTask } from "../pages-js/homePage.js";
-import { getDataAPI, translate } from "./fetching.js";
+import { getDataAPI, postDataAPI, translate } from "./fetching.js";
+import { addDBItem } from "./indexdb.js";
 const fetching = await import('./fetching.js');
 
 
@@ -38,7 +39,7 @@ export function createMessage(text, color, duration) {
 
   messagesContainer.insertAdjacentElement('afterbegin', message);
   removeMessage(duration);
-  console.log('message created');
+  console.log(text);
 
 }
 function removeMessage(duration) {
@@ -236,17 +237,9 @@ function makeProfilePicSrc(pic) {
   const ctx = canvas.getContext('2d');
 
   ctx.drawImage(pic, 0, 0, 200, 200);
-  return canvas.toDataURL('image/png');
+  return canvas.toDataURL('image/jpeg');
 }
 prepareEditPhotoFiled()
-
-
-//#region turn photos to base64
-export async function photoToBase64(photo) {
-
-}
-
-//#endregion
 
 //#endregion
 
@@ -255,13 +248,41 @@ export async function createUserId() {
   let userId = (crypto.randomUUID()).replaceAll('-', '').slice(0, 25);
 
   const result = await fetching.getDataAPI('users', { id: userId }, 'id');
-
-  if (result.data.items.length === 0) {
-    return userId
+  
+  if (result.data?.items?.length === 0) {
+    return userId;
   } else {
-    createUserId();
+    return false;
   }
 
+}
+
+// creat pic id
+export async function managePic(pic, name, id) {
+  if (!pic || pic === '') return {
+    id: '',
+    version: '',
+  };
+  const lang = localStorage.getItem('main language') === 'en' ? 0 : 1;
+
+  let picId = id || (crypto.randomUUID()).replaceAll('-', '').slice(0, 30);
+
+  const picV = (crypto.randomUUID()).replaceAll('-', '').slice(0, 5);
+  const picData = {
+    id: picId,
+    name: (name || 'empty'),
+    version: picV,
+    image: pic
+  };
+
+  const sentData = await postDataAPI('images', 'id', picData);
+  if (sentData) {
+    addDBItem(picData, 'photos');
+  } else {
+    translate.erroruploadingphoto[lang]
+  }
+
+  return picData;
 }
 
 //#endregion

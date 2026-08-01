@@ -233,6 +233,7 @@
   flex-direction: row-reverse;
   justify-content: center;
   content: 'hello';
+  overflow: hidden;
 }
 #userFormSubmitBtn::before{
   content: 'تأكيد';
@@ -248,6 +249,19 @@ body.en #userFormSubmitBtn.preparing::before{
 }
 #userFormSubmitBtn.preparing::before{
   animation: preparingDataAr 5s linear infinite;
+}
+
+body.en #userFormSubmitBtn.sending::before{
+  animation: sendingDataEn 5s linear infinite;
+}
+#userFormSubmitBtn.sending::before{
+  animation: sendingDataAr 5s linear infinite;
+}
+#userFormSubmitBtn.active >div{
+  animation: animatedPlane 2s linear infinite;
+  position: relative;
+      transform: translate(150%, -150%);
+
 }
 
 #logOutBtn {
@@ -272,6 +286,27 @@ body.en #userFormSubmitBtn.preparing::before{
 #logOutBtn>div>p,
 #userFormSubmitBtn>div>p {
   margin: 0px;
+}
+
+@keyframes animatedPlane {
+  0%{
+    transform: translate(0%, 0%);
+  }10%{
+        transform: translate(-10%, 10%);
+
+  }50%{
+        transform: translate(200%, -200%);
+
+  }50.1%{
+        transform: translate(-200%, 200%);
+
+  }90%{
+        transform: translate(10%, -10%);
+
+  }100%{
+        transform: translate(0%, 0%);
+
+  }
 }
 
 @keyframes preparingDataEn {
@@ -306,6 +341,42 @@ body.en #userFormSubmitBtn.preparing::before{
     content: 'جارى التجهيز .';
   }100%{
     content: 'جارى التجهيز';
+  }
+}
+
+
+@keyframes sendingDataEn {
+  0%{
+    content: 'sending to server';
+  }16.66%{
+    content: 'sending to server .';
+  }33.33%{
+    content: 'sending to server . .';
+  }50%{
+    content: 'sending to server . . .';
+  }66.66%{
+    content: 'sending to server . .';
+  }83.33%{
+    content: 'sending to server .';
+  }100%{
+    content: 'sending to server';
+  }
+}
+@keyframes sendingDataAr {
+  0%{
+    content: 'جارى الارسال الى السيرفر';
+  }16.66%{
+    content: 'جارى الارسال الى السيرفر .';
+  }33.33%{
+    content: 'جارى الارسال الى السيرفر . .';
+  }50%{
+    content: 'جارى الارسال الى السيرفر . . .';
+  }66.66%{
+    content: 'جارى الارسال الى السيرفر . .';
+  }83.33%{
+    content: 'جارى الارسال الى السيرفر .';
+  }100%{
+    content: 'جارى الارسال الى السيرفر';
   }
 }
 
@@ -371,8 +442,11 @@ body.pwa-ready #downloadAppBtn {
 #appVersion{
   align-self: center;
   margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 900;
 }
 #appVersion::after{
   content: var(--download-app-version);
+  font-weight: 500;
 }
 /* #endregion */

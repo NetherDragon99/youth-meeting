@@ -69,5 +69,14 @@
   "emptypass": ["I think that you forget to type your password", "بيتهيقلى كدة انك نسيت تكتب كلمة السر"],
   "emptynewpass": ["I think that your forget to type your new password", "بيتهيقلى كدة انك نيست تكتب الباسورد الجديد"],
   "emptyconfirmpass": ["sorry but there is an extra step which is to confirm your password to make sure you typed it properly", "معلش بس فى خطوة اخيرة انك تأكد على الباسورد علشان نتأكد انك كاتبة صح"],
-  "emptyphoto": ["be carful there is no photo", "خلى بالك ان كدة مفيش صورة"]
+  "emptyphoto": ["be carful there is no photo", "خلى بالك ان كدة مفيش صورة"],
+
+  "problemhappend": ["there is a problem while working", "حصلت مشكلة اثناء العمل"],
+
+  "erroruploadingphoto": ["there is a problem while we are working on the photo plz try again", "حصلت مشكلة اثناء العمل على الصورة برجاء المحاولة مرة اخرى"],
+  "accountcreated": ["your account has been created successfully", "الاكونت اتعمل بنجاح يا باشا"],
+
+  "emailinuse": ["this email is in use", "هذا الايميل مستخدم بالفعل"],
+  "phoneinuse": ["this phone is in use", "رقم الهاتف مستخدم بالفعل"],
+  "emailphoneinuse": ["the email and phone are in used", "رقم الهاتف والايميل مستخدين بالفعل"]
 }
