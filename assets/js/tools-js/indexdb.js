@@ -1,21 +1,24 @@
 export const indexdb = await new Promise((resolve, reject) => {
-  const requestdb = indexedDB.open('youth-meeting', 2);
+  const requestdb = indexedDB.open('youth-meeting', 3);
   requestdb.onupgradeneeded = function (e) {
     const db = e.target.result;
 
     if (!db.objectStoreNames.contains('photos')) {
-      db.createObjectStore('photos', { keyPath: 'id' })
+      db.createObjectStore('photos', { keyPath: 'id' });
     }
     if (!db.objectStoreNames.contains('usersData')) {
-      db.createObjectStore('usersData', { keyPath: 'id' })
+      db.createObjectStore('usersData', { keyPath: 'id' });
+    }
+    if (!db.objectStoreNames.contains('random')) {
+      db.createObjectStore('random', { keyPath: 'name' });
     }
   }
   requestdb.onsuccess = e => {
-    resolve(e.target.result)
+    resolve(e.target.result);
   }
 
   requestdb.onerror = e => {
-    reject(e.target.error)
+    reject(e.target.error);
   }
 })
 
@@ -28,7 +31,7 @@ export function addDBItem(data, name) {
       resolve('added');
     }
     tx.onerror = e =>{
-      reject(e.target.error)
+      reject(e.target.error);
     }
   })
 }
@@ -42,9 +45,24 @@ export function getDBItem(id, name) {
       resolve(e.target.result);
     }
     request.onerror = e =>{
-      reject(e.target.error)
+      reject(e.target.error);
     }
   })
+}
+
+export function getAllDBItems(name) {
+  return new Promise((resolve, reject) => {
+    const tx = indexdb.transaction(name, 'readonly');
+    const request = tx.objectStore(name).getAll();
+
+    request.onsuccess = e => {
+      resolve(e.target.result);
+    }
+    
+    request.onerror = e => {
+      reject(e.target.error);
+    }
+  });
 }
 
 export function deleteDBItem(id, name) {
@@ -56,7 +74,7 @@ export function deleteDBItem(id, name) {
       resolve('deleted');
     }
     tx.onerror = e =>{
-      reject(e.target.error)
+      reject(e.target.error);
     }
   })
 }
@@ -67,10 +85,10 @@ export function clearDBItem(name) {
     tx.objectStore(name).clear();
 
     tx.oncomplete = e => {
-      resolve(name, 'deleted');
+      resolve('deleted');
     }
     tx.onerror = e =>{
-      reject(e.target.error)
+      reject(e.target.error);
     }
   })
 }

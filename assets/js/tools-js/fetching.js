@@ -31,20 +31,23 @@ export async function getPageElements(url) {
 
 
 //#region google sheet api
-const googleSheetURL = 'https://script.google.com/macros/s/AKfycbyLZPuqElWqcNP4nnSNQQUDq8GXfaf7xh9F6YOywdKJIYCFIJB6WXTH63ZBwb7K6lqj/exec';
+const googleSheetURL = 'https://script.google.com/macros/s/AKfycbzUIFWgZHEIuZp1R6cmgmBLSvCu2IWboMTp4p5NAfNVFqAMlpk0Nwj8HheCjWhPQD4Z/exec';
 
 // get data
-export async function getDataAPI(sheetName, condition, returned, resHash) {
+export async function getDataAPI(sheetName, condition, returned, resHash, onlyChanges) {
   try {
     const request = await fetch(googleSheetURL, {
       method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      redirect: "follow",
       body: JSON.stringify({
         key: "YouthMeeting2026",
         action: "read",
         sheetName: sheetName,
         where: condition,
         select: returned,
-        resHash: resHash
+        resHash: resHash,
+        onlyChanges: onlyChanges || 'false'
       })
     })
 
@@ -60,6 +63,8 @@ export async function postDataAPI(sheetName, condition, data) {
   try {
     const request = await fetch(googleSheetURL, {
       method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      redirect: "follow",
       body: JSON.stringify({
         key: "YouthMeeting2026",
         action: "write",
