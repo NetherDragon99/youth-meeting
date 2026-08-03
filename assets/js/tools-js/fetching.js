@@ -1,3 +1,5 @@
+import { userOnlineState } from "./online-state.js";
+console.log(userOnlineState);
 
 
 // getting data 'locally'
@@ -35,6 +37,8 @@ const googleSheetURL = 'https://script.google.com/macros/s/AKfycbzUIFWgZHEIuZp1R
 
 // get data
 export async function getDataAPI(sheetName, condition, returned, resHash, onlyChanges) {
+  if (!userOnlineState) return;
+
   try {
     const request = await fetch(googleSheetURL, {
       method: "POST",
@@ -60,6 +64,8 @@ export async function getDataAPI(sheetName, condition, returned, resHash, onlyCh
 
 // add and update data
 export async function postDataAPI(sheetName, condition, data) {
+  if (!userOnlineState) return;
+
   try {
     const request = await fetch(googleSheetURL, {
       method: "POST",
