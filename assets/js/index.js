@@ -167,5 +167,13 @@ qrBtn.addEventListener('click', click => {
 })
 //#endregion
 
+// const v = new Int32Array(1)
+// console.log(v);
 
+// console.log((new TextEncoder()).encode('hello'));
+
+// let hash = await crypto.subtle.digest('SHA-256', ((new TextEncoder()).encode('hello world')))
+// console.log(hash);
+
+// console.log(Array.from(new Uint8Array(hash)).map(byte => byte.toString(16).padStart(2, '0')).join(''));
 

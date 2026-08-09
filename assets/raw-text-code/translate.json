@@ -78,5 +78,7 @@
 
   "emailinuse": ["this email is in use", "هذا الايميل مستخدم بالفعل"],
   "phoneinuse": ["this phone is in use", "رقم الهاتف مستخدم بالفعل"],
-  "emailphoneinuse": ["the email and phone are in used", "رقم الهاتف والايميل مستخدين بالفعل"]
+  "emailphoneinuse": ["the email and phone are in used", "رقم الهاتف والايميل مستخدين بالفعل"],
+
+  "plzconnecttodownload": ["please connect to the internet to download the main data", "من فضلك اتصل بالانترنت لتحمل البيانات الاساسية"]
 }

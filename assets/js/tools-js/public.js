@@ -275,7 +275,7 @@ export async function managePic(pic, name, id) {
     image: pic
   };
 
-  const sentData = await postDataAPI('images', 'id', picData);
+  const sentData = await postDataAPI('photos', 'id', picData);
   if (sentData) {
     addDBItem(picData, 'photos');
   } else {
