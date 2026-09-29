@@ -191,7 +191,7 @@ window.getFormDataBtn = async function (event, type) {
         let makeId = await createUserId();
 
         if (makeId) {
-          formData.id = makeId;
+          formData.id = `user${makeId}`;
         } else {
           submitBtn.classList.remove('preparing');
           submitBtn.classList.remove('active');
@@ -218,7 +218,13 @@ window.getFormDataBtn = async function (event, type) {
           createMessage(getDate.translate.accountcreated[lang], 'green');
         }
 
-        localStorage.setItem('user', JSON.stringify(formData))
+        delete formData.password;
+        localStorage.setItem('user', JSON.stringify(formData));
+        addDBItem(formData, 'usersData');
+        addDBItem({
+          name: 'userId',
+          id: formData.id
+        }, 'random');
 
       }
       // console.log(formData);
@@ -333,13 +339,9 @@ window.logOut = function (event) {
 // signup
 window.changeLocationToSignUp = function () {
   const newURL = new URL(location.href)
-  newURL.searchParams.set('account-state', 'creat');
+  newURL.searchParams.set('account-state', 'create');
 
   history.pushState({}, '', newURL);
-
-  const accountStateLinkEvent = new CustomEvent('urlDataChanged', {
-    detail: { 'account-state': 'myValue' }
-  });
   applysignTypePage();
 }
 // signin
@@ -348,18 +350,14 @@ window.changeLocationToSignIn = function () {
   newURL.searchParams.delete('account-state');
 
   history.pushState({}, '', newURL);
-
-  const accountStateLinkEvent = new CustomEvent('urlDataChanged', {
-    detail: { 'account-state': 'myValue' }
-  });
   applysignTypePage();
 }
 // apply profile page type
-async function applysignTypePage() {
+export async function applysignTypePage() {
   const params = new URLSearchParams(location.search)
   // console.log(params.has('account-state'));
 
-  if (params.get('account-state') == 'creat') {
+  if (params.get('account-state') == 'create') {
     document.getElementById('profilePage').innerHTML = await getDate.getPageElements('../../pages/sign-up.blade.php');
 
     await translate.applyLanguage(localStorage.getItem('main language'), translate.allSiteToTranslate);

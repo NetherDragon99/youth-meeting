@@ -1,4 +1,4 @@
-
+import { userOnlineState } from "./online-state.js";
 
 // getting data 'locally'
 export let translate = await getData((new URL('../../raw-text-code/translate.json', import.meta.url)));
@@ -31,10 +31,12 @@ export async function getPageElements(url) {
 
 
 //#region google sheet api
-const googleSheetURL = 'https://script.google.com/macros/s/AKfycbzUIFWgZHEIuZp1R6cmgmBLSvCu2IWboMTp4p5NAfNVFqAMlpk0Nwj8HheCjWhPQD4Z/exec';
+const googleSheetURL = 'https://script.google.com/macros/s/AKfycby-yiCkGTnnBbbqPF9QhrTPKdeswscqRRX-S0_iXmyaQVwooCDCSuwV8s4BbrGh7jZ5/exec';
 
 // get data
 export async function getDataAPI(sheetName, condition, returned, resHash, onlyChanges) {
+  if (!userOnlineState) return;
+
   try {
     const request = await fetch(googleSheetURL, {
       method: "POST",
@@ -53,13 +55,15 @@ export async function getDataAPI(sheetName, condition, returned, resHash, onlyCh
 
     return await request.json();
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return error
   }
 }
 
 // add and update data
 export async function postDataAPI(sheetName, condition, data) {
+  if (!userOnlineState) return;
+
   try {
     const request = await fetch(googleSheetURL, {
       method: "POST",
@@ -76,7 +80,7 @@ export async function postDataAPI(sheetName, condition, data) {
 
     return await request.json();
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return error
   }
 }

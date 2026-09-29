@@ -82,7 +82,8 @@ const profilePage = await import("./pages-js/profilePage.js");
 const translate = await import("./tools-js/translate.js");
 const qrCodeScannerPage = await import("./pages-js/qr.js");
 const publicCode = await import('./tools-js/public.js');
-const timing = await import('./tools-js/timing.js')
+const timing = await import('./tools-js/timing.js');
+const getAccount = await import('./get-account.js');
 
 
 // #region scroll function
@@ -167,5 +168,13 @@ qrBtn.addEventListener('click', click => {
 })
 //#endregion
 
+// const v = new Int32Array(1)
+// console.log(v);
 
+// console.log((new TextEncoder()).encode('hello'));
+
+// let hash = await crypto.subtle.digest('SHA-256', ((new TextEncoder()).encode('hello world')))
+// console.log(hash);
+
+// console.log(Array.from(new Uint8Array(hash)).map(byte => byte.toString(16).padStart(2, '0')).join(''));
 
